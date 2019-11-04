@@ -1,0 +1,4 @@
+git fetch 
+git branch -f master HEAD~3
+git merge 
+git fakeTeamWork
