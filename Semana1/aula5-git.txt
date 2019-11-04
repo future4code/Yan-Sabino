@@ -1,0 +1,10 @@
+git fetch 
+git branch -f master HEAD~3
+git merge 
+git fakeTeamWork
+git clone 
+git checkout
+git pull
+git push
+git add
+git commit
