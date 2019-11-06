@@ -1,0 +1,30 @@
+*{
+    background-color: #FF914C;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+button{
+   font-size: 14px;
+   font-weight: 700;
+   color: #F8F1E5; 
+   background-color: #601208;
+   border: 1px solid black; 
+   padding: 5px;
+   margin: 20px 150px 0px 150px ;
+   text-align: center;
+}
+
+li{
+    float: left;
+    
+}
