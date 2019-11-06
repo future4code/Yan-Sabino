@@ -1,6 +1,45 @@
 *{
-    background-color: #FF914C;
+   
     margin: 0px;
     padding: 0px;
     font-family: 'Montserrat', sans-serif;
+}
+
+h1{
+    background-color: #FF914C;
+    color: #601208;
+    text-align: center; 
+    padding: 20px;
+    font-size: 50px;
+}
+
+.tabela{
+    background-color: #FF914C;
+    color: #601208;
+    font-size: 30px;
+    text-align: center;
+    padding: 40px;
+    width: 100%;
+}
+
+button{
+   
+    font-size: 14px;
+    font-weight: 700;
+    color: #F8F1E5; 
+    background-color: #601208;
+    border: 1px solid black; 
+    padding: 5px;
+    text-align: center;
+    
+ }
+
+ 
+
+ .footer{
+    padding: 10px 0px 15px 0px;
+    color: #F8F1E5;
+    background-color: #601208;
+    margin: 0px;
+
 }
