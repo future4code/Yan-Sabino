@@ -109,6 +109,13 @@ div:last-child {
     text-align: center;
 }
 
+input{
+    border-top: hidden;
+    border-left: hidden;
+    border-right: hidden;
+    border-bottom: 2px solid black;
+}
+
 table {
     width: 60%;
     margin-left: auto;
