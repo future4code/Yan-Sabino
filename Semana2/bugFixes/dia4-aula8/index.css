@@ -116,6 +116,12 @@ input{
     border-bottom: 2px solid black;
 }
 
+#center-table{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 table {
     width: 60%;
     margin-left: auto;
