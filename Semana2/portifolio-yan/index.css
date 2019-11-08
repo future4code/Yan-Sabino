@@ -6,7 +6,7 @@
 
 .intro{
     width: 100%;
-    margin: 5% auto 0 auto;
+    margin: 0 0 0 auto;
     text-align: center;
     border: 1px solid black;
     background-color: #6e3667;
@@ -40,8 +40,35 @@
 
 #lista{
     width: 400px;
-    margin: 10px auto 10px auto;
+    margin: 10px auto;
     text-align: left;
     border: 1px solid #6e3667;
     padding: 10px 10px 10px 30px;
 }
+
+.skill{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid black;
+    background-color: #424142;
+    color: whitesmoke;
+    padding: 10px 0;
+}
+
+#table1{
+    width: 400px;
+    margin: 0 auto ;
+    padding: 10px 0;
+    border: 1px solid whitesmoke;
+    }
+
+    th{
+        color: #88d317;
+        background-color: #6e3667;
+    }
+
+    #table1 tr:nth-last-of-type(2){
+        color: #88d317;
+        background-color: #6e3667;
+    }
