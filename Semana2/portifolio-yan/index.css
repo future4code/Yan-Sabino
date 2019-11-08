@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.intro{
+    width: 100%;
+    margin: 5% auto 0 auto;
+    text-align: center;
+    border: 1px solid black;
+}
+
+#yan-portifolio{
+    width: 10%;
+    height: auto;
+}
+
+p{
+    width: 400px;
+    margin: 0 auto;
+}
