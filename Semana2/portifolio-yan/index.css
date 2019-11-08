@@ -32,12 +32,12 @@
     /* border: 1px solid black; */
     background-color: #6e3667;
     color: whitesmoke;
-    padding: 10px;
+    /* padding: 10px; */
     
 }
 
 #yan-portifolio{
-    width: 10%;
+    width: 20%;
     height: auto;
     margin: 10px;
 }
@@ -48,6 +48,7 @@
     border: 1px solid #88d317;
     text-align:center;
     padding: 10px;
+    background-color: #6e3667;
 }
 
 .ge{
@@ -61,11 +62,22 @@
 
 #lista{
     width: 400px;
-    margin: 10px 0px 10px auto;
+    margin: 0px 0px 0px auto;
     text-align: left;
     border: 1px solid #6e3667;
     padding: 10px 10px 10px 30px;
 }
+
+.projects{
+    width: 100%;
+    margin: 0 auto 0 auto;
+    text-align: left;
+    /* border: 1px solid black; */
+    background-color: rgb(167, 164, 164);
+    color: #6e3667;
+}
+
+
 
 .skill{
     width: 100%;
@@ -137,7 +149,7 @@
     margin: 0 auto;
     text-align: right;
     /* border: 1px solid black; */
-    background-color: whitesmoke;
+    background-color: rgb(167, 164, 164);
     color: #6e3667;
     padding: 10px 0;
 }
