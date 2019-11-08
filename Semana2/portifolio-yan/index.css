@@ -11,12 +11,14 @@
     border: 1px solid black;
     background-color: #6e3667;
     color: whitesmoke;
+    padding: 10px;
     
 }
 
 #yan-portifolio{
     width: 10%;
     height: auto;
+    margin: 10px;
 }
 
 #intro{
@@ -25,4 +27,21 @@
     border: 1px solid #88d317;
     text-align:center;
     padding: 10px;
+}
+
+.ge{
+    width: 100%;
+    margin: 0 auto 0 auto;
+    text-align: center;
+    border: 1px solid black;
+    background-color: whitesmoke;
+    color: #6e3667;
+}
+
+#lista{
+    width: 400px;
+    margin: 10px auto 10px auto;
+    text-align: left;
+    border: 1px solid #6e3667;
+    padding: 10px 10px 10px 30px;
 }
