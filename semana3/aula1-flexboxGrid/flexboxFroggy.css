@@ -160,3 +160,40 @@
     display: flex;
   flex-flow: column wrap; /* mistura de flex-direction com flex-wrap*/
   }
+
+  /* Level 21 */
+
+  #pond {
+    display: flex;
+    flex-wrap: wrap;
+  align-content: flex-start;
+  }
+
+  /* Level 22 */
+
+  #pond {
+    display: flex;
+    flex-wrap: wrap;
+  align-content: flex-end;
+  }
+
+  /* Level 23 */
+
+  #pond {
+    display: flex;
+    flex-wrap: wrap;
+  flex-direction: column-reverse;
+  align-content: center;
+  }
+
+  /* Level 24 */
+
+  #pond {
+    display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  align-content: space-between;
+  }
+
+
