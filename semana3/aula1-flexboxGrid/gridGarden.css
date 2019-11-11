@@ -311,9 +311,30 @@
   grid-template-columns: 75px 3fr 2fr;
     grid-template-rows: 100%;
   }
+
+  /* Level 26 */
+
+
+
+  /* Level 27 */
+
+  #garden {
+    display: grid;
+  grid-template: 60% 60% / 200px;
+  }
   
+  #water {
+    grid-column: 1;
+    grid-row: 1;
+  }
 
+  /* Level 28 */
 
+  #garden {
+    display: grid;
+  grid-template: 93% 50px / 20% 80%
+  }
+  
 
 
 
