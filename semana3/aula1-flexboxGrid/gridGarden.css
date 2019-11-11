@@ -123,7 +123,71 @@
   #water {
   grid-column: 4/6 ;
   }
+
+  /* Level 11 */
+
+  #garden {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+  }
   
+  #water {
+  grid-column: span 3/5;
+  }
+
+  /* Level 12 */
+
+  #garden {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+  }
+  
+  #water {
+  grid-row-start: 3;
+  }
+
+  /* Level 13 */
+
+  #garden {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+  }
+  
+  #water {
+  grid-row: 3/6;
+  }
+
+  /* Level 14 */
+
+  #garden {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+  }
+  
+  #poison {
+  grid-column: 2;
+  grid-row: 5;
+  }
+
+  /* Level 15 */
+
+  #garden {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+  }
+  
+  #water {
+  grid-column: 2/6;
+  grid-row: span 5;
+  }
+
+
+
 
 
 
