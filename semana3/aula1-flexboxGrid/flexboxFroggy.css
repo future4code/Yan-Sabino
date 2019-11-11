@@ -115,4 +115,48 @@
   .red {
   order: -1;
   }
+
+  /* Level 16 */
+
+  #pond {
+    display: flex;
+    align-items: flex-start;
+  }
   
+  .yellow {
+  align-self: flex-end;
+  }
+
+  /* Level 17 */
+
+  #pond {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .yellow {
+  order: 1;
+  align-self: flex-end;
+  }
+
+  /* Level 18 */
+
+  #pond {
+    display: flex;
+  flex-wrap: wrap;
+  }
+
+  /* Level 19 */
+
+  #pond {
+    display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  }
+
+  /* Level 20 */
+
+  #pond {
+    display: flex;
+  flex-flow: column wrap; /* mistura de flex-direction com flex-wrap*/
+  }
