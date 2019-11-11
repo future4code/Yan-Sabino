@@ -33,4 +33,40 @@
   align-items: flex-end;
   }
 
-  
+  /* Level 6 */
+
+  #pond {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  /* Level 7 */
+
+  #pond {
+    display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  }
+
+  /* Level 8 */
+
+  #pond {
+    display: flex;
+  flex-direction: row-reverse;
+  }
+
+  /* Level 9 */
+
+  #pond {
+    display: flex;
+  flex-direction: column;
+  }
+
+  /* Level 10 */
+
+  #pond {
+    display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  }
