@@ -1,0 +1,36 @@
+/* Level 1 */
+
+#pond {
+    display: flex;
+  justify-content: flex-end;
+  }
+
+  /* Level 2 */
+
+  #pond {
+    display: flex;
+  justify-content: center
+  }
+
+/* Level 3 */
+
+#pond {
+    display: flex;
+  justify-content: space-around;
+  }
+
+/* Level 4 */
+
+#pond {
+    display: flex;
+  justify-content: space-between;
+  }
+
+/* Level 5 */
+
+#pond {
+    display: flex;
+  align-items: flex-end;
+  }
+
+  
