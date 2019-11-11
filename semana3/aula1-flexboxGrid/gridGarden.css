@@ -284,7 +284,7 @@
 
   #garden {
     display: grid;
-  grid-template-columns: 1fr 5fr
+  grid-template-columns: 1fr 5fr;
     grid-template-rows: 20% 20% 20% 20% 20%;
   }
 
@@ -292,7 +292,7 @@
 
   #garden {
     display: grid;
-  grid-template-columns: 50px 3fr 3fr 3fr 50px
+  grid-template-columns: 50px 3fr 3fr 3fr 50px;
     grid-template-rows: 20% 20% 20% 20% 20%;
   }
   
@@ -334,7 +334,7 @@
     display: grid;
   grid-template: 93% 50px / 20% 80%
   }
-  
+
 
 
 
