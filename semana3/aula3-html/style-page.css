@@ -35,7 +35,7 @@ section{
 
 div{
     display: grid;
-    border: 1px solid black;
+    border: 1px solid gray;
     width: 15vw;
     height: 30vh;
     justify-items: center;
@@ -45,7 +45,9 @@ div{
 
 footer{
     bottom: 0;
-    
+    color: white;
+    background-color: #282828;
+    padding: 4vh 1vw;
 }
 
 
