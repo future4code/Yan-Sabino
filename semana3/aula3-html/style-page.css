@@ -61,3 +61,37 @@ footer{
 
 /* Primeira pagina de vídeo */
 
+#video-1{
+    display: flex;
+    flex-direction: column;
+    background-color: #1F1F1F ;
+    padding: 50px 0;
+    color: white;
+}
+
+#video-1 h4{
+    font-size: larger;
+    padding: 0 0 15px 0;
+    text-align: left;
+    margin-right: 570px;
+}
+
+button{
+    margin-top: 40px;
+    padding: 5px;
+    font-size: large;
+    background-color: white ;
+    border: 1px solid black;
+}
+
+button:hover{
+    background-color: #1F1F1F ;
+    color: white;
+    border: 1px solid white;
+}
+
+button:active{
+    background-color: red ;
+    color: black;
+    border: 1px solid white;
+}
