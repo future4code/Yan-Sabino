@@ -38,6 +38,8 @@ div{
     border: 1px solid gray;
     width: 14vw;
     height: 30vh;
+    max-width: 300px;
+    min-width: 200px;
     text-align: left;
     color: white;
 }
@@ -99,4 +101,49 @@ button:active{
     background-color: red ;
     color: black;
     border: 1px solid white;
+}
+
+@media screen and (max-device-width: 420px){
+    section{
+        display:grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input{
+        width: 70vw;
+        margin-top: 15px;
+    }
+
+    footer{
+        text-align: center;
+    }
+}
+
+@media screen and (max-device-width: 880px) and (min-device-width: 421px){
+    section{
+        display:grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+    header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input{
+        width: 70vw;
+        margin-top: 15px;
+    }
+
+    footer{
+        text-align: center;
+    }
 }
