@@ -76,6 +76,11 @@ footer{
     margin-right: 570px;
 }
 
+video{
+    width: 70vw;
+    height: 60vh;
+}
+
 button{
     margin-top: 40px;
     padding: 5px;
