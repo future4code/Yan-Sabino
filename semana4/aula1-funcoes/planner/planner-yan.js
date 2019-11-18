@@ -8,28 +8,28 @@ function addTarefa(){
     const contentul4 = document.getElementById("content4")
     const contentul5 = document.getElementById("content5")
     const contentul6 = document.getElementById("content6")
-        console.log(contentul)
+        
         if(seletor === "segunda"){
             contentul.innerHTML += "<li> " + txt + " </li>"
-            // console.log(contentul.innerHTML)
+            
         } else if(seletor === "terca"){
             contentul1.innerHTML += "<li> " + txt + " </li>"
-            // console.log(contentul.innerHTML)
+            
         } else if(seletor === "quarta"){
             contentul2.innerHTML += "<li> " + txt + " </li>"
-            // console.log(contentul.innerHTML)
+            
         } else if(seletor === "quinta"){
             contentul3.innerHTML += "<li> " + txt + " </li>"
-            // console.log(contentul.innerHTML)
+            
         } else if(seletor === "sexta"){
             contentul4.innerHTML += "<li> " + txt + " </li>"
-            // console.log(contentul.innerHTML)
+            
         } else if(seletor === "sabado"){
             contentul5.innerHTML += "<li> " + txt + " </li>"
-            // console.log(contentul.innerHTML)
+            
         } else if(seletor === "domingo"){
             contentul6.innerHTML += "<li> " + txt + " </li>"
-            // console.log(contentul.innerHTML)
+            
         }
 
         
