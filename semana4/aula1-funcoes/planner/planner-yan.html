@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="planner-yan.css">
-    <script type="text/javascript" src="planner-yan.js"></script>
+    <script type="text/javascript" src="planner-yan.js" defer></script>
     <title>Planner - Yan</title>
 </head>
 <body>
    <header id="cabecalho">
     <label for="novaTarefa"> Nova Tarefa: </label>
     <input type="text" name="novaTarefa" id="novaTarefa">
-    <select name="diaDaSemana" id="diaDaSemana">
+    <select name="diaDaSemana" id="seletorDiaDaSemana">
         <option value="segunda">Segunda-Feira</option>
         <option value="terca">Terça-Feira</option>
         <option value="quarta">Quarta-Feira</option>
@@ -21,33 +21,39 @@
         <option value="sabado">Sabado</option>
         <option value="domingo">Domingo</option>
     </select>
-    <button>Criar Tarefa</button>
+    <button onclick="addTarefa(); apagaForm()">Criar Tarefa</button>
    </header>
 <hr>
 <h1>Minha Semana</h1>
    <section id="diasSemana" class="diasSemana">
         <div id="segunda">
             Segunda-Feira
-            
+            <ul id="content"></ul>
         </div>
         
         <div id="terca">
             Terca-Feira
+            <ul id="content1"></ul>
         </div>
         <div id="quarta">
             Quarta-Feira
+            <ul id="content2"></ul>
         </div>
         <div id="quinta">
             Quinta-Feira
+            <ul id="content3"></ul>
         </div>
         <div id="sexta">
             Sexta-Feira
+            <ul id="content4"></ul>
         </div>
         <div id="sabado">
             Sábado
+            <ul id="content5"></ul>
         </div>
         <div id="domingo">
             Domingo
+            <ul id="content6"></ul>
         </div>
    </section>
 </body>
