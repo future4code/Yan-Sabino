@@ -22,13 +22,14 @@
         <option value="domingo">Domingo</option>
     </select>
     <button onclick="addTarefa(); apagaForm()">Criar Tarefa</button>
+    <button onclick="limparTarefas()">Limpar</button>
    </header>
 <hr>
 <h1>Minha Semana</h1>
    <section id="diasSemana" class="diasSemana">
         <div id="segunda">
             Segunda-Feira
-            <ul id="content"></ul>
+            <ul id="content" onclick="sublinharTarefa()"></ul>
         </div>
         
         <div id="terca">
