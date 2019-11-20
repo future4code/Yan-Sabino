@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+hr{
+    width: 100%;
+}
+
 #cabecalho{
     display: flex;
     justify-content: space-evenly;
@@ -12,6 +16,11 @@
 h1{
     padding: 50px 0 0 0;
     text-align: center;
+}
+
+input{
+    
+    border: 1px solid black;
 }
 
 #diasSemana{
@@ -33,4 +42,67 @@ div{
 ul{
     display: block;
     padding: 30px;
+}
+
+@media screen and (max-device-width: 375px) and (min-device-width : 320px){
+    #cabecalho{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding: 25px 0;
+    }
+
+    input{
+        margin-left: 0;
+        border: 1px solid black;
+    }
+
+    select{
+        width: 250px;
+        margin: 20px 50% 15px 50%;
+    }
+
+    button{
+        margin: 10px 0;
+    }
+
+    #diasSemana{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+        margin: 50px;
+    
+    }
+
+    #diasSemana > div{
+        width: 200px;
+        height: auto;
+        margin: 20px;
+    }
+}
+
+@media screen and (max-device-width: 670px) and (min-device-width : 376px){
+    
+    #cabecalho{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 25px 0;
+    }
+    
+    #diasSemana{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        margin: 50px;
+    
+    }
+
+    #diasSemana > div{
+        width: 200px;
+        height: auto;
+        margin: 20px;
+    }
 }
