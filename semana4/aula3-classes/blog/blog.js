@@ -19,7 +19,7 @@ console.log("clique em mim")
 const titulo = document.getElementById("titulo").value
 const autor = document.getElementById("autor").value
 const conteudo = document.getElementById("texto").value
-// const postagem = document.getElementById("post")
+
 const post1 = new postagem(titulo, autor, conteudo)
 console.log(post1) 
 arrayDePost.push(post1)
@@ -27,15 +27,24 @@ console.log(arrayDePost)
 document.getElementById('titulo').value = ""
 document.getElementById('autor').value = ""
 document.getElementById('texto').value = ""
-// post1.innerHTML += "<h1>Título:" + post1.titulo +  "</h1>" +
-//     "<p>Autor:" + post1.autor + "</p>" + "<p>Conteúdo: " + post1.conteudo +
-//     "</p>" 
+ 
 
 }
 
+function addPost(){
+    console.log("add")
+     const divDePost = document.getElementById("post")
+     divDePost.innerHTML = ""
+     for(const txt of arrayDePost){
+    divDePost.innerHTML += criaPost(txt)
+     }
+}
 
-
-
+function criaPost(){
+    return "<h1>Título:" + arrayDePost.indexOf(titulo.value) +  "</h1>" +
+    "<p>Autor:" + arrayDePost.indexOf(autor) + "</p>" + "<p>Conteúdo: " + arrayDePost.indexOf(titulo) +
+    "</p>"
+}
 
 
 
