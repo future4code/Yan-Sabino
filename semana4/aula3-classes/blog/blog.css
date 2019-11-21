@@ -15,3 +15,17 @@ input{
 textarea{
     margin: 10px 0;
 }
+
+.post{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    margin: 80px 0;
+}
+
+p{
+    border: 1px solid black;
+    width: 80%;
+}
