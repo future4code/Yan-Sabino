@@ -1,0 +1,17 @@
+.formulario{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+button{
+    width: 100px;
+}
+
+input{
+    margin: 10px 0;
+}
+
+textarea{
+    margin: 10px 0;
+}
