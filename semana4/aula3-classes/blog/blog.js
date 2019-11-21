@@ -40,9 +40,9 @@ function addPost(){
      }
 }
 
-function criaPost(){
-    return "<h1>Título:" + arrayDePost.indexOf(titulo.value) +  "</h1>" +
-    "<p>Autor:" + arrayDePost.indexOf(autor) + "</p>" + "<p>Conteúdo: " + arrayDePost.indexOf(titulo) +
+function criaPost(txt){
+    return "<h1>Título:" + txt.titulo +  "</h1>" +
+    "<p>Autor:" + txt.autor + "</p>" + "<p>Conteúdo: " + txt.conteudo +
     "</p>"
 }
 
