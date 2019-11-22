@@ -17,6 +17,7 @@ const arrayDespesa = []
 
 function salvar(){
     console.log("Teste Salvar")
+    
     const valor = document.getElementById('valor').value
     const descricao = document.getElementById('descricao').value
     const tipo = document.getElementById('tipoDespesa').value
@@ -25,4 +26,13 @@ function salvar(){
     console.log(dadosCadastrados)
     arrayDespesa.push(dadosCadastrados)
     console.log(arrayDespesa)
+
+    if(valor === "" || descricao === "" || tipo === "none"){
+        alert("Por favor preencha os campos!")
+        document.getElementById("valor").focus()
+        document.getElementById("descricao").focus()
+        document.getElementById("tipoDespesa").focus()
+        return false
+        }
+
 }
