@@ -22,11 +22,6 @@ function salvar(){
     const descricao = document.getElementById('descricao').value
     const tipo = document.getElementById('tipoDespesa').value
 
-    const dadosCadastrados = new despesa(valor, descricao, tipo)
-    console.log(dadosCadastrados)
-    arrayDespesa.push(dadosCadastrados)
-    console.log(arrayDespesa)
-
     if(valor === "" || descricao === "" || tipo === "none"){
         alert("Por favor preencha os campos!")
         document.getElementById("valor").focus()
@@ -34,5 +29,12 @@ function salvar(){
         document.getElementById("tipoDespesa").focus()
         return false
         }
+
+    const dadosCadastrados = new despesa(valor, descricao, tipo)
+    console.log(dadosCadastrados)
+    arrayDespesa.push(dadosCadastrados)
+    console.log(arrayDespesa)
+
+    
 
 }
