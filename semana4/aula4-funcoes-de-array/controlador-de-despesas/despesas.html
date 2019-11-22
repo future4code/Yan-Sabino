@@ -15,6 +15,7 @@
             <h4>Cadastrar Despesa</h4>
             <label for="valor">Valor</label>
             <input id="valor" type="number">
+            <label for="tipoDespesa">Tipo</label>
             <select name="tipoDespesa" id="tipoDespesa">
                 <option value="casa">Casa</option>
                 <option value="roles">Roles</option>
@@ -22,10 +23,11 @@
             </select>
             <label for="descricao">Descrição</label>
             <input id="descricao" type="text">
-            <button onclick="apagaForm()">Cadastrar Despesa</button>
+            <button onclick="apagaForm(); salvar()">Cadastrar Despesa</button>
         </div>
         <div id="detalhes">
             <h3>Despesas Detalhadas</h3>
+            <label for="tipoDespesa">Tipo</label>
             <select name="tipoDespesa" id="tipoDespesa">
                 <option value="casa">Casa</option>
                 <option value="roles">Roles</option>
