@@ -14,11 +14,34 @@
             <h3>Controlador de Desepesas</h3>
             <h4>Cadastrar Despesa</h4>
             <label for="valor">Valor</label>
-            <input id="valor" type="text">
-            
+            <input id="valor" type="number">
+            <select name="tipoDespesa" id="tipoDespesa">
+                <option value="casa">Casa</option>
+                <option value="roles">Roles</option>
+                <option value="games">Games</option>
+            </select>
+            <label for="descricao">Descrição</label>
+            <input id="descricao" type="text">
+            <button>Cadastrar Despesa</button>
         </div>
-        <div id="detalhes"></div>
-        <div id="extrato"></div>
+        <div id="detalhes">
+            <h3>Despesas Detalhadas</h3>
+            <select name="tipoDespesa" id="tipoDespesa">
+                <option value="casa">Casa</option>
+                <option value="roles">Roles</option>
+                <option value="games">Games</option>
+            </select>
+            <label for="valorMax">Valor Máximo</label>
+            <input id="valorMax" type="number">
+            <label for="valorMin">Valor Mínimo</label>
+            <input id="valorMin" type="number">
+            <button>Filtrar</button>
+            <button>Limpar Filtros</button>
+        </div>
+        <div id="extrato">
+            <h3>Extrato</h3>
+            <h4>Valor Total:</h4>
+        </div>
     </section>
 </body>
 </html>

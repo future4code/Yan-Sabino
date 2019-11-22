@@ -1,0 +1,31 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: space-around;
+
+}
+
+.container div{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid orange;
+    width: 300px;
+    padding: 30px;
+}
+
+.container div input{
+    margin: 5px;
+    width: 200px;
+}
+
+.container div label{
+    margin-top: 5px;
+}
+
+.container div button{
+    width: 100px;
+}
+
+.container div select{
+    width: 200px;
+}
