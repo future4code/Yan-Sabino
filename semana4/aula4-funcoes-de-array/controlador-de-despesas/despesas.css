@@ -24,8 +24,10 @@
 
 .container div button{
     width: 100px;
+    margin: 10px;
 }
 
 .container div select{
     width: 200px;
+    margin: 10px;
 }
