@@ -19,11 +19,11 @@ function App() {
       <div id="corpoGeral">
       <div id="menuLateral">
         <p id="itemMenu">Início</p>
-        <p id="itemMenu">Início</p>
-        <p id="itemMenu">Início</p>
-        <p id="itemMenu">Início</p>
-        <p id="itemMenu">Início</p>
-        <p id="itemMenu">Início</p>
+        <p id="itemMenu">Em Alta</p>
+        <p id="itemMenu">Inscrições</p>
+        <p id="itemMenu">Originais</p>
+        <p id="itemMenu">Biblioteca</p>
+        <p id="itemMenu">Histórico</p>
       </div>
       <section id="iconesVideos">
         <div className="videos">
