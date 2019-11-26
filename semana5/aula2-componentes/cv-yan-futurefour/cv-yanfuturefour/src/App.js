@@ -3,6 +3,7 @@ import './App.css';
 import CvFlex from './Components/CvFlex/CvFlex';
 import CvFlexTitulo from './Components/CvFlexTitulo/CvFlexTitulo'
 import CvFlexDescricao from './Components/CvFlexDescricao/CvFlexDescricao'
+import CvInfos from './Components/CvInfos/CvInfos'
 
 function App() {
   return (
@@ -15,8 +16,8 @@ function App() {
                 desenvolvimento e atendimento ao cliente. Vivência
                 internacional, proatividade e trabalho em equipe. Inglês
                 Avançado, comunicando-se em espanhol e francês." />
-        
-        
+        <CvInfos imagem="https://encurtador.com.br/jEHX4" label="E-mail:" texto="yan.sabino@hotmail.com" />
+        <CvInfos imagem="https://encurtador.com.br/kmCQ1" label="Endereço:" texto="Rua dos Sabias, 1234"/> 
     </CvFlex>
   );
 }

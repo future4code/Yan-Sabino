@@ -6,7 +6,7 @@ function CvFlexDescricao(props){
         <div className="CvFlexDescricao">
             <h4>{props.nome}</h4>
             <div className="MiniContainer">
-            <img src={props.imagem}></img>
+            <img id="imgRedonda" src={props.imagem}></img>
             <p>{props.texto}</p>
             </div>
         </div>
