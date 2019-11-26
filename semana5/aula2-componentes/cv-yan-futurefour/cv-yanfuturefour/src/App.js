@@ -19,9 +19,14 @@ function App() {
                 Avançado, comunicando-se em espanhol e francês." />
         <CvInfos imagem="https://encurtador.com.br/jEHX4" label="E-mail:" texto="yan.sabino@hotmail.com" />
         <CvInfos imagem="https://encurtador.com.br/kmCQ1" label="Endereço:" texto="Rua dos Sabias, 1234"/>
-        <CvButtom imagem="https://encurtador.com.br/hmxDX" texto="Ver Mais"  />
+        <CvButtom imagem="https://encurtador.com.br/hmxDX" texto="Ver Mais"/>
         <CvFlexTitulo titulo="Experiências Profissionais"/>
-        
+        <CvFlexDescricao nome="AgroData" imagem="https://encurtador.com.br/gnuQV"
+        texto="Suporte Técnico e Pesquisa e desenvolvimento junto com Marketing Digital."/>
+        <CvFlexTitulo titulo="Minhas Redes Sociais"/>
+        <CvButtom imagem="https://encurtador.com.br/uJR47" texto="Facebook"/>
+
+
     </CvFlex>
   );
 }
