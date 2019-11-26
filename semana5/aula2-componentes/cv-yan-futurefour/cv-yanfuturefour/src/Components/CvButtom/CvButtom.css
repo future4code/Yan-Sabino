@@ -1,0 +1,27 @@
+.CvButtom{
+    
+    width: 80%;
+   
+    }
+
+
+#seta{
+width: 20px;
+height: 20px;
+padding:10px 10px 0 0;
+}
+
+#botao{
+    display: flex;
+    justify-content: center;
+}    
+
+button{
+    border: 1px solid black;
+    border-radius: 50px;
+    background-color: white;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    margin: 50px 170px ;
+}
