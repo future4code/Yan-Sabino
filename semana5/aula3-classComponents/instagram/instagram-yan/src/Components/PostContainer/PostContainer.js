@@ -8,8 +8,11 @@ class PostContainer extends React.Component{
 
 	render(){
 		return(
-			<div className="PostContainer"/>
-            )
+			<div className="PostContainer">
+				{this.props.children}
+				
+			</div>
+        )
 	}
 
 }
