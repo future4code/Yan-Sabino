@@ -26,4 +26,20 @@
 #container2 img{
     width:25px;
     height: 25px;
+    margin-right: 10px;
+}
+
+
+
+#ContainerComments{
+    display: flex;
+   justify-content: space-around;
+   margin:0 0 10px;
+
+}
+
+button{
+    color:white;
+    background-color: white;
+    border: 0;
 }
