@@ -1,0 +1,9 @@
+.CvFlexContainer{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin: 100px auto 0 auto;
+    border: 1px solid black;
+    width: 40vw;
+    gap: 20px;
+}
