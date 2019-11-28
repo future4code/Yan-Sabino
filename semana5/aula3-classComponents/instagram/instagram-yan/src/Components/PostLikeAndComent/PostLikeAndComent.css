@@ -1,0 +1,40 @@
+.PostLikeAndComentContainer{
+    display: flex;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10px;
+}
+
+#container1{
+    display: flex;
+    align-items: center;
+
+}
+
+#container1 img{
+    width:25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+#container2{
+    display: flex;
+    align-items: center;
+}
+
+#container2 img{
+    width:25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+
+
+#ContainerComments{
+    display: flex;
+   justify-content: space-around;
+   margin:0 0 10px;
+
+}
+
