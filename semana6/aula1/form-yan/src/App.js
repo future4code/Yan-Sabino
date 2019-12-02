@@ -26,7 +26,7 @@ class App extends React.Component{
       case 4:
         return <Etapa4></Etapa4>
       default:
-        return <Etapa4></Etapa4>
+        return <Etapa1></Etapa1>
     }
   }
 
