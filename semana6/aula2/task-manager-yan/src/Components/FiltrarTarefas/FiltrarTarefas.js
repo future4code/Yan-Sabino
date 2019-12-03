@@ -12,7 +12,16 @@ class FiltrarTarefas extends React.Component{
    } 
    render(){
        return(
-        <div></div>
+        <div>
+            <label>
+                Filtro
+                <select>
+                    <option>Nenhum</option>
+                    <option>Pendentes</option>
+                    <option>Completas</option>
+                </select>
+            </label>
+        </div>
        )
    }
 }

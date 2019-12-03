@@ -13,28 +13,46 @@ justify-content: center;
 border: 1px solid black;
 width: 50%;
 margin: 50px auto;
+padding: 20px 0 50px;
 `
 
 
 class App extends React.Component{
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     
     this.state = {
-
+      listaDeTarefas: []
     }
   }
 
+onClickBotao = (novaTarefaTexto) =>{
+  const novaListaDeTarefas = [...this.state.listaDeTarefas]
+  novaListaDeTarefas.push(novaTarefaTexto)
+  this.setState({listaDeTarefas: novaListaDeTarefas})
+}
+
+addNaTelaALista = ()=>{
+  return this.state.listaDeTarefas.map(item => {
+      console.log("ITEM", item)
+  return <li>{item}</li>
+  })
+}
 
 
-  
   render() {
+    const listaDeTarefasAdd = this.addNaTelaALista()
+
     return (
       <MainContainer>
-        <p>oi</p>
-        <p>oi</p>
-        <p>oi</p>
-        <p>oi</p>
+        <h1>Lista de Tarefas</h1>
+          <AddTarefas 
+          aoClicarEmAdicionar={this.onClickBotao}
+          arrayDeLista={this.listaDeTarefas}
+          />
+          
+          <FiltrarTarefas/>
+          <ul>{listaDeTarefasAdd}</ul>
       </MainContainer>
         
       
