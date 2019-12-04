@@ -3,8 +3,8 @@ import React from 'react';
 import styled from 'styled-components'
 
 class AddTarefas extends React.Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
          this.state = {
             valorCampo: ""
          }
@@ -16,6 +16,8 @@ class AddTarefas extends React.Component{
     onChangeCampo = e =>{
         this.setState({valorCampo: e.target.value})
     }
+
+    
     
 
     render(){
