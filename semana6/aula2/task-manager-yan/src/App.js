@@ -2,7 +2,6 @@ import React from 'react';
 import AddTarefas from './Components/AddTarefas/AddTarefas';
 import FiltrarTarefas from './Components/FiltrarTarefas/FiltrarTarefas'
 import ListaTarefas from './Components/ListaTarefas/ListaTarefas'
-import './App.css';
 import styled from 'styled-components'
 
 const MainContainer = styled.div`
