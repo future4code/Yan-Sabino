@@ -35,6 +35,9 @@ class UserSignup extends React.Component{
         }
          
         axios.post(`${baseUrl}/users/createUser`, userToBeCreated, axiosConfig )
+        .then(() => {
+            this.setState({name:"",email:""})
+        })
     }
 
     render(){

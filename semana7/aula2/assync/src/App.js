@@ -1,13 +1,16 @@
 import React from 'react';
 
-// import styled from "styled-components"
+import styled from "styled-components"
 import UserSignup from './Components/UserSignUp/index'
 import UsersList from './Components/UsersList/index'
 
-// const token = "yan"
-// const baseUrl = "https://us-central1-future4-users.cloudfunctions.net/api"
+const Container = styled.div`
+display: flex;
+flex-direction: column;
+width: 400px;
+`
 
- class App extends React.Component {
+class App extends React.Component {
     constructor(props){
       super(props)
 
