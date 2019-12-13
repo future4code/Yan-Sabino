@@ -28,6 +28,8 @@ class CreatePlaylist extends React.Component {
         await axios.post(url,data,axiosConfig)
         this.setState({playlistName: ""})
 
+        
+
     }
 
     onChangePlaylistValue = e =>{
