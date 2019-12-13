@@ -8,13 +8,51 @@ class AddMusicToPlaylist extends React.Component{
         super(props)
 
         this.state = {
-            music: ""
+            music: "",
+            artist: "",
+            musicUrl: ""
         }
     }
 
-    
+    componentDidMount(){
+        this.handleAddMusicToPlaylist()
+    }
 
-    handleAddMusicToPlaylist = e =>{
+    handleAddMusicToPlaylist = async () =>{
+        const urlAdd = `${baseURL}/playlists/addMusicToPlaylist`
+        const data = {
+            playlistId: "",
+            music:{
+                name: this.state.music,
+                artist: this.state.artist,
+                url: this.state.musicUrl
+            }
+           
+        }
+
+        const axiosConfig = {
+            headers:{
+                auth: "yan"
+            }
+            
+        }
+
+        await axios.put(urlAdd,data,axiosConfig)
+        this.setState({
+            music: "",
+            artist: "",
+            musicUrl: ""
+        })
+
+    }
+
+    handleInputAddMusicChange = e =>{
+        this.setState({music: e.target.value})
+    }
+    handleInputAddArtistChange = e =>{
+        this.setState({music: e.target.value})
+    }
+    handleInputAddMusicUrlChange = e =>{
         this.setState({music: e.target.value})
     }
 
@@ -23,9 +61,20 @@ class AddMusicToPlaylist extends React.Component{
             <div>
                 <input 
                 value={this.state.music}
-                onChange={this.handleAddMusicToPlaylist}
+                onChange={this.handleInputAddMusicChange}
+                placeholder="Música"
                 />
-                <button>Adicionar Músicas</button>
+                <input 
+                value={this.state.artist}
+                onChange={this.handleInputAddArtistChange}
+                placeholder="Artista"
+                />
+                <input 
+                value={this.state.musicUrl}
+                onChange={this.handleInputAddMusicUrlChange}
+                placeholder="URL"
+                />
+                <button onClick={this.handleAddMusicToPlaylist}>Adicionar Músicas</button>
             </div>
             
         )

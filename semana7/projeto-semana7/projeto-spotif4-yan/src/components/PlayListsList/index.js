@@ -42,6 +42,7 @@ class PlayListsList extends React.Component{
                     <PlayListsListItem playlist={playlist} onDeletePlaylist={this.handleGetAllPlaylists}/>
                     
                 ))}
+                
                 <AddMusicToPlaylist/>
             </div>
         )
