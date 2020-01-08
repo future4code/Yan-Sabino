@@ -1,4 +1,4 @@
-import { ADD_TASK } from '../constants/actionTypes'
+
 
 const initialState = {
     allTasks: [],
@@ -16,6 +16,10 @@ const tasks = (state = initialState, action) => {
             }
             
             return { ...state, allTasks: [...state.allTasks, newTask] }
+
+        case 'DELETE_TASK':
+            const numIndex = parseInt(action.id)
+            return state.filter(task => task.id !== numIndex)
         default:
             return state;
     }

@@ -1,11 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { deleteEachTaskActionCreator } from '../Actions/index'
 
-export default class TaskItem extends React.Component{
+
+class TaskItem extends React.Component{
     render(){
         return(
             
-                <li><input type="checkbox"/>{this.props.task.text} <button>X</button></li>
+                <li><input type="checkbox"/>{this.props.task.text} <button onClick={() => this.props.deleteEachTaskActionCreator(id)}>X</button></li>
             
         )
     }
 }
+
+const mapDispatchToProps = (dispatch) =>({
+    deleteTask: (id) => dispatch(deleteEachTaskActionCreator(id))
+})
+
+export default connect(null, mapDispatchToProps)(TaskItem)
