@@ -1,13 +1,14 @@
 import React from 'react';
 import TaskItem from './TaskItem'
+import { connect } from 'react-redux';
 
-export default class TaskList extends React.Component{
+ class TaskList extends React.Component{
     render(){
         return(
-            <div>
+            <ul>
                 <TaskItem/>
-                
-            </div>
+            </ul>
         )
     }
 }
+export default connect()(TaskList)
