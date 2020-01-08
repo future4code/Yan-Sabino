@@ -1,12 +1,10 @@
 import { ADD_TASK } from '../constants/actionTypes'
 
 const initialState = {
-    allTasks: [{
-        text: 'Tarefa 1',
-        completed: false,
-        id: 0
-    }],
+    allTasks: [],
 }
+
+
 
 const tasks = (state = initialState, action) => {
     switch(action.type){

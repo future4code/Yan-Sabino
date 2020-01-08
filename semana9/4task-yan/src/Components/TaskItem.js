@@ -4,7 +4,7 @@ export default class TaskItem extends React.Component{
     render(){
         return(
             
-                <li><input type="checkbox"/>Usar Redux  <button>X</button></li>
+                <li><input type="checkbox"/>{this.props.task.text} <button>X</button></li>
             
         )
     }

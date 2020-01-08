@@ -1,11 +1,45 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { addTaskActionCreator } from '../Actions/index'
 
-export default class TaskInput extends React.Component{
+class TaskInput extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            taskValue: ""
+        }
+    }
+    onChangeInput = event =>{
+        
+        this.setState({taskValue: event.target.value})
+    }
+
+    onCreateTask = event =>{
+        if(event.key === "Enter"){
+            this.props.createTask(this.state.taskValue)
+            this.setState({taskValue: ""})
+        }
+        
+        
+    }
+    
     render(){
         return(
             <div>
-                <input placeholder=" O que tem que ser feito?"/>
+                <input 
+                onChange={this.onChangeInput} 
+                onKeyDown={this.onCreateTask} 
+                placeholder=" O que tem que ser feito?"
+                value={this.state.taskValue}
+                />
+                
             </div>
         )
     }
 }
+
+const mapDispatchToProps = (dispatch) =>({
+    createTask: (text) => dispatch(addTaskActionCreator(text))
+})
+
+export default connect(null, mapDispatchToProps)(TaskInput)
