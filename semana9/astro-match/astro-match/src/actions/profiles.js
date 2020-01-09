@@ -8,7 +8,7 @@ export const setProfileToSwipe = (profile) => ({
 	} 
 })
 
-export const setMatchList = (matches) => ({
+export const setMatches = (matches) => ({
 	type: 'SET_MATCHES',
 	payload:{
 		matches
@@ -31,5 +31,12 @@ export const chooseProfile = (id, choice) => async (dispatch) => {
 		return
 	}
 
-	await axios.post('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/yan/choose-person')
+	await axios.post('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/yan/choose-person', {id,choice})
+
+	dispatch(getProfileToSwipe())
+}
+
+export const getMatches = () => async (dispatch) => {
+	const response = await axios.get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/yan/matches')
+	dispatch(setMatches(response.data.matches))
 }
