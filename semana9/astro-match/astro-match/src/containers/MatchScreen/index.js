@@ -54,4 +54,4 @@ const mapDispatchToProps = dispatch => ({
 	getMatches: () => dispatch(getMatches())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(MatchScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(MatchScreen)  
