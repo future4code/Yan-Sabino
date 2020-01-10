@@ -83,3 +83,7 @@ export const UserAge = styled.div`
   margin-left: 10px;
 	font-size: 20px;
 `
+
+export const UserDescription = styled.p`
+  margin-top: 10px;
+`

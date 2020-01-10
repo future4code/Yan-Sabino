@@ -55,3 +55,4 @@ export const Avatar = styled.div`
 export const ListText = styled.p`
   user-select: none;
 `
+
