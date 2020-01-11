@@ -26,7 +26,7 @@ export const getProfileToSwipe = () => async (dispatch) => {
 }
 
 export const chooseProfile = (id, choice) => async (dispatch) => {
-	if(!id){
+	if(!choice){
 		dispatch(getProfileToSwipe())
 		return
 	}
