@@ -25,11 +25,11 @@ function Router(props) {
     <ConnectedRouter history={props.history}>
       <Switch>
         <Route exact path={routes.root} component={HomePage} />
-        <Route path={routes.applicationForm} component={AppForm} />
-        <Route path={routes.login} component={LoginPage} />
-        <Route path={routes.createTrip} component={CreateTrip} />
-        <Route path={routes.tripsList} component={TripsList} />
-        <Route path={routes.tripDetails} component={TripDetails} />
+        <Route exact path={routes.applicationForm} component={AppForm} />
+        <Route exact path={routes.login} component={LoginPage} />
+        <Route exact path={routes.createTrip} component={CreateTrip} />
+        <Route exact path={routes.tripsList} component={TripsList} />
+        <Route exact path={routes.tripDetails} component={TripDetails} />
       </Switch>
     </ConnectedRouter>
   );
