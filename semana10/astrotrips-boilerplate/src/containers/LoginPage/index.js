@@ -6,6 +6,23 @@ import Button from "@material-ui/core/Button";
 import styled from "styled-components";
 import { routes } from '../Router/index'
 
+const loginForm = [
+  {
+    name: 'adminname',
+    type: 'text',
+    label: 'admin',
+    required: true,
+    pattern: "[A-Za-z]{3,}"
+  },
+
+  {
+    name: 'password',
+    type: 'password',
+    label: 'password',
+    required: true,
+  },
+]
+
 const LoginWrapper = styled.form`
   width: 100%;
   height: 100vh;
@@ -19,37 +36,43 @@ class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
-      password: ""
+      form: {}
     };
   }
 
   handleFieldChange = event => {
+    const { name, value } = event.target
     this.setState({
-      [event.target.name]: event.target.value
+      form: {...this.state.form, [name]: value}
     });
   };
+
+  handleOnSubmit = event => {
+    event.preventDefault();
+    console.log(this.state.form)
+  }
 
   render() {
     const { email, password } = this.state;
 
     return (
-      <LoginWrapper>
-        <TextField
-          onChange={this.handleFieldChange}
-          name="email"
-          type="email"
-          label="E-mail"
-          value={email}
-        />
-        <TextField
-          onChange={this.handleFieldChange}
-          name="password"
-          type="password"
-          label="Password"
-          value={password}
-        />
-        <Button onClick={this.props.goToTripsList}>Login</Button>
+      <LoginWrapper onSubmit={this.handleOnSubmit}>
+
+        {loginForm.map(input =>(
+          <div key={input.name}>
+            <label htmlFor={input.name}>{input.label}:</label>
+            <TextField
+              onChange={this.handleFieldChange}
+              name={input.name}
+              type={input.type}
+              label={input.label}
+              value={this.state.form[input.name] || ""}
+              required={input.required}
+              pattern={input.pattern}
+            />
+          </div>
+        ))}
+        <Button type="button" onClick={this.props.goToTripsList}>Login</Button>
       </LoginWrapper>
     );
   }

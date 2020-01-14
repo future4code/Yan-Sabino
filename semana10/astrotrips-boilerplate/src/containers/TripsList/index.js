@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import { routes } from '../Router/index'
 import { getTrips } from '../../actions/tripActions'
+import LoginPage from '../LoginPage/index'
 
 class TripList extends React.Component {
       
@@ -14,7 +15,7 @@ class TripList extends React.Component {
       }
       
       render(){
-        console.log(this.props)
+        console.log(this.props.trips)
         return (
             <div>
                <h1>EU SOU A TripsList</h1>
