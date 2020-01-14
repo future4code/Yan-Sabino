@@ -3,6 +3,6 @@ import { connectRouter } from "connected-react-router";
 
 export const generateReducers = history =>
   combineReducers({
-    router: connectRouter(history)
+    router: connectRouter(history),
     // Outros reducers aqui
   });
