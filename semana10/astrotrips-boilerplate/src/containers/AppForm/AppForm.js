@@ -6,17 +6,19 @@ import { push } from "connected-react-router";
 import { routes } from '../Router/index'
 
 
-const AppForm = props => {
+class AppForm extends Component {
     
 
-    
-        return (
-            <div>
-                <h1>EU SOU A APP FORM</h1>
-                <Button>Salvar</Button>
-            </div>
-            
-        )
+        render(){
+            return (
+                <div>
+                    <h1>EU SOU A APP FORM</h1>
+                    <Button>Salvar</Button>
+                </div>
+                
+            )
+        }
+        
     
 }
 
