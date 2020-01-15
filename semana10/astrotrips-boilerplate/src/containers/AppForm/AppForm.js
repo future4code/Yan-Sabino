@@ -52,6 +52,9 @@ const AppFormWrapper = styled.form`
 const StyledDropDown = styled(TextField)`
 width: 185px;
 `
+const StyledSelect = styled(Select)`
+width: 185px;
+`
 class AppForm extends React.Component {
 
     constructor(props) {
@@ -347,7 +350,7 @@ class AppForm extends React.Component {
                     <MenuItem value="Zimbabwe">Zimbabwe</MenuItem>
                     <MenuItem value="Zâmbia">Zâmbia</MenuItem>
                 </StyledDropDown>
-                <Select
+                <StyledSelect
                     label="Viagem"
                     name="Viagem"
                     onChange={this.onHandleChangeTrip}
@@ -355,7 +358,7 @@ class AppForm extends React.Component {
                     value={this.state.valueTrip}
                 >
                     {this.props.trips.map((trip) => (<MenuItem value={trip.id}>{trip.name} - {trip.planet}</MenuItem>))}
-                </Select>
+                </StyledSelect>
                 <Button>Salvar</Button>
             </AppFormWrapper>
         )
