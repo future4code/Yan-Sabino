@@ -43,7 +43,7 @@ class LoginPage extends Component {
   handleFieldChange = event => {
     const { name, value } = event.target
     this.setState({
-      form: {...this.state.form, [name]: value}
+      form: { ...this.state.form, [name]: value }
     });
   };
 
@@ -57,8 +57,7 @@ class LoginPage extends Component {
 
     return (
       <LoginWrapper onSubmit={this.handleOnSubmit}>
-
-        {loginForm.map(input =>(
+          {loginForm.map(input => (
           <div key={input.name}>
             <label htmlFor={input.name}>{input.label}:</label>
             <TextField
@@ -78,10 +77,10 @@ class LoginPage extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch){
-  return{
+function mapDispatchToProps(dispatch) {
+  return {
     goToTripsList: () => dispatch(push(routes.tripsList)),
   }
 }
 
-export default connect(null, mapDispatchToProps) (LoginPage);
+export default connect(null, mapDispatchToProps)(LoginPage);

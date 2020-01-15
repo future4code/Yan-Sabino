@@ -6,7 +6,7 @@ import { push } from "connected-react-router";
 import { routes } from '../Router/index'
 
 const TripDetails = props => {
-    return(
+    return (
         <div>
             <h1>Eu sou a Trip Details</h1>
             <Button onClick={props.goToTripsList}>va para a trip list </Button>
@@ -14,10 +14,9 @@ const TripDetails = props => {
     )
 }
 
-function mapDispatchToProps(dispatch){
+function mapDispatchToProps(dispatch) {
     return {
         goToTripsList: () => dispatch(push(routes.tripsList)),
-
     }
 }
 

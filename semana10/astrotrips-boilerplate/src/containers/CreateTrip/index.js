@@ -41,8 +41,6 @@ const tripForm = [
     }
 ]
 
-
-
 const TripsWrapper = styled.form`
   width: 100%;
   height: 100vh;
@@ -58,34 +56,37 @@ width: 185px;
 
 class CreateTrip extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
-        this.state={
+        this.state = {
             form: {},
             value: "",
         }
     }
 
-    onHandleChangePlanet = (event) =>{
-        this.setState({value: event.target.value})
+    onHandleChangePlanet = (event) => {
+        this.setState({ value: event.target.value })
     }
 
-        render(){
-            return (
-                <div>
-                
-                <TripsWrapper>
+    render() {
+        return (
+            <TripsWrapper>
                 <h1>Crie uma Viagem</h1>
-                {tripForm.map(input =>(
-                  <TextField
-                   name={input.name}
-                   type={input.type}
-                   label={input.label}
-                   required={input.required}
-                   pattern={input.pattern}
-                   /> 
-                ))} 
-                <StyledDropDown select onChange={this.onHandleChangePlanet} label="Planeta" name="Planetas" value={this.state.value}>
+                {tripForm.map(input => (
+                    <TextField
+                        name={input.name}
+                        type={input.type}
+                        label={input.label}
+                        required={input.required}
+                        pattern={input.pattern}
+                    />
+                ))}
+                <StyledDropDown
+                    select
+                    onChange={this.onHandleChangePlanet}
+                    label="Planeta"
+                    name="Planetas"
+                    value={this.state.value}>
                     <MenuItem value="mercurio">Mercúrio</MenuItem>
                     <MenuItem value="venus">Vênus</MenuItem>
                     <MenuItem value="terra">Terra</MenuItem>
@@ -95,24 +96,16 @@ class CreateTrip extends React.Component {
                     <MenuItem value="urano">Urano</MenuItem>
                     <MenuItem value="netuno">Netuno</MenuItem>
                 </StyledDropDown>
-                <Button onClick={this.props.goToTripsList}>Trip List</Button> 
-                </TripsWrapper>
-                
-                 
-                </div>
-                
-            );
-        }
-        
-    
+                <Button onClick={this.props.goToTripsList}>Trip List</Button>
+            </TripsWrapper>
+        );
+    }
 };
 
 function mapDispatchToProps(dispatch) {
     return {
         goToTripsList: () => dispatch(push(routes.tripsList)),
     }
-      
-    
 }
 
 export default connect(null, mapDispatchToProps)(CreateTrip) 

@@ -9,7 +9,6 @@ import LoginPage from '../LoginPage/index'
 
 class TripList extends React.Component {
 
-
   componentDidMount() {
     this.props.fetchTrips()
   }
@@ -23,16 +22,13 @@ class TripList extends React.Component {
         <Button onClick={this.props.goToCreateTrip}>Va Para Create Trip</Button>
         <Button onClick={this.props.goToTripDetails}>Trip Details</Button>
       </div>
-
     );
   }
 };
 
 const mapStateToProps = state => ({
   trips: state.trips.allTrips
-}
-
-);
+});
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -40,8 +36,6 @@ function mapDispatchToProps(dispatch) {
     goToCreateTrip: () => dispatch(push(routes.createTrip)),
     fetchTrips: () => dispatch(getTrips())
   }
-
-
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TripList) 
