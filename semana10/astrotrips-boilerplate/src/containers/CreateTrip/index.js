@@ -21,7 +21,7 @@ const tripForm = [
         type: 'text',
         label: 'Data',
         required: true,
-        pattern: ""
+        pattern: "^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$"
     },
 
     {
@@ -37,7 +37,7 @@ const tripForm = [
         type: 'text',
         label: 'Duração',
         required: true,
-        pattern: ""
+        pattern: "^[0-9]*$"
     }
 ]
 
@@ -52,30 +52,49 @@ const TripsWrapper = styled.form`
   display: grid;
 `;
 
+const StyledDropDown = styled(TextField)`
+width: 185px;
+`
+
 class CreateTrip extends React.Component {
 
     constructor(props){
         super(props)
         this.state={
             form: {},
+            value: "",
         }
     }
+
+    onHandleChangePlanet = (event) =>{
+        this.setState({value: event.target.value})
+    }
+
         render(){
             return (
                 <div>
-                   
+                
                 <TripsWrapper>
-                <h1>EU SOU A CreateTrip</h1>
-                <TextField select>
-                    <MenuItem>Mercúrio</MenuItem>
-                    <MenuItem>Vênus</MenuItem>
-                    <MenuItem>Terra</MenuItem>
-                    <MenuItem>Marte</MenuItem>
-                    <MenuItem>Saturno</MenuItem>
-                    <MenuItem>Júpter</MenuItem>
-                    <MenuItem>Urano</MenuItem>
-                    <MenuItem>Netuno</MenuItem>
-                </TextField>
+                <h1>Crie uma Viagem</h1>
+                {tripForm.map(input =>(
+                  <TextField
+                   name={input.name}
+                   type={input.type}
+                   label={input.label}
+                   required={input.required}
+                   pattern={input.pattern}
+                   /> 
+                ))} 
+                <StyledDropDown select onChange={this.onHandleChangePlanet} label="Planeta" name="Planetas" value={this.state.value}>
+                    <MenuItem value="mercurio">Mercúrio</MenuItem>
+                    <MenuItem value="venus">Vênus</MenuItem>
+                    <MenuItem value="terra">Terra</MenuItem>
+                    <MenuItem value="marte">Marte</MenuItem>
+                    <MenuItem value="saturno">Saturno</MenuItem>
+                    <MenuItem value="jupter">Júpiter</MenuItem>
+                    <MenuItem value="urano">Urano</MenuItem>
+                    <MenuItem value="netuno">Netuno</MenuItem>
+                </StyledDropDown>
                 <Button onClick={this.props.goToTripsList}>Trip List</Button> 
                 </TripsWrapper>
                 
