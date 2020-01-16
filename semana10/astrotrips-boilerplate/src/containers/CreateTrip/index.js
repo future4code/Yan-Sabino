@@ -21,7 +21,8 @@ const tripForm = [
         type: 'text',
         label: 'Data',
         required: true,
-        pattern: "^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$"
+        pattern: "^(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}$",
+
     },
 
     {
@@ -62,6 +63,14 @@ class CreateTrip extends React.Component {
             form: {},
             value: "",
         }
+    }
+
+    componentDidMount() {
+        const token = window.localStorage.getItem("token")
+        if(token === null){
+          this.props.goToLoginPage()
+        }
+        
     }
 
     onHandleChangePlanet = (event) => {
@@ -105,6 +114,7 @@ class CreateTrip extends React.Component {
 function mapDispatchToProps(dispatch) {
     return {
         goToTripsList: () => dispatch(push(routes.tripsList)),
+        goToLoginPage: () => dispatch(push(routes.login))
     }
 }
 

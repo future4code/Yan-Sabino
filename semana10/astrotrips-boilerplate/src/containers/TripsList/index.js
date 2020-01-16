@@ -10,7 +10,13 @@ import LoginPage from '../LoginPage/index'
 class TripList extends React.Component {
 
   componentDidMount() {
-    this.props.fetchTrips()
+    const token = window.localStorage.getItem("token")
+    if(token === null){
+      this.props.goToLoginPage()
+    }else{
+      this.props.fetchTrips()
+    }
+    
   }
 
   render() {
@@ -34,7 +40,8 @@ function mapDispatchToProps(dispatch) {
   return {
     goToTripDetails: () => dispatch(push(routes.tripDetails)),
     goToCreateTrip: () => dispatch(push(routes.createTrip)),
-    fetchTrips: () => dispatch(getTrips())
+    fetchTrips: () => dispatch(getTrips()),
+    goToLoginPage: () => dispatch(push(routes.login))
   }
 }
 

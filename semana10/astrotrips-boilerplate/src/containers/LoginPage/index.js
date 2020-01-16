@@ -5,14 +5,15 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import styled from "styled-components";
 import { routes } from '../Router/index'
+import { login } from '../../actions/login'
 
 const loginForm = [
   {
-    name: 'adminname',
-    type: 'text',
+    name: 'email',
+    type: 'email',
     label: 'admin',
     required: true,
-    pattern: "[A-Za-z]{3,}"
+    pattern: "[A-Za-^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$]{3,}"
   },
 
   {
@@ -42,6 +43,7 @@ class LoginPage extends Component {
 
   handleFieldChange = event => {
     const { name, value } = event.target
+    console.log(name,value)
     this.setState({
       form: { ...this.state.form, [name]: value }
     });
@@ -52,34 +54,40 @@ class LoginPage extends Component {
     console.log(this.state.form)
   }
 
+  handleLoginButton = () => {
+    const { email, password } = this.state.form;
+    this.props.login(email, password)
+  }
+
   render() {
-    const { email, password } = this.state;
+    console.log(this.state)
+    
 
     return (
       <LoginWrapper onSubmit={this.handleOnSubmit}>
           {loginForm.map(input => (
-          <div key={input.name}>
-            <label htmlFor={input.name}>{input.label}:</label>
-            <TextField
-              onChange={this.handleFieldChange}
-              name={input.name}
-              type={input.type}
-              label={input.label}
-              value={this.state.form[input.name] || ""}
-              required={input.required}
-              pattern={input.pattern}
-            />
-          </div>
+            <div key={input.name}>
+              <label htmlFor={input.name}>{input.label}:</label>
+              <TextField
+                onChange={this.handleFieldChange}
+                name={input.name}
+                type={input.type}
+                label={input.label}
+                value={this.state.form[input.name] || ""}
+                required={input.required}
+                pattern={input.pattern}
+              />
+            </div>
         ))}
-        <Button type="button" onClick={this.props.goToTripsList}>Login</Button>
+        <Button type="button" onClick={this.handleLoginButton}>Login</Button>
       </LoginWrapper>
     );
   }
 }
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return {
-    goToTripsList: () => dispatch(push(routes.tripsList)),
+    login: (email, password) => dispatch(login(email, password))
   }
 }
 
