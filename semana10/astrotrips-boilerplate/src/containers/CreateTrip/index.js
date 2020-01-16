@@ -6,10 +6,11 @@ import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import { routes } from '../Router/index'
 import MenuItem from '@material-ui/core/MenuItem'
+import { createTrip } from '../../actions/tripActions'
 
 const tripForm = [
     {
-        name: 'Nome da viagem',
+        name: 'name',
         type: 'text',
         label: 'Nome da viagem',
         required: true,
@@ -17,7 +18,7 @@ const tripForm = [
     },
 
     {
-        name: 'Data',
+        name: 'date',
         type: 'text',
         label: 'Data',
         required: true,
@@ -26,7 +27,7 @@ const tripForm = [
     },
 
     {
-        name: 'Descrição',
+        name: 'description',
         type: 'text',
         label: 'Descrição',
         required: true,
@@ -34,7 +35,7 @@ const tripForm = [
     },
 
     {
-        name: 'Duração',
+        name: 'durationInDays',
         type: 'text',
         label: 'Duração',
         required: true,
@@ -74,8 +75,24 @@ class CreateTrip extends React.Component {
     }
 
     onHandleChangePlanet = (event) => {
+        
         this.setState({ value: event.target.value })
+        console.log(this.state.value)
     }
+
+    handleCreateTrip = () => {
+        const { name, date, description, durationInDays } = this.state.form
+        const planet = this.state.value
+        this.props.createTrip(name, date, description, durationInDays, planet)
+    }
+
+    handleFieldChange = event => {
+        const { name, value } = event.target
+        
+        this.setState({
+          form: { ...this.state.form, [name]: value }
+        });
+    };
 
     render() {
         return (
@@ -83,6 +100,8 @@ class CreateTrip extends React.Component {
                 <h1>Crie uma Viagem</h1>
                 {tripForm.map(input => (
                     <TextField
+                        onChange={this.handleFieldChange}
+                        value={this.state.form[input.name] || ""}
                         name={input.name}
                         type={input.type}
                         label={input.label}
@@ -94,7 +113,7 @@ class CreateTrip extends React.Component {
                     select
                     onChange={this.onHandleChangePlanet}
                     label="Planeta"
-                    name="Planetas"
+                    name="planet"
                     value={this.state.value}>
                     <MenuItem value="mercurio">Mercúrio</MenuItem>
                     <MenuItem value="venus">Vênus</MenuItem>
@@ -105,7 +124,7 @@ class CreateTrip extends React.Component {
                     <MenuItem value="urano">Urano</MenuItem>
                     <MenuItem value="netuno">Netuno</MenuItem>
                 </StyledDropDown>
-                <Button onClick={this.props.goToTripsList}>Trip List</Button>
+                <Button onClick={this.handleCreateTrip}>Trip List</Button>
             </TripsWrapper>
         );
     }
@@ -114,7 +133,8 @@ class CreateTrip extends React.Component {
 function mapDispatchToProps(dispatch) {
     return {
         goToTripsList: () => dispatch(push(routes.tripsList)),
-        goToLoginPage: () => dispatch(push(routes.login))
+        goToLoginPage: () => dispatch(push(routes.login)),
+        createTrip: (name, date, description, durationInDays, planet) => dispatch(createTrip(name, date, description, durationInDays, planet))
     }
 }
 

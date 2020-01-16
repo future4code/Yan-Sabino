@@ -7,6 +7,14 @@ import { routes } from '../Router/index'
 import { getTrips } from '../../actions/tripActions'
 import LoginPage from '../LoginPage/index'
 
+const TripsContainer = styled.div`
+  display: grid;
+  width: 250px;
+  border: 1px solid black;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+`
+
 class TripList extends React.Component {
 
   componentDidMount() {
@@ -24,7 +32,16 @@ class TripList extends React.Component {
     return (
       <div>
         <h1>EU SOU A TripsList</h1>
-        {this.props.trips.map((trip) => (<li>{trip.planet}</li>))}
+        {this.props.trips.map((trip) => (
+        <TripsContainer>
+          <span>{trip.name}</span>
+          <span>{trip.description}</span>
+          <span>{trip.planet}</span>
+          <span>{trip.durationInDays}</span>
+          <span>{trip.date}</span>
+        </TripsContainer>  
+        
+        ))}
         <Button onClick={this.props.goToCreateTrip}>Va Para Create Trip</Button>
         <Button onClick={this.props.goToTripDetails}>Trip Details</Button>
       </div>
