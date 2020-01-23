@@ -33,7 +33,7 @@ export const createTrip = (name, date, description, durationInDays, planet) => a
 
     const token = window.localStorage.getItem("token")
 
-    console.log(newTrip)
+   
     try{
         await axios.post(`${baseURL}/trips`, newTrip, {
             headers: {
