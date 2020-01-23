@@ -10,7 +10,7 @@ export const login = (email, password) => async (dispatch) => {
         password,
     }
 
-    console.log(loginInformation)
+    
     try{
         const response = await axios.post(`${baseURL}/login`, loginInformation)
 
