@@ -6,7 +6,7 @@ import { push } from "connected-react-router";
 import { routes } from '../Router/index'
 
 const HomePage = props => {
-    console.log(props)
+    
     return (
         <div>
             <h1>EU SOU A HOME</h1>
