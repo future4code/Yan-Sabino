@@ -67,7 +67,7 @@ class LoginPage extends Component {
       <LoginWrapper onSubmit={this.handleOnSubmit}>
           {loginForm.map(input => (
             <div key={input.name}>
-              {/* <label htmlFor={input.name}>{input.label}:</label> */}
+              
               <TextField
                 onChange={this.handleFieldChange}
                 name={input.name}
