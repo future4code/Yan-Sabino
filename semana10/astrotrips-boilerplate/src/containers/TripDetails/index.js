@@ -6,14 +6,6 @@ import { push } from "connected-react-router";
 import { routes } from '../Router/index'
 
 class TripDetails extends React.Component {
-
-    constructor(props){
-        super(props)
-        this.state = {
-
-        }
-    }
-    
     componentDidMount() {
         const token = window.localStorage.getItem("token")
         if(token === null){
