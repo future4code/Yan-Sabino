@@ -85,7 +85,11 @@ class Planner extends React.Component {
           {arrayDias.map(dia => (
             <StyledDayContainer>
               <h2>{dia}</h2>
-              {this.props.tasks.filter((task)=>task.day).map((task)=>task.text)}
+              <ul>
+                {this.props.tasks
+                  .filter(task => task.day === dia)
+                .map(task => <li>{task.text}</li>)}
+              </ul>
             </StyledDayContainer>
           ))}
         </StyledWeekDaysContainer>
