@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import PropTypes from 'prop-types'
 import { connect } from "react-redux";
 import { getTasks, createTask } from "../../actions/tasksActions";
 import {
@@ -34,8 +35,8 @@ class Planner extends React.Component {
 
   handleCreateTask = event => {
     event.preventDefault();
-
-    this.props.createTask(this.state.input, this.state.dayValue);
+    const { input, dayValue } = this.state
+    this.props.createTask(input, dayValue);
     this.setState({
       input: "",
       dayValue: ""
@@ -44,13 +45,13 @@ class Planner extends React.Component {
 
   render() {
     const arrayDias = [
-      "segunda",
-      "terca",
-      "quarta",
-      "quinta",
-      "sexta",
-      "sabado",
-      "domingo"
+      "Segunda",
+      "Terça",
+      "Quarta",
+      "Quinta",
+      "Sexta",
+      "Sabado",
+      "Domingo"
     ];
 
     return (
@@ -68,13 +69,13 @@ class Planner extends React.Component {
               value={this.state.dayValue}
               labelId="demo-simple-select-label"
             >
-              <MenuItem value="segunda">Segunda-Feira</MenuItem>
-              <MenuItem value="terca">Terça-Feira</MenuItem>
-              <MenuItem value="quarta">Quarta-Feira</MenuItem>
-              <MenuItem value="quinta">Quinta-feira</MenuItem>
-              <MenuItem value="sexta">Sexta-Feira</MenuItem>
-              <MenuItem value="sabado">Sabado</MenuItem>
-              <MenuItem value="domingo">Domingo</MenuItem>
+              <MenuItem value="Segunda">Segunda-Feira</MenuItem>
+              <MenuItem value="Terça">Terça-Feira</MenuItem>
+              <MenuItem value="Quarta">Quarta-Feira</MenuItem>
+              <MenuItem value="Quinta">Quinta-feira</MenuItem>
+              <MenuItem value="Sexta">Sexta-Feira</MenuItem>
+              <MenuItem value="Sabado">Sabado</MenuItem>
+              <MenuItem value="Domingo">Domingo</MenuItem>
             </Select>
           </InputLabel>
           <StyledButton onClick={this.handleCreateTask}>
@@ -88,7 +89,9 @@ class Planner extends React.Component {
               <ul>
                 {this.props.tasks
                   .filter(task => task.day === dia)
-                .map(task => <li>{task.text}</li>)}
+                  .map(task => (
+                    <li>{task.text}</li>
+                  ))}
               </ul>
             </StyledDayContainer>
           ))}
@@ -96,6 +99,12 @@ class Planner extends React.Component {
       </Fragment>
     );
   }
+}
+
+Planner.propTypes ={
+  getTasks: PropTypes.func.isRequired,
+  createTask: PropTypes.func.isRequired,
+  tasks: PropTypes.array,
 }
 
 const mapStateToProps = state => ({

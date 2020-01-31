@@ -36,7 +36,7 @@ export const StyledWeekDaysContainer = styled.div`
 export const StyledDayContainer = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     border-right: 1px solid black;
     width: 200px;
     height:500px;
