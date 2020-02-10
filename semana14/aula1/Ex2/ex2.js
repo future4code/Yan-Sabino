@@ -9,10 +9,13 @@ const fileName = process.argv[2]
 // }catch(e){
 //     console.error(e)
 // }
-
-try {
-    fs.appendFileSync(fileName,newTask,'utf8');
-    console.log("Tarefa Inserida com sucesso")
-}catch(e){
-    console.error(e)
+if(process.argv.length <= 3){
+    console.log("Pelo menos 3 paramentros são esperados e recebi menos que isso")
+}else{
+    try {
+        fs.appendFileSync(fileName,newTask,'utf8');
+        console.log("Tarefa Inserida com sucesso")
+    }catch(e){
+        console.error(e)
+    }
 }

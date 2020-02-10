@@ -3,3 +3,4 @@ Comprar Sabonete
 Comprar chocolate
 Comprar Pizza
 Comprar legumes
+Comprar arroz
