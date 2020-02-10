@@ -2,3 +2,4 @@ Comprar pao
 Comprar Sabonete
 Comprar chocolate
 Comprar Pizza
+Comprar legumes
