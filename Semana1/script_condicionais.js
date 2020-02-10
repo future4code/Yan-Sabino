@@ -123,24 +123,24 @@
 
 //Exercício 3
 
-const nome = prompt("Qual seu nome completo?")
-const tipo = prompt("Qual o tipo de jogo? [IN/DO]")
-const etapa = prompt("Qual a etapa do jogo?[SF/DT/FI")
-const categoria = prompt("Qual a categoria do ingresso?")
-const quantidade = Number(prompt("Qual a quantidade de ingressos"))
+// const nome = prompt("Qual seu nome completo?")
+// const tipo = prompt("Qual o tipo de jogo? [IN/DO]")
+// const etapa = prompt("Qual a etapa do jogo?[SF/DT/FI")
+// const categoria = prompt("Qual a categoria do ingresso?")
+// const quantidade = Number(prompt("Qual a quantidade de ingressos"))
 
-console.log("---Dados da Compra---")
-console.log("Nome do Cliente: " + nome)
+// console.log("---Dados da Compra---")
+// console.log("Nome do Cliente: " + nome)
 
-switch(tipo){
-  case "IN":
-  console.log("Tipo do Jogo: Internacional")
-  break
+// switch(tipo){
+//   case "IN":
+//   console.log("Tipo do Jogo: Internacional")
+//   break
 
-  case "DO":
-  console.log("Tipo do Jogo: Doméstico")
-  break
-}
+//   case "DO":
+//   console.log("Tipo do Jogo: Doméstico")
+//   break
+// }
 
 // switch(etapa){
 //   case "SF":
@@ -156,96 +156,96 @@ switch(tipo){
 //   break
 // }
 
-switch(categoria){
+// switch(categoria){
 
 
-  case "1":
-    switch(etapa){
-      case "SF":
-        let precoUnitario = 1320;
-        const etapaDoJogo = "Semifinal";
-        break
-      case "DT":
-        precoUnitario = 660;
-        etapaDoJogo = "Decisão do terceiro Lugar";
-        break
-      case "FI":
-        precoUnitario = 1980;
-        etapaDoJogo = "Final";
-        break
-      default:
-        precoUnitario = 0;
-        break
+//   case "1":
+//     switch(etapa){
+//       case "SF":
+//         let precoUnitario = 1320;
+//         const etapaDoJogo = "Semifinal";
+//         break
+//       case "DT":
+//         precoUnitario = 660;
+//         etapaDoJogo = "Decisão do terceiro Lugar";
+//         break
+//       case "FI":
+//         precoUnitario = 1980;
+//         etapaDoJogo = "Final";
+//         break
+//       default:
+//         precoUnitario = 0;
+//         break
             
-    }
-  console.log("Categoria: 1")
+//     }
+//   console.log("Categoria: 1")
   
-  break
+//   break
 
-  case "2":
-  switch(etapa){
-      case "SF":
-        let precoUnitario = 880;
-        const etapaDoJogo = "Semifinal";
-        break
-      case "DT":
-        precoUnitario = 440;
-        etapaDoJogo = "Decisão do terceiro Lugar";
-        break
-      case "FI":
-        precoUnitario = 1320;
-        etapaDoJogo = "Final";
-        break
-      default:
-        precoUnitario = 0;
-        break
-  console.log("Categoria: 2")
-  break
-  }
+//   case "2":
+//   switch(etapa){
+//       case "SF":
+//         let precoUnitario = 880;
+//         const etapaDoJogo = "Semifinal";
+//         break
+//       case "DT":
+//         precoUnitario = 440;
+//         etapaDoJogo = "Decisão do terceiro Lugar";
+//         break
+//       case "FI":
+//         precoUnitario = 1320;
+//         etapaDoJogo = "Final";
+//         break
+//       default:
+//         precoUnitario = 0;
+//         break
+//   console.log("Categoria: 2")
+//   break
+//   }
 
-  case "3":
-  switch(etapa){
-      case "SF":
-        let precoUnitario = 550;
-        const etapaDoJogo = "Semifinal";
-        break
-      case "DT":
-        precoUnitario = 330;
-        etapaDoJogo = "Decisão do terceiro Lugar";
-        break
-      case "FI":
-        precoUnitario = 888;
-        etapaDoJogo = "Final";
-        break
-      default:
-        precoUnitario = 0;
-        break
-  console.log("Categoria: 3")
-  break
-  }
+//   case "3":
+//   switch(etapa){
+//       case "SF":
+//         let precoUnitario = 550;
+//         const etapaDoJogo = "Semifinal";
+//         break
+//       case "DT":
+//         precoUnitario = 330;
+//         etapaDoJogo = "Decisão do terceiro Lugar";
+//         break
+//       case "FI":
+//         precoUnitario = 888;
+//         etapaDoJogo = "Final";
+//         break
+//       default:
+//         precoUnitario = 0;
+//         break
+//   console.log("Categoria: 3")
+//   break
+//   }
 
-  case "4":
-  switch(etapa){
-      case "SF":
-        let precoUnitario = 220;
-        const etapaDoJogo = "Semifinal";
-        break
-      case "DT":
-        precoUnitario = 170;
-        etapaDoJogo = "Decisão do terceiro Lugar";
-        break
-      case "FI":
-        precoUnitario = 330;
-        etapaDoJogo = "Final";
-        break
-      default:
-        precoUnitario = 0;
-        break
-  console.log("Categoria: 4")
-  break
-}
-}
-console.log("Quantidade de ingressos: " + quantidade)
+//   case "4":
+//   switch(etapa){
+//       case "SF":
+//         let precoUnitario = 220;
+//         const etapaDoJogo = "Semifinal";
+//         break
+//       case "DT":
+//         precoUnitario = 170;
+//         etapaDoJogo = "Decisão do terceiro Lugar";
+//         break
+//       case "FI":
+//         precoUnitario = 330;
+//         etapaDoJogo = "Final";
+//         break
+//       default:
+//         precoUnitario = 0;
+//         break
+//   console.log("Categoria: 4")
+//   break
+// }
+// }
+// console.log("Quantidade de ingressos: " + quantidade)
 
-console.log("---Valores---")
+// console.log("---Valores---")
 
