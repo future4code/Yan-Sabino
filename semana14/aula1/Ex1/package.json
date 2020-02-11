@@ -1,0 +1,19 @@
+{
+  "name": "ex1-yan",
+  "version": "1.0.0",
+  "description": "Resolucao do ex1",
+  "main": "ex1.js",
+  "scripts": {
+    "start": "node ex1.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "exercicio",
+    "operacoes",
+    "calculadora",
+    "projeto",
+    "pacote"
+  ],
+  "author": "Yan Sabino Corrêa",
+  "license": "ISC"
+}
