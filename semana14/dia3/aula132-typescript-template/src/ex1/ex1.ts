@@ -34,28 +34,3 @@ const init = async () => {
   }
 };
 init();
-
-// fs.readdir(diretoryPath,function(err: Error,files: Buffer){
-//     if(err){
-//         console.log("Erro em pegar as infos do diretório")
-//     }else{
-//         files.forEach(function(file){
-//             console.log(file)
-//         })
-//     }
-// })
-
-// const fileName : string[] = ['1.txt', '2.txt', '3.txt', '4.txt', '5.txt']
-
-// const firstPromise = new Promise((resolve, reject)) => {
-
-//     if(err){
-//         reject(err)
-//         return
-//     }
-//     console.log()
-
-// }
-// const fileContent: string[] = data.toString()
-// console.log("arquivo lido com sucesso", fileContent)
-// readFile(fileName: , handleFileRead)
