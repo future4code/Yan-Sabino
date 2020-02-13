@@ -1,8 +1,12 @@
 import * as moment from "moment";
-import { readFile, writeFile, writeFileSync } from "fs";
+import { readFile, writeFileSync } from "fs";
 moment.locale("pt-br");
 
 const jsonFileName: string = "calendarData.json";
+const eventName: string = process.argv[4];
+const eventDescription: string = process.argv[5];
+const eventStart: any = moment(process.argv[6], "DD/MM/YYYY HH:mm");
+const eventEnd: any = moment(process.argv[7], "DD/MM/YYYY HH:mm");
 
 type event = {
   name: string;
@@ -22,7 +26,7 @@ const getEvents = async () => {
         reject(err);
         return;
       }
-      //   console.log(data);
+
       resolve(data.toString());
     });
   });
@@ -31,23 +35,14 @@ const getEvents = async () => {
   console.log(jsonContent);
   const eventsObject: eventsFile = JSON.parse(jsonContent);
   eventsObject.eventList.push({
-    name: "yan",
-    description: "fazer o projeto",
-    startDate: new Date(),
-    endEvent: new Date()
+    name: eventName,
+    description: eventDescription,
+    startDate: eventStart.format("DD/MM/YYYY HH:mm"),
+    endEvent: eventEnd.format("DD/MM/YYYY HH:mm")
   });
   writeFileSync(jsonFileName, JSON.stringify(eventsObject));
 };
 
-// const createEvent = () => {
-
-//     writeFileSync(jsonFileName, {
-//         name: "yan";
-//         description: "fazer o projeto";
-//         startDate: Date;
-//         endEvent: Date;
-//     });
-
-// };
-
-getEvents().then((eventsObject: any) => console.log(eventsObject.eventList));
+getEvents()
+  .then((eventsObject: any) => console.log(eventsObject.eventList))
+  .catch(err => console.error(err));

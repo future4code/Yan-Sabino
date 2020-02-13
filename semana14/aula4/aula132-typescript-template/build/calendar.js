@@ -13,6 +13,10 @@ const moment = require("moment");
 const fs_1 = require("fs");
 moment.locale("pt-br");
 const jsonFileName = "calendarData.json";
+const eventName = process.argv[4];
+const eventDescription = process.argv[5];
+const eventStart = moment(process.argv[6], "DD/MM/YYYY HH:mm");
+const eventEnd = moment(process.argv[7], "DD/MM/YYYY HH:mm");
 const getEvents = () => __awaiter(void 0, void 0, void 0, function* () {
     const readEventsPromise = new Promise((resolve, reject) => {
         fs_1.readFile(jsonFileName, (err, data) => {
@@ -25,6 +29,16 @@ const getEvents = () => __awaiter(void 0, void 0, void 0, function* () {
     });
     const jsonContent = yield readEventsPromise;
     console.log(jsonContent);
+    const eventsObject = JSON.parse(jsonContent);
+    eventsObject.eventList.push({
+        name: eventName,
+        description: eventDescription,
+        startDate: eventStart.format("DD/MM/YYYY HH:mm"),
+        endEvent: eventEnd.format("DD/MM/YYYY HH:mm")
+    });
+    fs_1.writeFileSync(jsonFileName, JSON.stringify(eventsObject));
 });
-getEvents().then((eventsObject) => console.log(eventsObject.eventList));
+getEvents()
+    .then((eventsObject) => console.log(eventsObject.eventList))
+    .catch(err => console.error(err));
 //# sourceMappingURL=calendar.js.map
