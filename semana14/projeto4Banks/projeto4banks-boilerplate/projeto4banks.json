@@ -1,3 +1,21 @@
 {
-    "accontList": []
+    "accountList": [
+        {
+            "user": {
+                "name": "Yan",
+                "cpfNumber": 12345678945,
+                "birthday": "08/12/1994"
+            },
+            "expense": [],
+            "balance": 0
+        },
+        {
+            "user": {
+                "name": "Yan",
+                "cpfNumber": 12345678945,
+                "birthday": "08/12/1994"
+            },
+            "balance": 0
+        }
+    ]
 }
