@@ -13,20 +13,22 @@ const moment = require("moment");
 const fs_1 = require("fs");
 moment.locale("pt-br");
 const jsonFileName = "projeto4banks.json";
-const userName = process.argv[4];
-const userCpf = Number(process.argv[5]);
-const userBirthday = moment(process.argv[6], "DD/MM/YYYY");
-const userBalance = Number(process.argv[7]);
-const createAccounts = () => __awaiter(void 0, void 0, void 0, function* () {
-    const readAccountsPromise = new Promise((resolve, reject) => {
-        fs_1.readFile(jsonFileName, (err, data) => {
-            if (err) {
-                reject(err);
-                return;
-            }
-            resolve(data.toString());
-        });
+const accountActions = process.argv[4];
+const userName = process.argv[5];
+const userCpf = Number(process.argv[6]);
+const userBirthday = moment(process.argv[7], "DD/MM/YYYY");
+const userExpense = Number(process.argv[8]);
+const userBalance = Number(process.argv[9]);
+const readAccountsPromise = new Promise((resolve, reject) => {
+    fs_1.readFile(jsonFileName, (err, data) => {
+        if (err) {
+            reject(err);
+            return;
+        }
+        resolve(data.toString());
     });
+});
+const createAccounts = () => __awaiter(void 0, void 0, void 0, function* () {
     const jsonContent = yield readAccountsPromise;
     console.log(jsonContent);
     const accountsObject = JSON.parse(jsonContent);
@@ -34,14 +36,29 @@ const createAccounts = () => __awaiter(void 0, void 0, void 0, function* () {
         user: {
             name: userName,
             cpfNumber: userCpf,
-            birthday: userBirthday.format("DD/MM/YYYY"),
+            birthday: userBirthday.format("DD/MM/YYYY")
         },
-        balance: userBalance,
+        expenses: [],
+        balance: 0
     });
     console.log(accountsObject);
     fs_1.writeFileSync(jsonFileName, JSON.stringify(accountsObject));
 });
-createAccounts()
-    .then((accountsObject) => console.log(accountsObject.accountList))
-    .catch(err => console.error(err));
+const getBalance = () => __awaiter(void 0, void 0, void 0, function* () {
+    const jsonContent = yield readAccountsPromise;
+    const accountsObject = JSON.parse(jsonContent);
+    console.log(accountsObject.accountList.find((account) => account.user.name === process.argv[5] && account.user.cpfNumber === Number(process.argv[6])).balance);
+});
+switch (accountActions) {
+    case "criar-conta":
+        createAccounts()
+            .then((accountsObject) => console.log(accountsObject.accountList))
+            .catch(err => console.error(err));
+        break;
+    case "pegar-saldo":
+        getBalance();
+        break;
+    default:
+        console.log("comando invalido");
+}
 //# sourceMappingURL=projeto4banks.js.map
