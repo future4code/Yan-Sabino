@@ -20,3 +20,5 @@ console.log("Lucro da Feijoada", feijoada.getProfit());
 const pizza = new SaltyDish(100, 20, ["trigo", "molho de tomate", "calabresa", "queijo", "cebola", "catupiry"], 100);
 console.log(pizza)
 console.log("Lucro da pizza: ", pizza.getProfit());
+
+export const allDishes: Dish[] = [brigadeiro, bolo, feijoada, pizza]
