@@ -1,7 +1,4 @@
 import { Client } from "./client";
-import { CommercialClient } from "./commertialClient";
-import { IndustrialClient } from "./industrialClient";
-import { ResidentialClient } from "./residentialClient";
 
 export class ClientManager {
   public clients: Client[];
