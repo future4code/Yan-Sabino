@@ -14,6 +14,6 @@ export class IndustrialClient extends Industry implements Client {
   }
 
   calculateBill(): number {
-    return this.consumedEnergy * 0.45;
+    return this.consumedEnergy * 0.45 + 10000;
   }
 }

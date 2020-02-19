@@ -1,6 +1,7 @@
 import { ResidentialClient } from "./residentialClient";
 import { CommercialClient } from "./commertialClient";
 import { IndustrialClient } from "./industrialClient";
+import { ClientManager } from "./clientManager";
 
 //Instâncias de Clientes Residenciais
 const clientYan = new ResidentialClient(
@@ -20,50 +21,55 @@ const clientDavid = new ResidentialClient(
   "13400101"
 );
 
-console.log(clientYan);
-console.log(clientDavid);
-
 //Instâncias Comerciais
 
 const casasBahia = new CommercialClient(
-    'Casas Bahia',
-    3,
-    1500,
-    'Casas Bahia',
-    '23.232.232/0001-02',
-    "13400-142"
-)
+  "Casas Bahia",
+  3,
+  1500,
+  "Casas Bahia",
+  "23.232.232/0001-02",
+  "13400-142"
+);
 
 const magazineLuiza = new CommercialClient(
-    'Magazine Luiza',
-    4,
-    1500,
-    'Magazine Luiza',
-    '23.232.232/0001-03',
-    "13400-143"
-)
+  "Magazine Luiza",
+  4,
+  1500,
+  "Magazine Luiza",
+  "23.232.232/0001-03",
+  "13400-143"
+);
 
-console.log(casasBahia)
-console.log(magazineLuiza)
-
-// Instâncias Industriais 
+// Instâncias Industriais
 
 const honda = new IndustrialClient(
-    'Honda',
-    5,
-    5000,
-    'Honda',
-    '23.232.232/0001-04',
-    "13400-144"
-)
+  "Honda",
+  5,
+  5000,
+  "Honda",
+  "23.232.232/0001-04",
+  "13400-144"
+);
 const volkswagen = new IndustrialClient(
-    'Volkswagen',
-    6,
-    5000,
-    'Volkswagen',
-    '23.232.232/0001-05',
-    "13400-145"
-)
+  "Volkswagen",
+  6,
+  5000,
+  "Volkswagen",
+  "23.232.232/0001-05",
+  "13400-145"
+);
 
-console.log(honda)
-console.log(volkswagen)
+// Funcões
+
+const client = new ClientManager();
+
+client.addClient(clientYan);
+client.addClient(clientDavid);
+client.addClient(volkswagen);
+
+// console.log(client)
+
+// volkswagen.calculateBill()
+// client.printCellBills()
+client.calculateAllIncome();

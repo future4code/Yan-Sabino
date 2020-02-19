@@ -9,7 +9,7 @@ class IndustrialClient extends industry_1.Industry {
         this.consumedEnergy = consumedEnergy;
     }
     calculateBill() {
-        return this.consumedEnergy * 0.45;
+        return this.consumedEnergy * 0.45 + 10000;
     }
 }
 exports.IndustrialClient = IndustrialClient;
