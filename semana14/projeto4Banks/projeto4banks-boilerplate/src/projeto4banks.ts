@@ -40,7 +40,7 @@ const readAccountsPromise: Promise<string> = new Promise((resolve, reject) => {
       reject(err);
       return;
     }
-    // console.log(data)
+    
     resolve(data.toString());
   });
 });
@@ -65,14 +65,11 @@ const createAccounts = async () => {
 const getBalance = async () => {
   const jsonContent: string = await readAccountsPromise;
   const accountsObject: accountFile = JSON.parse(jsonContent);
-  console.log(
-    "O seu saldo é: ",
-    accountsObject.accountList.find(
-      (account: account) =>
+  const currentAccount = accountsObject.accountList.find((account: account) =>
         account.user.name === process.argv[5] &&
         account.user.cpfNumber === Number(process.argv[6])
-    ).balance
-  );
+    )
+  console.log("O seu saldo é: ", currentAccount.balance);
 };
 
 switch (accountActions) {
