@@ -2,9 +2,6 @@ import { getTasks, setTasks, createTask } from "./tasksActions"
 import axios from "axios"
 
 describe("Pega todas as tarefas", () => {
-
-    
-
     test('deve mandar a action com as tarefas da API', async () =>{
         
         const tasksMock = [{
@@ -19,8 +16,7 @@ describe("Pega todas as tarefas", () => {
 
         axios.get = jest.fn( () =>{
             return{
-                data: tasksMock
-                
+                data: tasksMock    
             }
         })
 
@@ -37,9 +33,6 @@ describe('Criar tarefas', () =>{
         axios.post = jest.fn().mockReturnValue({
             status:200
         })
-
-        
-
         await createTask('oi', 'Segunda')(dispatchMock)
 
         expect(dispatchMock).toHaveBeenCalled()
