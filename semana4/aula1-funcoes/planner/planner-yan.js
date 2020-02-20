@@ -37,7 +37,7 @@ function addTarefa(){
             contentul6.innerHTML += "<li id='elemento'> " + txt + " </li>"
             
         }
-        }
+}
 
 function apagaForm(){
     document.getElementById('novaTarefa').value = ""
