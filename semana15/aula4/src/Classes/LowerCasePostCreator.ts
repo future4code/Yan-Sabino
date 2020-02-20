@@ -8,9 +8,9 @@ export class LowerCasePostCreator implements PostCreator {
     if (!name || !text) {
       throw new ErrorPrinter("deu erro", new Date());
     }
-    
+
     const post = new Post(name, text.toLowerCase(), new Date());
-    
+
     this.savePost(post);
   }
 

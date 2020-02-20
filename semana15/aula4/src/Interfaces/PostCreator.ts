@@ -1,3 +1,3 @@
-export interface PostCreator{
-    create(name: string, text:string): void;
+export interface PostCreator {
+  create(name: string, text: string): void;
 }
