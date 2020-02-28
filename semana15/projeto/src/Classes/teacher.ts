@@ -5,6 +5,16 @@ export class Teacher implements User {
     public name: string,
     public email: string,
     public birthday: Date,
-    public specialty: string
+    public specialty: Specialty
   ) {}
+}
+
+enum Specialty  {
+ HTML = "HTML",
+ CSS = "CSS",
+ JS = "JS",
+ REACT = "REACT",
+ REDUX = "REDUX",
+ BACK = "BACK",
+ OOP = "OOP"
 }
