@@ -1,0 +1,34 @@
+{
+    "eventList": [
+        {
+            "name": "teste",
+            "description": "sou um teste",
+            "startDate": "1970-01-01T00:00:00.000Z",
+            "endEvent": "2020-02-13T20:17:33.152Z"
+        },
+        {
+            "name": "teste",
+            "description": "sou um teste",
+            "startDate": "1970-01-06T08:14:11.641Z",
+            "endEvent": "Quinta-feira, 13 de Fevereiro de 2020 às 17:26"
+        },
+        {
+            "name": "teste",
+            "description": "sou um teste",
+            "startDate": null,
+            "endEvent": null
+        },
+        {
+            "name": "teste",
+            "description": "sou um teste",
+            "startDate": "2020-02-12T08:52:00.000Z",
+            "endEvent": "2020-02-13T20:38:00.000Z"
+        },
+        {
+            "name": "teste",
+            "description": "sou um teste",
+            "startDate": "12/02/2020 05:52",
+            "endEvent": "13/02/2020 17:38"
+        }
+    ]
+}
