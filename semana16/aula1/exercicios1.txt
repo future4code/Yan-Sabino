@@ -38,7 +38,34 @@ VALUES (1, "YAN", "SABINO");
 SELECT id, first_name, last_name
 FROM YAN_ACTORS;
 
+Ex2: 
 
+A)
+
+USE exercicios;
+DESCRIBE films;
+
+SELECT title, description 
+FROM films
+WHERE length > 2;
+
+B)
+
+SELECT title, release_year, rating
+FROM films
+WHERE description LIKE "%Documentary%";
+
+C)
+
+SELECT title, release_year, special_features
+FROM films
+WHERE rating = "NC-17" AND title LIKE "A%";
+
+D)
+
+SELECT film_id, title, description, release_year, length, rating, special_features
+FROM films
+WHERE special_features LIKE "%Trailers%" AND rating LIKE "%PG-13%" AND title LIKE "%D%";
 
 
 
