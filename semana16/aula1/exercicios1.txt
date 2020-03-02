@@ -1,0 +1,45 @@
+Ex1: 
+A) 
+
+USE exercicios;
+DESCRIBE actors;
+
+SELECT first_name, last_name 
+FROM actors
+WHERE last_name LIKE "%a%";
+
+B)
+
+SELECT last_name
+FROM actors
+WHERE first_name LIKE "DAN" OR first_name LIKE "JULIA";
+
+C) 
+
+SELECT first_name, last_name
+FROM actors
+WHERE first_name LIKE "ANGELINA" OR first_name LIKE "%B%"
+
+Adicionando os actors no meu Schemas:
+
+USE `bouman-yan`;
+
+CREATE TABLE YAN_ACTORS(
+id int PRIMARY KEY,
+first_name varchar(40),
+last_name varchar(40)
+);
+
+DESCRIBE YAN_ACTORS;
+
+INSERT INTO YAN_ACTORS (id, first_name, last_name)
+VALUES (1, "YAN", "SABINO");
+
+SELECT id, first_name, last_name
+FROM YAN_ACTORS;
+
+
+
+
+
+
