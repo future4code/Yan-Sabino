@@ -90,5 +90,11 @@ order by IndepYear desc
 limit 10;
 
 8. A média de expectativa de vida de cada continente.
-Importante: o nome dos continentes deve ser exibido em caixa baixa (letras minúsculas).
+Importante: o nome dos continentes deve ser exibido em caixa baixa 
+(letras minúsculas).
+
+select avg(LifeExpectancy), lower(Continent)
+from country
+group by Continent;
+
 9. Os 3 continentes mais extensos em território.
