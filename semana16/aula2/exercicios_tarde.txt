@@ -69,6 +69,13 @@ where GovernmentForm like "%Republic%" or GovernmentForm like "%Monarchy%"
 group by 2;
 
 5. A forma de governo que mais se repete e a quantidade de vezes que aparece.
+
+select count(GovernmentForm), GovernmentForm
+from country
+group by GovernmentForm
+order by count(GovernmentForm) desc
+limit 1;
+
 6. A média de população de cada continente.
 7. Os dez últimos países a conquistar independência.
 8. A média de expectativa de vida de cada continente.
