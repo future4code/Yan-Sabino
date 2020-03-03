@@ -24,7 +24,13 @@ SELECT COUNT(Name), District
 FROM city
 GROUP BY District;
 
-4. Os 10 países (countryCode) com mais cidades, em ordem decrescente;  
+4. Os 10 países (countryCode) com mais cidades, em ordem decrescente;
+
+SELECT count(Name), CountryCode 
+FROM city
+group by CountryCode
+ORDER BY count(Name) DESC
+LIMIT 10;
 
 ---
 
@@ -39,5 +45,6 @@ Acesse a tabela `country` e responda qual Query SQL retornará:
 5. A forma de governo que mais se repete e a quantidade de vezes que aparece.
 6. A média de população de cada continente.
 7. Os dez últimos países a conquistar independência.
-8. A média de expectativa de vida de cada continente. Importante: o nome dos continentes deve ser exibido em caixa baixa (letras minúsculas).
+8. A média de expectativa de vida de cada continente.
+Importante: o nome dos continentes deve ser exibido em caixa baixa (letras minúsculas).
 9. Os 3 continentes mais extensos em território.
