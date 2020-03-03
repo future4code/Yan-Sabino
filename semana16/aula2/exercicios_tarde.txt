@@ -55,7 +55,16 @@ FROM country
 WHERE Population > 5000000;
 
 3. A soma do valor de todas as populações da Asia, com o Alias "Soma de população".
+
+SELECT SUM(Population), Continent 
+FROM country
+WHERE Continent = "Asia"
+GROUP BY 2;
+
 4. A quantidade de Repúblicas e Monarquias no mundo.
+
+
+
 5. A forma de governo que mais se repete e a quantidade de vezes que aparece.
 6. A média de população de cada continente.
 7. Os dez últimos países a conquistar independência.
