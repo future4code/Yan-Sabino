@@ -39,6 +39,15 @@ LIMIT 10;
 Acesse a tabela `country` e responda qual Query SQL retornará:
 
 1. Os 100 primeiros países com mais de 100 mil habitantes.
+
+describe country;
+
+select Name, Population
+from country
+WHERE Population > 100000
+ORDER BY 2 ASC
+LIMIT 100;
+
 2. A quantidade de países com mais de 5 milhões de habitantes.
 3. A soma do valor de todas as populações da Asia, com o Alias "Soma de população".
 4. A quantidade de Repúblicas e Monarquias no mundo.
