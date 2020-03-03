@@ -13,6 +13,11 @@ ORDER BY Population DESC
 LIMIT 5;
 
 2. A média populacional em cada distrito.
+
+select avg(Population), District
+from city
+group by District;
+
 3. A quantidade de cidades por distrito.
 4. Os 10 países (countryCode) com mais cidades, em ordem decrescente;  
 
