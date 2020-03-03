@@ -19,6 +19,11 @@ from city
 group by District;
 
 3. A quantidade de cidades por distrito.
+
+SELECT COUNT(Name), District
+FROM city
+GROUP BY District;
+
 4. Os 10 países (countryCode) com mais cidades, em ordem decrescente;  
 
 ---
