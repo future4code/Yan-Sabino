@@ -1,0 +1,33 @@
+## 1. Cidades
+
+Acesse a tabela `city` e responda qual Query SQL retornará:
+
+1. As 5 cidades com maior população.
+
+USE exercicios;
+DESCRIBE city;
+
+SELECT *
+FROM city
+ORDER BY Population DESC
+LIMIT 5;
+
+2. A média populacional em cada distrito.
+3. A quantidade de cidades por distrito.
+4. Os 10 países (countryCode) com mais cidades, em ordem decrescente;  
+
+---
+
+## 2. Países
+
+Acesse a tabela `country` e responda qual Query SQL retornará:
+
+1. Os 100 primeiros países com mais de 100 mil habitantes.
+2. A quantidade de países com mais de 5 milhões de habitantes.
+3. A soma do valor de todas as populações da Asia, com o Alias "Soma de população".
+4. A quantidade de Repúblicas e Monarquias no mundo.
+5. A forma de governo que mais se repete e a quantidade de vezes que aparece.
+6. A média de população de cada continente.
+7. Os dez últimos países a conquistar independência.
+8. A média de expectativa de vida de cada continente. Importante: o nome dos continentes deve ser exibido em caixa baixa (letras minúsculas).
+9. Os 3 continentes mais extensos em território.
