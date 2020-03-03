@@ -63,7 +63,10 @@ GROUP BY 2;
 
 4. A quantidade de Repúblicas e Monarquias no mundo.
 
-
+select Count(GovernmentForm), GovernmentForm
+from country
+where GovernmentForm like "%Republic%" or GovernmentForm like "%Monarchy%"
+group by 2;
 
 5. A forma de governo que mais se repete e a quantidade de vezes que aparece.
 6. A média de população de cada continente.
