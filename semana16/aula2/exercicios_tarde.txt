@@ -49,6 +49,11 @@ ORDER BY 2 ASC
 LIMIT 100;
 
 2. A quantidade de países com mais de 5 milhões de habitantes.
+
+SELECT COUNT(Name)
+FROM country
+WHERE Population > 5000000;
+
 3. A soma do valor de todas as populações da Asia, com o Alias "Soma de população".
 4. A quantidade de Repúblicas e Monarquias no mundo.
 5. A forma de governo que mais se repete e a quantidade de vezes que aparece.
