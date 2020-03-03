@@ -1,0 +1,99 @@
+Ex1: 
+A) 
+
+USE exercicios;
+DESCRIBE actors;
+
+SELECT first_name, last_name 
+FROM actors
+WHERE last_name LIKE "%a%";
+
+B)
+
+SELECT last_name
+FROM actors
+WHERE first_name LIKE "DAN" OR first_name LIKE "JULIA";
+
+C) 
+
+SELECT first_name, last_name
+FROM actors
+WHERE first_name LIKE "ANGELINA" OR first_name LIKE "%B%"
+
+Adicionando os actors no meu Schemas:
+
+USE `bouman-yan`;
+
+CREATE TABLE YAN_ACTORS(
+id int PRIMARY KEY,
+first_name varchar(40),
+last_name varchar(40)
+);
+
+DESCRIBE YAN_ACTORS;
+
+INSERT INTO YAN_ACTORS (id, first_name, last_name)
+VALUES (1, "YAN", "SABINO");
+
+SELECT id, first_name, last_name
+FROM YAN_ACTORS;
+
+Ex2: 
+
+A)
+
+USE exercicios;
+DESCRIBE films;
+
+SELECT title, description 
+FROM films
+WHERE length > 2;
+
+B)
+
+SELECT title, release_year, rating
+FROM films
+WHERE description LIKE "%Documentary%";
+
+C)
+
+SELECT title, release_year, special_features
+FROM films
+WHERE rating = "NC-17" AND title LIKE "A%";
+
+D)
+
+SELECT film_id, title, description, release_year, length, rating, special_features
+FROM films
+WHERE special_features LIKE "%Trailers%" AND rating LIKE "%PG-13%" AND title LIKE "%D%";
+
+Adicionando os films no meu Schemas:
+
+USE `bouman-yan`;
+
+CREATE TABLE YAN_FILMS(
+film_id int(10) unique,
+title varchar(128) ,
+description varchar(255) ,
+release_year year(4), 
+length int(11), 
+rating enum('G','PG','PG-13','R','NC-17') ,
+special_features set('Trailers','Commentaries','Deleted Scenes','Behind the Scenes')
+);
+
+DESCRIBE YAN_FILMS;
+
+INSERT INTO YAN_FILMS (film_id, title, description, release_year, length, rating, special_features)
+VALUES (1, "A VOLTA DOS QUE NÃO FORAM", "histórias dos alunos F4", 1994, 2, "G", "Trailers"),
+	(2, "DE VOLTA A LAGOA AZUL NOVAMENTE", "PELA INFINITÉSIMA VEZ", 2067, 10, "R", "Trailers"),
+	(3, "O exterminador do passado", "TERMINATOR AO CONTRARIO", 1994, 2, "G", "Trailers"),
+       (4, "wilson a bola do naufrago", "LIVE ACTION DO WILSON ", 1996, 2, "G", "Trailers"),
+       (5, "miranha no brasilverso", "HOMI ARANHA DO BR HUE", 2020, 2, "G", "Trailers");
+
+SELECT * FROM YAN_FILMS;
+
+
+
+
+
+
