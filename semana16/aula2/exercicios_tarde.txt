@@ -98,3 +98,8 @@ from country
 group by Continent;
 
 9. Os 3 continentes mais extensos em território.
+
+select Continent, SurfaceArea
+from country
+order by SurfaceArea desc
+limit 3;
