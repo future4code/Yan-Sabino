@@ -77,7 +77,18 @@ order by count(GovernmentForm) desc
 limit 1;
 
 6. A média de população de cada continente.
+
+select avg(Population), Continent
+from country
+group by Continent;
+
 7. Os dez últimos países a conquistar independência.
+
+select Name ,IndepYear 
+from country 
+order by IndepYear desc
+limit 10;
+
 8. A média de expectativa de vida de cada continente.
 Importante: o nome dos continentes deve ser exibido em caixa baixa (letras minúsculas).
 9. Os 3 continentes mais extensos em território.
