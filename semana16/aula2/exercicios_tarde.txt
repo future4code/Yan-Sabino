@@ -103,3 +103,34 @@ select Continent, SurfaceArea
 from country
 order by SurfaceArea desc
 limit 3;
+
+## Escrita
+
+Estes exercícios pressupõem que os exercícios de escrita do banco de dados de ontem foram completos.
+
+Antes de começar adicione filmes (até completar 10 no mínimo), fictícios com dados variados e válidos.
+
+**Na sua cópia da tabela `films` faça as seguintes alterações:**
+
+1. Adicione uma nova coluna chamada "watched", não nula, com o valor padrão de "false"
+2. Atualize todas as entradas no banco seguindo a regra: para maiores de 
+13 anos o valor de watched deve ser "true.
+3. Adicione uma nova coluna chamada "lucky_number", não nula, com valor padrão
+ de 0
+4. Atualize todas as entradas do banco atribuindo um número aleatório
+ entre 1-1000 (incluindo os extremos) para a coluna "lucky_number"
+ de cada um dos filmes, **atenção: este número deve ser inteiro,
+ sem casas decimais.**
+
+ALTER TABLE YAN_FILMS 
+ADD watched BOOL DEFAULT FALSE;
+
+UPDATE YAN_FILMS
+SET watched = TRUE
+WHERE rating LIKE "%PG-13%";
+
+ALTER TABLE YAN_FILMS 
+ADD lucky_number int DEFAULT 0;
+
+update YAN_FILMS
+SET lucky_number = floor(RAND()*(1000-1+1)+1);
