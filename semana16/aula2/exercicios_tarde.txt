@@ -1,0 +1,136 @@
+## 1. Cidades
+
+Acesse a tabela `city` e responda qual Query SQL retornará:
+
+1. As 5 cidades com maior população.
+
+USE exercicios;
+DESCRIBE city;
+
+SELECT *
+FROM city
+ORDER BY Population DESC
+LIMIT 5;
+
+2. A média populacional em cada distrito.
+
+select avg(Population), District
+from city
+group by District;
+
+3. A quantidade de cidades por distrito.
+
+SELECT COUNT(Name), District
+FROM city
+GROUP BY District;
+
+4. Os 10 países (countryCode) com mais cidades, em ordem decrescente;
+
+SELECT count(Name), CountryCode 
+FROM city
+group by CountryCode
+ORDER BY count(Name) DESC
+LIMIT 10;
+
+---
+
+## 2. Países
+
+Acesse a tabela `country` e responda qual Query SQL retornará:
+
+1. Os 100 primeiros países com mais de 100 mil habitantes.
+
+describe country;
+
+select Name, Population
+from country
+WHERE Population > 100000
+ORDER BY 2 ASC
+LIMIT 100;
+
+2. A quantidade de países com mais de 5 milhões de habitantes.
+
+SELECT COUNT(Name)
+FROM country
+WHERE Population > 5000000;
+
+3. A soma do valor de todas as populações da Asia, com o Alias "Soma de população".
+
+SELECT SUM(Population), Continent 
+FROM country
+WHERE Continent = "Asia"
+GROUP BY 2;
+
+4. A quantidade de Repúblicas e Monarquias no mundo.
+
+select Count(GovernmentForm), GovernmentForm
+from country
+where GovernmentForm like "%Republic%" or GovernmentForm like "%Monarchy%"
+group by 2;
+
+5. A forma de governo que mais se repete e a quantidade de vezes que aparece.
+
+select count(GovernmentForm), GovernmentForm
+from country
+group by GovernmentForm
+order by count(GovernmentForm) desc
+limit 1;
+
+6. A média de população de cada continente.
+
+select avg(Population), Continent
+from country
+group by Continent;
+
+7. Os dez últimos países a conquistar independência.
+
+select Name ,IndepYear 
+from country 
+order by IndepYear desc
+limit 10;
+
+8. A média de expectativa de vida de cada continente.
+Importante: o nome dos continentes deve ser exibido em caixa baixa 
+(letras minúsculas).
+
+select avg(LifeExpectancy), lower(Continent)
+from country
+group by Continent;
+
+9. Os 3 continentes mais extensos em território.
+
+select Continent, SurfaceArea
+from country
+order by SurfaceArea desc
+limit 3;
+
+## Escrita
+
+Estes exercícios pressupõem que os exercícios de escrita do banco de dados de ontem foram completos.
+
+Antes de começar adicione filmes (até completar 10 no mínimo), fictícios com dados variados e válidos.
+
+**Na sua cópia da tabela `films` faça as seguintes alterações:**
+
+1. Adicione uma nova coluna chamada "watched", não nula, com o valor padrão de "false"
+2. Atualize todas as entradas no banco seguindo a regra: para maiores de 
+13 anos o valor de watched deve ser "true.
+3. Adicione uma nova coluna chamada "lucky_number", não nula, com valor padrão
+ de 0
+4. Atualize todas as entradas do banco atribuindo um número aleatório
+ entre 1-1000 (incluindo os extremos) para a coluna "lucky_number"
+ de cada um dos filmes, **atenção: este número deve ser inteiro,
+ sem casas decimais.**
+
+ALTER TABLE YAN_FILMS 
+ADD watched BOOL DEFAULT FALSE;
+
+UPDATE YAN_FILMS
+SET watched = TRUE
+WHERE rating LIKE "%PG-13%";
+
+ALTER TABLE YAN_FILMS 
+ADD lucky_number int DEFAULT 0;
+
+update YAN_FILMS
+SET lucky_number = floor(RAND()*(1000-1+1)+1);
