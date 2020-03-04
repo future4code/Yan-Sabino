@@ -1,0 +1,46 @@
+1) 
+
+USE `bouman-yan`;
+
+CREATE TABLE livros (
+	id INT,
+    titulo VARCHAR(255),
+    autor_id INT,
+    editora_id INT,
+    ano DATETIME,
+    PRIMARY KEY (id),
+    FOREIGN KEY (autor_id) REFERENCES autores(id),
+    FOREIGN KEY (editora_id) REFERENCES editoras(id)
+);
+
+CREATE TABLE autores(
+	id INT,
+    primeiro_nome varchar(40),
+    ultimo_nome varchar(60),
+    primary key (id)
+);
+
+CREATE TABLE editoras(
+	id INT,
+    nome VARCHAR(255),
+    cidade varchar(255),
+    fundacao DATE,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE usuarios(
+	id int,
+    primeiro_nome varchar(40),
+    ultimo_nome varchar(60),
+    nacionalidade varchar(40),
+    aniversario date,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE usuarios_livros(
+	usuario_id INT,
+    livro_id INT,
+    primary key (usuario_id, livro_id),
+    foreign key (usuario_id) REFERENCES usuarios(id),
+    foreign key (livro_id) REFERENCES livros(id)
+);
