@@ -5,15 +5,15 @@ export class UserDB {
   private connection = knex({
     client: "mysql",
     connection: {
-      host: "<HOST>",
-      port: 0,
-      user: "<USER>",
-      password: "<PASSWORD>",
-      database: "<TABLE>"
+      host: "ec2-18-229-236-15.sa-east-1.compute.amazonaws.com",
+      port: 3306,
+      user: "yan",
+      password: "TRn8#4BZcg2KM%QfPc#C",
+      database: "bouman-yan"
     }
   });
 
-  private userTableName = "<TABELA>";
+  private userTableName = "USER_TABLE";
 
   private mapDateToDbDate(input: Date): string {
     const year = input.getFullYear();
@@ -56,6 +56,21 @@ VALUES(
     );
 
     return result[0].map((res: any) => this.mapDbUserToUser(res)!);
+  }
+
+  public async getUsersByEmail(email: string): Promise<User> {
+    const result = await this.connection.raw(
+      `SELECT * FROM ${this.userTableName} WHERE email='${email}'`
+    );
+    
+    const user = result[0][0] && new User(
+      result[0][0].id,
+      result[0][0].name,
+      result[0][0].email,
+      new Date(result[0][0].birthDate)
+    )
+
+    return user;
   }
 
   public async updateUser(user: User): Promise<void> {
