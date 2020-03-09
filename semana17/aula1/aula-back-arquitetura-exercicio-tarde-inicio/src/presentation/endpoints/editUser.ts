@@ -1,12 +1,16 @@
 import { Request, Response } from "express";
-import { GetUserByEmailUC } from "../../business/usecase/getUserByEmail";
+import { EditUsersUC } from "../../business/usecase/editUsers";
+import { UserDB } from "../../data/userDataBase";
 
-export const getUserByEmail = async (req: Request, res: Response) => {
+export const editUsersEndPoint = async (req: Request, res: Response) => {
   try {
-    // CHAMAR USE CASE
-    res.status(200).send({
-      msg: "success"
-    });
+    const editUserUC = new EditUsersUC(new UserDB())
+    const result = await editUserUC.execute({
+      id: req.body.id,
+      email: req.body.email,
+      name: req.body.name
+    })
+    res.status(200).send(result);
   } catch (err) {
     console.log(err);
     res.status(400).send({
