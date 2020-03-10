@@ -67,6 +67,14 @@ VALUES(
     )
   }
 
+  public async deleteUser(id: string): Promise<void>{
+    const result = await this.connection.raw(
+      `DELETE FROM USER_TABLE WHERE id='${id}'`
+    )
+  }
+
+
+
   public async getAllUsers(): Promise<User[]> {
     const result = await this.connection.raw(
       `SELECT * FROM ${this.userTableName}`
