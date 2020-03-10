@@ -1,0 +1,34 @@
+O seu *Tech Lead* pediu para você ler a funcionalidade de criar posts com calma e tentar responder às seguintes perguntas sobre ela: 
+
+(i) Quais são os tipos de Posts possíveis nessa aplicação? Como eles são representados no código?
+
+Tem dois tipos de post, o normal e o event, eles são representados no código como um enum.
+
+(ii) Quais validações a criação de posts faz? Como o erro é tratado nesses casos? 
+
+As validações feitas na criação	 de posts são em relação ao tipo dos posts
+
+(iii) Abra o arquivo `BaseDataBase.ts`. Por que essa classe é abstrata? O que ela guarda de importante com ela?
+
+A classe é abstrata para termos uma maior segurança em relação ao acesso, por classes abstratas só podem ser acessadas por seus filhos, 
+dentro desse arquivo estão autenticações do banco de dados.
+
+(iv) O que essa linha faz `const createPostUC = new CreatePostUC(new PostDB());`  no arquivo `createPostEndpoint.ts`?
+
+ela cria uma instancia da use case do create post chamando o banco de dados
+
+(v) No `CreatePostUC` do arquivo `createPost.ts`, nós criamos uma variável `const post = new Post(...)`. Por que isso é necessário?
+
+criamos essa variavel para não repetirmos os post criados.
+
+(vi) De onde vem o `input` da classe `CreatePostUC`?
+
+vem da interface CreatePostUCInput
+
+(vii) Na classe `PostDB` a função `createPost` recebe um `post`. De onde vem esse `post`?
+
+ele vem da entity Post
+
+(viii) Por que há um ternário para criara  query na função `createPost`? O que aconteceria se não existisse?
+
+para que caso ele não receba a imagem.. ele não devolve a imagem no post.

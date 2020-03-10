@@ -3,8 +3,8 @@ import { Post, PostWithUser, PostType } from "../business/entities/post";
 import { User } from "../business/entities/user";
 
 export class PostDB extends BaseDB {
-  private userTableName = "<USER TABLE>";
-  private postTableName = "<POST TABLE>";
+  private userTableName = "USER_TABLE";
+  private postTableName = "POSTS_TABLE";
 
   public async createPost(post: Post): Promise<void> {
     let query = post.getImage()
@@ -90,11 +90,16 @@ WHERE p.id='${id}'`);
   }
 
   public async deletePost(id: string): Promise<void> {
-    /**
-     * ISSUE 3
-     *
-     * Perceba que o UseCase e a Presentation já estão preparados,
-     * você deve terminar essa função do DataBase
-     */
+    await this.connection.raw(`
+    DELETE FROM ${this.postTableName} WHERE id='${id}'
+    `)
+  }
+
+  public async getPostByType(type:string): Promise<PostWithUser | undefined>{
+    const result= await this.connection.raw(`
+    SELECT * FROM ${this.userTableName} u
+    LEFT JOIN ${this.postTableName} p ON u.id = p.userId
+    WHERE p.type='${type}'
+    `)
   }
 }

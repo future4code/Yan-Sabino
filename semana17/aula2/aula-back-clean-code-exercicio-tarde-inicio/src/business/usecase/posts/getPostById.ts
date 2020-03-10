@@ -3,13 +3,24 @@ import { PostType } from "../../entities/post";
 export class GetPostByIdUC {
   constructor(private db: PostDB) {}
 
-  public async execute(input: GetPostByIdUCInput): Promise<void> {
-    /**
-     * ISSUE 2
-     *
-     * Perceba que a Presentation e o DataBase já estão preparados,
-     * você deve terminar o UseCase (lembre-se de colcar a saída correta)
-     */
+  public async execute(
+    input: GetPostByIdUCInput
+  ): Promise<GetPostByIdUCOutput> {
+    const post = await this.db.getPost(input.id);
+
+    if (!post) {
+      throw new Error("Post not found");
+    }
+
+    return {
+      id: post.getId(),
+      title: post.getTitle(),
+      content: post.getContent(),
+      image: post.getImage(),
+      type: post.getType(),
+      userId: post.getUserId(),
+      userName: post.getUser().getName()
+    };
   }
 }
 

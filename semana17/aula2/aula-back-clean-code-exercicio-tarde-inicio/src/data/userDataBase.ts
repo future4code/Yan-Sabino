@@ -2,7 +2,7 @@ import { User } from "../business/entities/user";
 import { BaseDB } from "./baseDataBase";
 
 export class UserDB extends BaseDB {
-  private userTableName = "<USER TABLE>";
+  private userTableName = "USER_TABLE";
 
   private mapDateToDbDate(input: Date): string {
     const year = input.getFullYear();

@@ -34,7 +34,7 @@ export class EditPostUC {
       type = PostType.event;
     } else if (input.type === "normal") {
       type = PostType.normal;
-    } else {
+    } else if(input.type !== undefined) {
       throw new InvalidParameterError("Invalid type");
     }
     post.setType(type);
@@ -44,7 +44,7 @@ export class EditPostUC {
     await this.db.updatePost(post);
 
     return {
-      message: "Post deleted successfully"
+      message: "Post updated successfully"
     };
   }
 }
