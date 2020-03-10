@@ -1,10 +1,14 @@
 import { UserDB } from "../../data/userDataBase";
-import { v4 } from "uuid";
 
 export class EditUsersUC {
   constructor(private userDB: UserDB) {}
-  public async execute(input: EditUsersUCInput): Promise<EditUsersUCOutPut> {
+  public async execute(input: EditUsersUCInput): Promise<any> {
     const user = await this.userDB.getUserById(input.id);
+
+    if (!input.id) {
+      throw new Error("User id not found");
+    }
+
     if (!user) {
       throw new Error("User not found");
     }
@@ -12,17 +16,21 @@ export class EditUsersUC {
     if (input.name !== undefined) {
       if (input.name === "") {
         throw new Error("Invalid Name");
+      } else {
+        user.setName(input.name);
       }
-
-      user.setName(input.name);
     }
 
     if (input.email !== undefined) {
       if (input.email.indexOf("@") === -1) {
         throw new Error("Invalid Email");
+      } else {
+        user.setEmail(input.email);
       }
+    }
 
-      user.setEmail(input.email);
+    if (input.birthDate !== undefined) {
+      user.setBirthDate(new Date(input.birthDate));
     }
     await this.userDB.updateUser(user);
 
@@ -36,7 +44,7 @@ export interface EditUsersUCInput {
   id: string;
   email: string;
   name: string;
-  
+  birthDate: string;
 }
 
 export interface EditUsersUCOutPut {

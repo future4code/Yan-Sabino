@@ -4,12 +4,13 @@ import { UserDB } from "../../data/userDataBase";
 
 export const editUsersEndPoint = async (req: Request, res: Response) => {
   try {
-    const editUserUC = new EditUsersUC(new UserDB())
+    const editUserUC = new EditUsersUC(new UserDB());
     const result = await editUserUC.execute({
       id: req.body.id,
       email: req.body.email,
-      name: req.body.name
-    })
+      name: req.body.name,
+      birthDate: req.body.name
+    });
     res.status(200).send(result);
   } catch (err) {
     console.log(err);

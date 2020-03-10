@@ -50,30 +50,18 @@ VALUES(
     `);
   }
 
-  public async getUserById(id: string):Promise<User | undefined>{
+  public async getUserById(id: string): Promise<User | undefined> {
     const result = await this.connection.raw(
       `SELECT * FROM ${this.userTableName} WHERE id='${id}'`
-    )
-
-    if(!result[0][0]){
-      return undefined
-    }
-
-    return new User(
-      result[0][0].id,
-      result[0][0].name,
-      result[0][0].email,
-      new Date(result[0][0].birthDate)
-    )
+    );
+    return this.mapDbUserToUser(result[0][0]);
   }
 
-  public async deleteUser(id: string): Promise<void>{
-    const result = await this.connection.raw(
-      `DELETE FROM USER_TABLE WHERE id='${id}'`
-    )
+  public async deleteUser(id: string): Promise<void> {
+    await this.connection.raw(
+      `DELETE FROM ${this.userTableName} WHERE id='${id}'`
+    );
   }
-
-
 
   public async getAllUsers(): Promise<User[]> {
     const result = await this.connection.raw(
@@ -83,19 +71,12 @@ VALUES(
     return result[0].map((res: any) => this.mapDbUserToUser(res)!);
   }
 
-  public async getUsersByEmail(email: string): Promise<User> {
+  public async getUsersByEmail(email: string): Promise<User | undefined> {
     const result = await this.connection.raw(
       `SELECT * FROM ${this.userTableName} WHERE email='${email}'`
     );
-    
-    const user = result[0][0] && new User(
-      result[0][0].id,
-      result[0][0].name,
-      result[0][0].email,
-      new Date(result[0][0].birthDate)
-    )
 
-    return user;
+    return this.mapDbUserToUser(result[0][0]);
   }
 
   public async updateUser(user: User): Promise<void> {

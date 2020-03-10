@@ -8,9 +8,15 @@ export class GetUserByEmailUC {
     input: GetUserByEmailUCInput
   ): Promise<GetUserByEmailUCOutput> {
 
-    const user = await this.userDB.getUsersByEmail(input.email)
+    
     if (!(input.email && input.email.indexOf("@") !== -1)) {
       throw new Error("Invalid email");
+    }
+
+    const user = await this.userDB.getUsersByEmail(input.email)
+
+    if (!user) {
+      throw new Error("User not found");
     }
 
     // const user = new User("", "", "", new Date());
