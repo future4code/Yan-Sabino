@@ -24,4 +24,17 @@ export class UserDB extends BaseDB implements UserGateway {
       }
     }
   }
+
+  async logIn(email: string): Promise<User | undefined> {
+    const user = await this.connection
+      .select("*")
+      .from(this.userTableName)
+      .where({ email });
+
+    if (!user[0]) {
+      return undefined;
+    }
+
+    return new User(user[0].id, user[0].name, user[0].email, user[0].password);
+  }
 }
