@@ -2,5 +2,6 @@ import { User } from "../entities/user";
 
 export interface UserGateway {
   signUp(user: User): Promise<void>;
-  logIn(email: string): Promise<User | undefined>
+  logIn(email: string): Promise<User | undefined>;
+  createFriendRelation(userId: string, friendId: string): Promise<void>;
 }

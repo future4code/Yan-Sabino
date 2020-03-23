@@ -32,5 +32,3 @@ export interface SignUpUCInput {
   email: string;
   password: string;
 }
-
-

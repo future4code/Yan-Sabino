@@ -2,9 +2,11 @@ import { BaseDB } from "./baseDB";
 import { UserGateway } from "../business/gateways/userGateway";
 import { User } from "../business/entities/user";
 import { DuplicateUserError } from "../business/error/duplicateUserError";
+import { freemem } from "os";
 
 export class UserDB extends BaseDB implements UserGateway {
   private userTableName = "users";
+  private friendTableName = "friend_user";
 
   async signUp(user: User) {
     try {
@@ -36,5 +38,13 @@ export class UserDB extends BaseDB implements UserGateway {
     }
 
     return new User(user[0].id, user[0].name, user[0].email, user[0].password);
+  }
+
+  async createFriendRelation(userId: string, friendId: string): Promise<void> {
+    await this.connection.raw(
+      `INSERT INTO ${this.friendTableName}
+      (\`user_id\`, \`friend_id\`) 
+      VALUES ('${userId}','${friendId}');`
+    );
   }
 }
