@@ -3,7 +3,7 @@ export class User {
     private id: string,
     private name: string,
     private email: string,
-    private password: string,
+    private password: string
   ) {}
 
   public getEmail(): string {
@@ -30,7 +30,7 @@ export class User {
     this.id = id;
   }
 
-  public getPassword(): string{
-    return this.password
+  public getPassword(): string {
+    return this.password;
   }
 }
