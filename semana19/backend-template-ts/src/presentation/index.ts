@@ -3,6 +3,7 @@ import { signUpEndPoint } from "./endpoints/users/signUp";
 import { loginEndPoint } from "./endpoints/users/login";
 import { friendUserEndPoint } from "./endpoints/users/friendUser";
 import { unfriendUserEndPoint } from "./endpoints/users/unfriendUser";
+import { createPostEndpoint } from "./endpoints/posts/createPostEndPoint";
 
 const app = express();
 app.use(express.json());
@@ -13,5 +14,9 @@ app.post("/signup", signUpEndPoint);
 app.post("/login", loginEndPoint);
 app.post("/user/addfriend", friendUserEndPoint);
 app.post("/user/unfriend", unfriendUserEndPoint);
+
+//Posts
+
+app.post("/createPost", createPostEndpoint)
 
 export default app;

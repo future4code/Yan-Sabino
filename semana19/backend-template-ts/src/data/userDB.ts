@@ -2,7 +2,7 @@ import { BaseDB } from "./baseDB";
 import { UserGateway } from "../business/gateways/userGateway";
 import { User } from "../business/entities/user";
 import { DuplicateUserError } from "../business/error/duplicateUserError";
-import { freemem } from "os";
+
 
 export class UserDB extends BaseDB implements UserGateway {
   private userTableName = "users";
