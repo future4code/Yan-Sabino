@@ -8,7 +8,7 @@ export class UserDB extends BaseDB implements UserGateway {
   private userTableName = "users";
   private friendTableName = "friend_user";
 
-  async signUp(user: User) {
+  public async signUp(user: User) {
     try {
       await this.connection
         .insert({
@@ -27,7 +27,7 @@ export class UserDB extends BaseDB implements UserGateway {
     }
   }
 
-  async logIn(email: string): Promise<User | undefined> {
+  public async logIn(email: string): Promise<User | undefined> {
     const user = await this.connection
       .select("*")
       .from(this.userTableName)
@@ -40,11 +40,18 @@ export class UserDB extends BaseDB implements UserGateway {
     return new User(user[0].id, user[0].name, user[0].email, user[0].password);
   }
 
-  async createFriendRelation(userId: string, friendId: string): Promise<void> {
+  public async createFriendRelation(userId: string, friendId: string): Promise<void> {
     await this.connection.raw(
       `INSERT INTO ${this.friendTableName}
       (\`user_id\`, \`friend_id\`) 
       VALUES ('${userId}','${friendId}');`
     );
+  }
+
+  public async deleteFriendRelation(userId: string, friendId: string): Promise<void>{
+    await this.connection.raw(`
+      DELETE FROM ${this.friendTableName}
+      WHERE user_id = '${userId}' AND friend_id = '${friendId}';
+    `)
   }
 }

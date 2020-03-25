@@ -1,4 +1,5 @@
 import { UserGateway } from "../../gateways/userGateway";
+import { AuthenticationGateway } from "../../gateways/authenticationGateway";
 
 export class FriendUserUC {
   constructor(private userGateway: UserGateway) {}

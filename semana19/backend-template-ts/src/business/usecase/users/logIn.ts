@@ -1,9 +1,13 @@
-import * as bcrypt from "bcrypt";
-import * as jwt from "jsonwebtoken";
 import { UserGateway } from "../../gateways/userGateway";
+import { AuthenticationGateway } from "../../gateways/authenticationGateway";
+import { CryptographyGateway } from "../../gateways/cryptographyGateway";
 
 export class LogInUC {
-  constructor(private userGateway: UserGateway) {}
+  constructor(
+    private userGateway: UserGateway,
+    private authenticationGateway: AuthenticationGateway,
+    private cryptographyGateway: CryptographyGateway
+  ) {}
 
   public async execute(input: LogInUCInput) {
     const user = await this.userGateway.logIn(input.email);
@@ -12,20 +16,18 @@ export class LogInUC {
       throw new Error("Email Incorreto");
     }
 
-    const isPassWordCorrect = await bcrypt.compare(
-      input.password,
-      user.getPassword()
-    );
-
-    if (!isPassWordCorrect) {
+    if (
+      !(await this.cryptographyGateway.compare(
+        input.password,
+        user.getPassword()
+      ))
+    ) {
       throw new Error("Senha Incorreta");
     }
 
-    const token = jwt.sign(
-      { id: user.getId(), email: user.getEmail() },
-      "bananinha",
-      { expiresIn: "1h" }
-    );
+    const token = this.authenticationGateway.generateToken({
+      id: user.getId()
+    });
 
     return token;
   }
