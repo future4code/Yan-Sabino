@@ -14,7 +14,7 @@ export class CreatePostUC {
       input.picture,
       input.description,
       new Date(),
-      input.postType,
+      Post.mapStringsToPostType(input.postType),
       input.userId
     );
 
