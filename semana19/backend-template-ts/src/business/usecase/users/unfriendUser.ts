@@ -1,5 +1,5 @@
 import { UserGateway } from "../../gateways/userGateway";
-import { threadId } from "worker_threads";
+
 
 export class UnfriendUserUC {
   constructor(private userGateway: UserGateway) {}

@@ -6,6 +6,8 @@ import { unfriendUserEndPoint } from "./endpoints/users/unfriendUser";
 import { createPostEndpoint } from "./endpoints/posts/createPostEndPoint";
 import { getFeedEndPoint } from "./endpoints/feed/getFeedEndPoint";
 import { getFeedByTypeEndPoint } from "./endpoints/feed/getFeedByTypeEndPoint";
+import { likePostEndPoint } from "./endpoints/posts/likePostEndPoint";
+import { dislikePostEndPoint } from "./endpoints/posts/dislikePostEndPoint";
 
 const app = express();
 app.use(express.json());
@@ -20,6 +22,8 @@ app.post("/user/unfriend", unfriendUserEndPoint);
 //Posts
 
 app.post("/createPost", createPostEndpoint);
+app.post("/post/like", likePostEndPoint)
+app.post("/post/dislike", dislikePostEndPoint)
 
 //Feed
 
