@@ -5,6 +5,7 @@ import { Post } from "../business/entities/post";
 export class PostDB extends BaseDB implements PostGateway{
     private postTableName = "posts"
     private likeTableName = "likes"
+    private commentTableName = "comments"
 
     public async createPost(post: Post): Promise<void>{
         try {
@@ -35,5 +36,15 @@ export class PostDB extends BaseDB implements PostGateway{
             DELETE FROM ${this.likeTableName}
             WHERE user_id = '${userId}' AND post_id = '${postId}';
         `)
+    }
+
+    public async commentPost(commentId: string,postId: string,userId: string, comment: string): Promise<void>{
+        const result = await this.connection.raw(`
+        INSERT INTO ${this.commentTableName}
+            (\`commentId\`, \`postId\`, \`userId\`, \`comment\`)
+            VALUES ('${commentId}', '${postId}', '${userId}', '${comment}');
+        `)
+
+        console.log(result)
     }
 }

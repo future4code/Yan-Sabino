@@ -8,6 +8,7 @@ import { getFeedEndPoint } from "./endpoints/feed/getFeedEndPoint";
 import { getFeedByTypeEndPoint } from "./endpoints/feed/getFeedByTypeEndPoint";
 import { likePostEndPoint } from "./endpoints/posts/likePostEndPoint";
 import { dislikePostEndPoint } from "./endpoints/posts/dislikePostEndPoint";
+import { commentPostEndPoint } from "./endpoints/posts/commentPostEndPoint";
 
 const app = express();
 app.use(express.json());
@@ -24,6 +25,7 @@ app.post("/user/unfriend", unfriendUserEndPoint);
 app.post("/createPost", createPostEndpoint);
 app.post("/post/like", likePostEndPoint)
 app.post("/post/dislike", dislikePostEndPoint)
+app.post("/post/comment", commentPostEndPoint)
 
 //Feed
 
