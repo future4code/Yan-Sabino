@@ -28,8 +28,8 @@ export class Post {
     return this.userId;
   }
 
-  public getPostType(): PostType{
-      return this.postType
+  public getPostType(): PostType {
+    return this.postType;
   }
 
   public static mapStringsToPostType(postType: string): PostType {

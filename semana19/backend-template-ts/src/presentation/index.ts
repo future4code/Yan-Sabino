@@ -23,9 +23,9 @@ app.post("/user/unfriend", unfriendUserEndPoint);
 //Posts
 
 app.post("/createPost", createPostEndpoint);
-app.post("/post/like", likePostEndPoint)
-app.post("/post/dislike", dislikePostEndPoint)
-app.post("/post/comment", commentPostEndPoint)
+app.post("/post/like", likePostEndPoint);
+app.post("/post/dislike", dislikePostEndPoint);
+app.post("/post/comment", commentPostEndPoint);
 
 //Feed
 

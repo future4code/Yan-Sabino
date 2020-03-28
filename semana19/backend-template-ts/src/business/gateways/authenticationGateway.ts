@@ -3,8 +3,6 @@ export interface AuthenticationGateway {
   verifyToken(token: string): UsersInfoForToken;
 }
 
-// userId = id
-
 export interface UsersInfoForToken {
   id: string;
 }

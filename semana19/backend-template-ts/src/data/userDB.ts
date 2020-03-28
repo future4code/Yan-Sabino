@@ -3,7 +3,6 @@ import { UserGateway } from "../business/gateways/userGateway";
 import { User } from "../business/entities/user";
 import { DuplicateUserError } from "../business/error/duplicateUserError";
 
-
 export class UserDB extends BaseDB implements UserGateway {
   private userTableName = "users";
   private friendTableName = "friend_user";
@@ -40,7 +39,10 @@ export class UserDB extends BaseDB implements UserGateway {
     return new User(user[0].id, user[0].name, user[0].email, user[0].password);
   }
 
-  public async createFriendRelation(userId: string, friendId: string): Promise<void> {
+  public async createFriendRelation(
+    userId: string,
+    friendId: string
+  ): Promise<void> {
     await this.connection.raw(
       `INSERT INTO ${this.friendTableName}
       (\`user_id\`, \`friend_id\`) 
@@ -48,10 +50,13 @@ export class UserDB extends BaseDB implements UserGateway {
     );
   }
 
-  public async deleteFriendRelation(userId: string, friendId: string): Promise<void>{
+  public async deleteFriendRelation(
+    userId: string,
+    friendId: string
+  ): Promise<void> {
     await this.connection.raw(`
       DELETE FROM ${this.friendTableName}
       WHERE user_id = '${userId}' AND friend_id = '${friendId}';
-    `)
+    `);
   }
 }

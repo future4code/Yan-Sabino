@@ -8,7 +8,11 @@ export class FeedDB extends BaseDB implements FeedGateway {
   private postTableName = "posts";
   private friendTableName = "friend_user";
 
-  public async getFeedForUser(userId: string, limit: number, offset: number): Promise<PostFeed[]> {
+  public async getFeedForUser(
+    userId: string,
+    limit: number,
+    offset: number
+  ): Promise<PostFeed[]> {
     const response = await this.connection.raw(
       `SELECT ${this.postTableName}.* , ${this.userTableName}.name
             FROM ${this.friendTableName}

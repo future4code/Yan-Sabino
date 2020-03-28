@@ -6,11 +6,12 @@ export class GetFeedByTypeUC {
 
   private USERS_PER_PAGE = 3;
 
-  public async execute(input: GetFeedByTypeUCInput): Promise<GetFeedByTypeUCOutput[]> {
-    
-    let page = input.page >=1 ? input.page : 1
-    const offset = this.USERS_PER_PAGE * (page -1)
-    
+  public async execute(
+    input: GetFeedByTypeUCInput
+  ): Promise<GetFeedByTypeUCOutput[]> {
+    let page = input.page >= 1 ? input.page : 1;
+    const offset = this.USERS_PER_PAGE * (page - 1);
+
     const posts = await this.feedGateway.getFeedByType(
       input.userId,
       input.postType,

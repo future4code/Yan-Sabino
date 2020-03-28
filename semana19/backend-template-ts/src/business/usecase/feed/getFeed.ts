@@ -7,9 +7,8 @@ export class GetFeedUC {
   private USERS_PER_PAGE = 3;
 
   public async execute(input: GetFeedUCInput): Promise<GetFeedUCOutput[]> {
-
-    let page = input.page >=1 ? input.page : 1
-    const offset = this.USERS_PER_PAGE * (page -1)
+    let page = input.page >= 1 ? input.page : 1;
+    const offset = this.USERS_PER_PAGE * (page - 1);
 
     const posts = await this.feedGateway.getFeedForUser(
       input.userId,

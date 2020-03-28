@@ -3,7 +3,6 @@ import { JWTAuthentication } from "../../../utils/JWTAuthentication";
 import { UserDB } from "../../../data/userDB";
 import { FriendUserUC } from "../../../business/usecase/users/friendUser";
 
-
 export const friendUserEndPoint = async (req: Request, res: Response) => {
   try {
     const jwtAuth = new JWTAuthentication();
