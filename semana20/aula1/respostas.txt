@@ -1,3 +1,5 @@
+Exercício 1
+
 1. Antes de começar, pense o que você precisaria fazer para que isso acontecesse.
  Explique sucintamente seu raciocínio comparando com o que fizemos em aula.
 
@@ -17,9 +19,44 @@ Rode o projeto e escreva todos os comandos que você precisou utilizar nessa eta
 
         Lembre-se de instalar as dependências antes de rodar o projeto!
 
-Comandos: 
+Comandos:
+
+git clone https://github.com/future4code/bouman-4food-A.git
+ls
+cd bouman-4food-A/
+ls
+README.md  __MACOSX  package-lock.json  package.json  public  src
+npm install
+node
+npm start
 
 5. Lembre-se de garantir que a porta esteja devidamente configurada para poder acessá-la e teste o seu deploy. 
 6. Agora, crie um *build* desse projeto e faça a configuração necessária para rodá-lo sem precisar colocar uma porta na URL.
+
+npm run build
+sudo python -mSimpleHTTPServer 80
+
 Veja os slides se precisar se lembrar o que precisa ser feito e escreva todos os comando que precisou utilziar nessa etapa.
 7. Para finalizar: escreva rapidamente as diferenças e as semelhanças entre o que você fez nesse exercício e o que fizemos em aula
+
+A principal diferença foi que no exemplo de aula nós criamos um app do react e no exercício nós fizemos um deploy. Também todas as configurações que fizemos
+em aula não foram necessárias faze-las novamente.
+
+### Exercício 2
+
+Esse exercício é **muito importante**, então tente terminá-lo. Se tiver qualquer problema, converse com os colegas e procure atendimento. 
+
+O objetivo dele é simples: subir um banco de dados MySQL em uma máquina da EC2 para que você possa utilizar quando quiser. 
+
+1. Comece lendo **[esse tutorial](https://geraldalinio.com/database/mysql/how-to-install-latest-mysql-server-on-ec2-ubuntu-18-04/)** 
+para entender como você pode fazer isso.
+2. Após executarem todos os passos descritos, vão faltar alguns ajustes para que vocês possam acessar o banco de dados remotamente:
+    - Clique para ver
+3. Lembrem-se de ativar a porta 3306 para acessá-la por fora.
+4. Escrevam no arquivo quais foram as dificuldades que você teve nesse processo. Além disso, pense pelo lado positivo,
+ e descreva o que foi mais fácil de fazer. 
+
+As dificuldades foram na hora de dar o start , stop e reload, pq o mysql tem que estar startado para consegui dar o reload, e gerou 
+alguma confusão em relação a isso 
+
+De resto foi de boa, seguindo os passos foi bem acessível o exercício.
