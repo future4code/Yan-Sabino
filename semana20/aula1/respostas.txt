@@ -1,0 +1,25 @@
+1. Antes de começar, pense o que você precisaria fazer para que isso acontecesse.
+ Explique sucintamente seu raciocínio comparando com o que fizemos em aula.
+
+
+
+2. Escolha algum projeto de React que você fez em grupo nos módulos anteriores
+e verifique se ele está rodando em sua máquina. Caso encontre algum erro, procure outro projeto que esteja funcionando 
+(não perca tempo arrumando bugs de React agora! 🤮)
+3. Acesse a máquina da EC2 utilizando a chave ssh que criamos durante a aula. Qual o comando que você utilizou?
+
+ssh -i ec2-AWS-yan.pem ubuntu@34.229.180.237
+
+
+4. Clone o repositório do seu projeto na máquina. Acesse-o através dos comandos dos terminais.
+Rode o projeto e escreva todos os comandos que você precisou utilizar nessa etapa explicando a necessidade de cada um.
+    - Dica
+
+        Lembre-se de instalar as dependências antes de rodar o projeto!
+
+Comandos: 
+
+5. Lembre-se de garantir que a porta esteja devidamente configurada para poder acessá-la e teste o seu deploy. 
+6. Agora, crie um *build* desse projeto e faça a configuração necessária para rodá-lo sem precisar colocar uma porta na URL.
+Veja os slides se precisar se lembrar o que precisa ser feito e escreva todos os comando que precisou utilziar nessa etapa.
+7. Para finalizar: escreva rapidamente as diferenças e as semelhanças entre o que você fez nesse exercício e o que fizemos em aula
