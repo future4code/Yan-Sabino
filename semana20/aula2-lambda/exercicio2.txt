@@ -1,0 +1,20 @@
+Reescreva a função abaixo seguindo a sintaxe necessária para associa-la a uma lambda e suba-a no console da AWS.
+
+    function myFunc() {
+    	return "Olá mundo, sou uma mensagem da AWS"
+    }
+
+exports.handler = async (event) =>{
+const response = {
+        statusCode:200,
+        body:JSON.stringify({
+            message: event.message
+        }),
+    }
+    
+    return response;
+}
+
+{
+  "message": "Olá mundo, sou uma mensagem da AWS"
+}
