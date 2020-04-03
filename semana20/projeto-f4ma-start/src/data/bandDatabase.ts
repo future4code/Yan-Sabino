@@ -1,6 +1,7 @@
 import { BaseDatabase } from "./baseDatabase";
 import { BandGateway } from "../business/gateways/band";
 import { Band } from "../business/entities/band";
+import { DuplicateUserError } from "../business/error/duplicateBandError";
 
 export class BandDatabase extends BaseDatabase implements BandGateway {
   private bandTableName: string = "bands";
@@ -18,6 +19,7 @@ export class BandDatabase extends BaseDatabase implements BandGateway {
   }
 
   public async createBand(band: Band): Promise<void> {
+    try{
     await this.connection.raw(`
       INSERT INTO ${this.bandTableName} (id, name, music_genre, responsible)
       VALUES(
@@ -27,6 +29,13 @@ export class BandDatabase extends BaseDatabase implements BandGateway {
         '${band.getResponsible()}'
       )
     `);
+    }catch(err){
+      if(err.code === "ER_DUP_ENTRY"){
+        throw new DuplicateUserError()
+      }else{
+        throw err
+      }
+    }
   }
 
   public async getBandById(id: string): Promise<Band | undefined> {
