@@ -6,10 +6,10 @@ export class CreateBandUC {
   constructor(private bandGateway: BandGateway) {}
 
   async execute(input: CreateBandUCInput) {
-    const bandId = this.generateBandId();
+    const id = this.generateBandId();
 
     const newBand = new Band(
-      bandId,
+      id,
       input.name,
       input.musicGenre,
       input.responsible

@@ -43,7 +43,7 @@ export class BandDatabase extends BaseDatabase implements BandGateway {
       SELECT * FROM ${this.bandTableName}
       WHERE id = '${id}'
     `);
-
+    
     return this.fromDB(result[0][0]);
   }
 
