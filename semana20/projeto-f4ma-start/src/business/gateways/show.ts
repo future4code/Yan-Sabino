@@ -8,4 +8,5 @@ export interface ShowGateway {
     weekDay: ShowWeekDay
   ): Promise<ShowWithBand[]>;
   getShowsByDay(day: ShowWeekDay): Promise<ShowWithBand[]>;
+  getShows(week_day: string, start_time: number, end_time: number): Promise<Show | undefined>
 }

@@ -58,6 +58,18 @@ export class ShowDatabase extends BaseDatabase implements ShowGateway {
   `);
   }
 
+  public async getShows(weekDate: string, startTime: number, endTime: number): Promise<Show | undefined> {
+    const result = await this.connection.raw(`
+      SELECT *
+      FROM ${this.showTableName}
+      WHERE week_day = '${weekDate}' AND start_time = '${startTime}' AND end_time='${endTime}'
+    `)
+    if(!result[0][0]){
+      return undefined
+    }
+    return await this.fromDB(result[0][0])
+  }
+
   public async getShowWithBandByTimeRange(
     startTime: number,
     endTime: number,
