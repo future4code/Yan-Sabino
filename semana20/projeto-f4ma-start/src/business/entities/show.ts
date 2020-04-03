@@ -1,57 +1,47 @@
 import { Band } from "./band";
-
 export class Show {
   constructor(
     private id: string,
-    private weekDate: ShowWeekDay,
-    private startTime: number,
-    private endTime: number,
-    private bandId: string
+    private week_day: ShowWeekDay,
+    private start_time: number,
+    private end_time: number,
+    private band_id: string
   ) {}
-
   public getId(): string {
     return this.id;
   }
-
   public getWeekDate(): ShowWeekDay {
-    return this.weekDate;
+    return this.week_day;
   }
-
   public getStartTime(): number {
-    return this.startTime;
+    return this.start_time;
   }
-
   public getEndTime(): number {
-    return this.endTime;
+    return this.end_time;
   }
-
   public getBandId(): string {
-    return this.bandId;
+    return this.band_id;
   }
 }
-
 export class ShowWithBand extends Show {
   constructor(
     id: string,
-    weekDate: ShowWeekDay,
-    startTime: number,
-    endTime: number,
+    week_day: ShowWeekDay,
+    start_time: number,
+    end_time: number,
     private band: Band
   ) {
-    super(id, weekDate, startTime, endTime, band.getId());
+    super(id, week_day, start_time, end_time, band.getId());
   }
-
   public getBand(): Band {
     return this.band;
   }
 }
-
 export enum ShowWeekDay {
   FRIDAY = "FRIDAY",
   SATURDAY = "SATURDAY",
   SUNDAY = "SUNDAY"
 }
-
 export const toShowWeekDay = (input: string): ShowWeekDay => {
   switch (input.toUpperCase()) {
     case "FRIDAY":

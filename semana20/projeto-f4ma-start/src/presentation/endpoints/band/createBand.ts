@@ -7,7 +7,7 @@ export const createBandEndPoint = async (req: Request, res: Response) => {
         const createBandUC = new CreateBandUC(new BandDatabase())
         const result = await createBandUC.execute({
             name: req.body.name,
-            musicGenre: req.body.musicGenre,
+            music_genre: req.body.music_genre,
             responsible: req.body.responsible
         })
 

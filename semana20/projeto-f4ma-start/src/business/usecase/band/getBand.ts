@@ -24,7 +24,7 @@ export class GetBandUC {
     return {
       id: band.getId(),
       name: band.getName(),
-      musicGenre: band.getMusicGenre(),
+      music_genre: band.getMusicGenre(),
       responsible: band.getResponsible(),
     };
   }
@@ -38,6 +38,6 @@ export interface GetBandByIdUCInput {
 export interface GetBandByIdUCOutPut {
   id: string;
   name: string;
-  musicGenre: string;
+  music_genre: string;
   responsible: string;
 }

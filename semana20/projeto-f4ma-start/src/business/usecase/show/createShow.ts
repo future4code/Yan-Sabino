@@ -6,39 +6,39 @@ export class CreateShowUC {
   constructor(private showGateway: ShowGateway) {}
   async execute(input: CreateShowUCInput) {
     const showId = this.generateShowId();
-    console.log(input.weekDate)
+    
 
-    if(!input.weekDate || input.weekDate.length < 1){
+    if(!input.week_day || input.week_day.length < 1){
         throw new Error("input weekday is missing")
     }
 
-    if(!input.startTime || !input.endTime || !input.bandId){
+    if(!input.start_time || !input.end_time || !input.band_id){
         throw new Error("There is one or more inputs missing")
     }
 
-    if(!input.weekDate || input.weekDate.length < 1){
+    if(!input.week_day || input.week_day.length < 1){
         throw new Error("input weekday is missing")
     }
 
-    if(input.startTime < 8 || input.startTime > 23){
+    if(input.start_time < 8 || input.start_time > 23){
         throw new Error("Start time must be between 8 and 23")
     }
-    if(input.endTime < 8 || input.endTime > 23){
+    if(input.end_time < 8 || input.end_time > 23){
         throw new Error("End time must be between 8 and 23")
     }
     
-    if(input.startTime % 1 !== 0) {
+    if(input.start_time % 1 !== 0) {
         throw new Error("Start time must be entire")
     }
 
-    if(input.endTime % 1 !== 0) {
+    if(input.end_time % 1 !== 0) {
         throw new Error("End time must be entire")
     }
 
     const showTime = await this.showGateway.getShows(
-        input.weekDate,
-        input.startTime,
-        input.endTime
+        input.week_day,
+        input.start_time,
+        input.end_time
     )
 
     if(showTime){
@@ -47,10 +47,10 @@ export class CreateShowUC {
 
     const newShow = new Show(
       showId,
-      input.weekDate,
-      input.startTime,
-      input.endTime,
-      input.bandId
+      input.week_day,
+      input.start_time,
+      input.end_time,
+      input.band_id
     );
 
     await this.showGateway.createShow(newShow)
@@ -66,8 +66,8 @@ export class CreateShowUC {
 }
 
 export interface CreateShowUCInput {
-  weekDate: ShowWeekDay;
-  startTime: number;
-  endTime: number;
-  bandId: string;
+  week_day: ShowWeekDay;
+  start_time: number;
+  end_time: number;
+  band_id: string;
 }
