@@ -7,7 +7,7 @@ export class GetShowsByDayUC {
   ): Promise<GetShowsByDayUCOutput> {
     const show = await this.showGateway.getShowsByDay(input.week_day);
     if (!show) {
-      throw new Error("Doesn't have any shows");
+      throw new Error("There aren't any shows");
     }
     return {
       shows: show.map((show) => {
