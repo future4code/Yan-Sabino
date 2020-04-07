@@ -1,21 +1,19 @@
 import { Request, Response } from "express";
-import { CreateUserUC } from "../../business/usecase/createUser";
-import { UserDatabase } from "../../data/userDatabase";
+import { UserDatabase } from "../../data/userDB";
 import { JwtAuthorizer } from "../../services/jwtAuthorizer";
+import { LoginUserUC } from "../../business/usecase/login";
 import { BcryptService } from "../../services/bcryptService";
 
-export const createUserEndpoint = async (req: Request, res: Response) => {
+export const loginEndpoint = async (req: Request, res: Response) => {
   try {
-    const uc = new CreateUserUC(
+    const uc = new LoginUserUC(
       new UserDatabase(),
       new JwtAuthorizer(),
       new BcryptService()
     );
 
     const result = await uc.execute({
-      name: req.body.name,
       email: req.body.email,
-      type: req.body.type,
       password: req.body.password
     });
 

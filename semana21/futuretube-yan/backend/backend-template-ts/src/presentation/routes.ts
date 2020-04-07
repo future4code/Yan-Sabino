@@ -1,19 +1,17 @@
-import express, { Request, Response } from "express";
-import cors from "cors";
+import express from "express";
 import { getUserByTypeEndpoint } from "./endpoints/getUserByType";
-import { createUserEndpoint } from "./endpoints/createUser";
-import { loginUserEndpoint } from "./endpoints/loginUser";
+import { signUpEndpoint } from "./endpoints/signUp";
+import { loginEndpoint } from "./endpoints/login";
 import { getAllStudentsEndpoint } from "./endpoints/getAllStudents";
 import { changePasswordEndpoint } from "./endpoints/changePassword";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
 
 app.post("/users", getUserByTypeEndpoint);
-app.post("/users/create", createUserEndpoint);
+app.post("/signup", signUpEndpoint);
 app.post("/users/changePassword", changePasswordEndpoint);
-app.post("/login", loginUserEndpoint);
+app.post("/login", loginEndpoint);
 
 app.get("/users/students", getAllStudentsEndpoint);
 

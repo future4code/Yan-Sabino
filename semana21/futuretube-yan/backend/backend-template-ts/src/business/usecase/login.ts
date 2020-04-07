@@ -9,7 +9,7 @@ export class LoginUserUC {
     private cryptographyGateway: CryptographyGateway
   ) {}
 
-  public async execute(input: LoginUserUCInput): Promise<any> {
+  public async execute(input: LoginUserUCInput): Promise<LoginUserUCOutput> {
     // email, e a senha
     // pegar as infos do usuário a partir do email dele => FUNCAO NO BANCO
     const user = await this.db.getUserByEmail(input.email);
@@ -20,14 +20,15 @@ export class LoginUserUC {
 
     // compara a senha salva com a senha enviada
 
-    if (!await this.cryptographyGateway.compare(input.password, user.getPassword())) {
+    const passwordCompare = await this.cryptographyGateway.compare(input.password, user.getPassword())
+
+    if (!passwordCompare) {
       throw new Error("Wrong Password or Email");
     }
 
     // Se estiver compatível, geramos o token e o usuário está logado
     const token = this.authenticationGateway.generateToken({
-      userId: user.getId(),
-      type: user.getType()
+      userId: user.getId()
     });
 
     return {

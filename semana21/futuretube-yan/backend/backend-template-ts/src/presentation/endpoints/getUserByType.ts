@@ -3,7 +3,7 @@ import {
   GetUserByTypeUC,
   UserOrderType
 } from "../../business/usecase/getUserByType";
-import { UserDatabase } from "../../data/userDatabase";
+import { UserDatabase } from "../../data/userDB";
 
 export const getUserByTypeEndpoint = async (req: Request, res: Response) => {
   try {

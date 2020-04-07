@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { ChangePasswordUC } from "../../business/usecase/changePassword";
-import { UserDatabase } from "../../data/userDatabase";
+import { UserDatabase } from "../../data/userDB";
 import { JwtAuthorizer } from "../../services/jwtAuthorizer";
 import { BcryptService } from "../../services/bcryptService";
 

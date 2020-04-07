@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { GetAllStudentsUC } from "../../business/usecase/getAllStudents";
-import { UserDatabase } from "../../data/userDatabase";
+import { UserDatabase } from "../../data/userDB";
 import { JwtAuthorizer } from "../../services/jwtAuthorizer";
 
 export const getAllStudentsEndpoint = async (req: Request, res: Response) => {
