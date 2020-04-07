@@ -1,0 +1,44 @@
+exports.handler = async (event) =>{
+    let isEmail = false
+    let reason = ""
+    
+    
+    if(!event.email){
+       return{
+           statusCode: 400,
+           body: JSON.stringify({
+               isEmail,
+               reason: "E-mail does not exist"
+           })
+       } 
+    }
+    
+    if(event.email.indexOf('@') === -1){
+        return{
+            statusCode: 422,
+            body: JSON.stringify({
+                isEmail,
+                reason: "Doesnt have @"
+            })
+        }
+    }
+    
+    if(event.email.indexOf('.') === -1){
+        return{
+            statusCode: 422,
+            body: JSON.stringify({
+                isEmail,
+                reason: "Doesnt have a dot"
+            })
+        }
+    }
+
+    const response = {
+        statusCode:200,
+        body:JSON.stringify({
+            isEmail: true
+        }),
+    }
+    
+    return response;
+}

@@ -1,0 +1,19 @@
+exports.handler = async (event) => {
+    let num1 = event.num1
+    let num2 = event.num2
+    
+    return {
+        statusCode: 200,
+        body: JSON.stringify(num1 + num2)
+    }    
+}
+
+{
+  "num1": 4,
+  "num2": 5
+}
+
+{
+  "statusCode": 200,
+  "body": "9"
+}
