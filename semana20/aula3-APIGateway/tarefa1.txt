@@ -1,0 +1,20 @@
+1) Sem rodar esse código, dê três exemplos de entrada e saída da função verifyExistence.
+
+Os inputs podem ser query string, params e body.
+
+2) Sem rodar esse código, dê três exemplos de entrada e saída da função verifyExistence
+
+Precisamos do JSON.parse(event.body), porque originalmente no JSON, ele vem como string ao invés de 
+objeto, então usa-se esse comando para converter para um objeto.
+
+3) Explique em que situação essa lambda retorna um código de 200 e qual o valor do body nesse caso.
+
+A lambda retorna um codigo de 200 depois que ele verifica as existencia dos inputs, isto é, nenhum deles
+é undefined, null, ou string vazia. Se essa verificação existir, ele para o retorno do código 200.
+
+4) Explique em que situação essa lambda retorna um código de erro 400 com a mensagem Missing Input
+
+Se após a verificação der um resultado de não existencia, ele joga um erro que tem inputs faltando com o código 400.
+
+
+

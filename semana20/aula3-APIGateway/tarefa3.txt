@@ -1,0 +1,38 @@
+lambda:
+
+const execute = (cep, apiKey) => {
+  if (!apiKey || !cep) {
+    throw new Error("Está faltando informação");
+  }
+  if (apiKey !== "key") {
+    throw new Error("Chave de API inválida");
+  }
+  const regex = new RegExp(
+    "\\d{5}[-]\\d{3}"
+  );
+  return regex.test(cep);
+};
+
+exports.handler = async event => {
+    try {
+        const body = JSON.parse(event.body)
+        const cep = body.cep
+        const apiKey = event.headers.apikey
+        const result = execute(cep, apiKey)
+        
+        return{
+            statusCode: 200,
+            body: JSON.stringify({
+                message: result ? true : false
+            })
+        }
+    } catch (err) {
+        const response = {
+		  statusCode: 400,
+		  body: JSON.stringify({
+		      message: err.message
+		      })
+		}
+		return response
+    }
+};
