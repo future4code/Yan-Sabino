@@ -1,0 +1,554 @@
+[33mcommit e4d719f8c5b3e4bdb793077d7d0f00d4e1093d00[m[33m ([m[1;36mHEAD -> [m[1;32msemana19-projeto[m[33m)[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Wed Mar 25 16:11:58 2020 -0300
+
+    Criação de Post
+
+[33mcommit f2f92f949171bc13aeaacb5f6f7b6d37186bbcd2[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Wed Mar 25 14:06:42 2020 -0300
+
+    Implementação de deletar um amigo feita
+
+[33mcommit 7f2a7182e59ecdeb146ebf958ff6ebb313dee1a4[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Mon Mar 23 18:39:04 2020 -0300
+
+    Implementação de add um amigo feita feita
+
+[33mcommit 6faf1c459c9ebd81cd1cbf8129906d985df59c89[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Mon Mar 23 16:50:40 2020 -0300
+
+    Implementação do login feita
+
+[33mcommit ccee3dc533df9ea3973a024fb9005dddbda56bb8[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Mon Mar 23 16:00:50 2020 -0300
+
+    Implementação do signUp feita
+
+[33mcommit 4b9a65b905f1fb142969a8beda24024570e10ec5[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Mon Mar 23 14:52:00 2020 -0300
+
+    arquitetura inicial montada
+
+[33mcommit e1b49bfb474017a4135314b77bd7ec2e74d55e47[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Merge: e2c5e0b 6aa35bd
+Author: Yan <57139085+yansabino@users.noreply.github.com>
+Date:   Thu Mar 5 14:18:59 2020 -0300
+
+    Merge pull request #41 from future4code/semana16-aula3
+    
+    04/03/2020 - Quarta-Feira - Relações em SQL
+
+[33mcommit 6aa35bd20550ead067e245f45cfe163ab15ce5be[m[33m ([m[1;31morigin/semana16-aula3[m[33m, [m[1;32msemana16-aula3[m[33m)[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Wed Mar 4 19:47:02 2020 -0300
+
+    projeto feito
+
+[33mcommit 6e681056dfd1d5038cae65f3b248cd175546d8be[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Wed Mar 4 14:49:17 2020 -0300
+
+    primeira etapa feita
+
+[33mcommit 79a637c07df0257cf3b7b22af2193edfe2cb24e9[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Wed Mar 4 13:30:51 2020 -0300
+
+    arquivo do ex criado
+
+[33mcommit e2c5e0b728585323b1c2f6a85b4656a441bc8cff[m
+Merge: 88bc08d c72228c
+Author: Yan <57139085+yansabino@users.noreply.github.com>
+Date:   Wed Mar 4 13:27:50 2020 -0300
+
+    Merge pull request #40 from future4code/semana16-aula2
+    
+    03/03/2020 - Terça Feira - Aprofundamento SQL
+
+[33mcommit c72228cc4e562eced819b8a7c282bad3957042fb[m[33m ([m[1;31morigin/semana16-aula2[m[33m, [m[1;32msemana16-aula2[m[33m)[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Tue Mar 3 16:35:02 2020 -0300
+
+    ENTREGA FINAL
+
+[33mcommit 4d53b71d29618a4f63d4d9423ccb9741cb442773[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Tue Mar 3 15:57:34 2020 -0300
+
+    nono DOS PAISES FEITO
+
+[33mcommit b044dd9ec0e1b456c1dca82bccf942e5b8d6d595[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Tue Mar 3 15:53:51 2020 -0300
+
+    oitavo DOS PAISES FEITO
+
+[33mcommit b238ed41343b59d4b72fde58cb9c09663824013e[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Tue Mar 3 15:50:03 2020 -0300
+
+    setimo DOS PAISES FEITO
+
+[33mcommit 8b452dfa00b8d82f0e9d239205167628ee49d97a[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Tue Mar 3 15:44:09 2020 -0300
+
+    quinto DOS PAISES FEITO
+
+[33mcommit 80352a4b637502b75961945a2e75150ca00d93a4[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Tue Mar 3 15:17:58 2020 -0300
+
+    quarto DOS PAISES FEITO
+
+[33mcommit 3f7bedad7ab496cda39ea1fa0fceaff7fbfbb001[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Tue Mar 3 15:09:45 2020 -0300
+
+    terceiro DOS PAISES FEITO
+
+[33mcommit d974f4825580331b189e679b469a01db5b983f18[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Tue Mar 3 14:52:21 2020 -0300
+
+    segundo DOS PAISES FEITO
+
+[33mcommit 5850eec1c5cc3befd548094529666f8644216f9b[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Tue Mar 3 14:43:58 2020 -0300
+
+    PRIMEIRO DOS PAISES FEITO
+
+[33mcommit 38ee1b88af0c6b1842e3697cd38a0c6afa6022d7[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Tue Mar 3 14:25:51 2020 -0300
+
+    QUARTO item feito e primeiro exercicio finalizado
+
+[33mcommit 0bfdfc5cba7e5956f5a923a5dc556f4de8c8163b[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Tue Mar 3 13:57:50 2020 -0300
+
+    terceiro item feito
+
+[33mcommit 464d924b3808b20b9fe891b8ea4bcaaa45b790de[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Tue Mar 3 13:51:52 2020 -0300
+
+    segundo item feito
+
+[33mcommit 0b4aeaab5c03564cb62aa8416bd72951d7a6acd4[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Tue Mar 3 13:36:55 2020 -0300
+
+    arquivo criado enunciado copiado e primeiro item feito
+
+[33mcommit 88bc08d14761af82fca5c3f6b396e2cff61963e7[m
+Merge: 1448e2d da8ea6f
+Author: Yan <57139085+yansabino@users.noreply.github.com>
+Date:   Tue Mar 3 09:03:14 2020 -0300
+
+    Merge pull request #39 from future4code/semana16-aula1
+    
+    02/03/2020 - Segunda-Feira -  Banco de Dados e Introdução a SQL
+
+[33mcommit 1448e2d41da15992ce3f17cbdec909a27211dc3a[m
+Merge: 3085f33 b2ee8be
+Author: Yan <57139085+yansabino@users.noreply.github.com>
+Date:   Mon Mar 2 16:23:06 2020 -0300
+
+    Merge pull request #38 from future4code/semana15-projetoYan
+    
+    Semana15 projeto yan
+
+[33mcommit da8ea6f2c75b53adc17b9ef119ef7787899a0dc0[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Mon Mar 2 16:21:56 2020 -0300
+
+    tabela films funcionando no meu schema
+
+[33mcommit f1db8bcdd5f1af16d0f4b4d575bccf79a4bbf475[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Mon Mar 2 16:02:49 2020 -0300
+
+    Segunda Parte Feita
+
+[33mcommit 03191875338781863f6fcca0a34797cc33edf881[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Mon Mar 2 15:14:58 2020 -0300
+
+    tabela funcionando no meu schema
+
+[33mcommit cbae5fe6cf66da150cb8819ac3dfe145be843086[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Mon Mar 2 14:15:55 2020 -0300
+
+    Primeira parte Feita
+
+[33mcommit 3085f33b75d7db8daf24f3106180512b2585cf61[m
+Merge: e0f938f 5063955
+Author: Yan <57139085+yansabino@users.noreply.github.com>
+Date:   Mon Mar 2 13:49:35 2020 -0300
+
+    Merge pull request #37 from future4code/semana15-aula4
+    
+    Semana15 aula4
+
+[33mcommit e0f938fbe807d6be022dc4065e0fbec64b388f57[m
+Merge: 53cf444 6b6172d
+Author: Yan <57139085+yansabino@users.noreply.github.com>
+Date:   Mon Mar 2 13:49:02 2020 -0300
+
+    Merge pull request #36 from future4code/semana15-aula3
+    
+    Semana15 aula3
+
+[33mcommit 53cf44403ca42640545bcafd1d747f5278eab643[m
+Merge: 1daa647 b27971f
+Author: Yan <57139085+yansabino@users.noreply.github.com>
+Date:   Mon Mar 2 13:48:35 2020 -0300
+
+    Merge pull request #35 from future4code/semana15-aula2
+    
+    Semana15 aula2
+
+[33mcommit 1daa64785d41581dfced5d7764ef86194cfb180d[m
+Merge: 0976f15 ac92f56
+Author: Yan <57139085+yansabino@users.noreply.github.com>
+Date:   Mon Mar 2 13:47:57 2020 -0300
+
+    Merge pull request #34 from future4code/semana15-aula1
+    
+    Exercicio de classes incompleto
+
+[33mcommit 0976f158aae407034c260a7ba7ce278dd8fe6d90[m
+Merge: 7235b08 ec115ce
+Author: Yan <57139085+yansabino@users.noreply.github.com>
+Date:   Mon Mar 2 13:47:27 2020 -0300
+
+    Merge pull request #32 from future4code/semana14-aula4
+    
+    Semana14 aula4
+
+[33mcommit 7235b0869243ae6e418aabebe0a0518c32319b0f[m
+Merge: 4193876 693b66e
+Author: Yan <57139085+yansabino@users.noreply.github.com>
+Date:   Mon Mar 2 13:47:01 2020 -0300
+
+    Merge pull request #31 from future4code/semana14-dia3
+    
+    Primeiro exercício feito
+
+[33mcommit 41938760e165b30e19ecc1b52d07144adaea4787[m
+Merge: 1ed6925 d245324
+Author: Yan <57139085+yansabino@users.noreply.github.com>
+Date:   Mon Mar 2 13:46:25 2020 -0300
+
+    Merge pull request #30 from future4code/semana14-dia2
+    
+    exercicios 1 e 2 feitos
+
+[33mcommit b2ee8be7f81bd9c1a194a04d9817ff4b54564bd8[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Fri Feb 28 11:44:16 2020 -0300
+
+    enum add
+
+[33mcommit f43affa4e0f31d436753cd82ffd345f0dd75de82[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Fri Feb 28 11:14:45 2020 -0300
+
+    nada
+
+[33mcommit 0bfb34e8db0771754f9d7009d80bace91ae6a9e1[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Fri Feb 21 16:53:02 2020 -0300
+
+    add as missions no json
+
+[33mcommit 4c9f5b35230ffe9c1043f2b21071fda58c5be955[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Fri Feb 21 16:26:02 2020 -0300
+
+    Pegando os valores do mission web
+
+[33mcommit ea4cf6de806d02ddc469781035bf1121a32ed8b0[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Fri Feb 21 14:04:21 2020 -0300
+
+    Missions props Passed , but still not working yet
+
+[33mcommit 760e201b8a3009bee55d14ccb880f2d211cf64c0[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Fri Feb 21 13:24:54 2020 -0300
+
+    First Commit
+
+[33mcommit 1ed6925847c020e96b4ee313d0f4dbb4769cb623[m
+Merge: e4c8c15 a0a7207
+Author: Yan <57139085+yansabino@users.noreply.github.com>
+Date:   Thu Feb 20 19:05:34 2020 -0300
+
+    Merge pull request #33 from future4code/semana14-projeto4Banks
+    
+    Semana14 projeto4banks - Yan
+
+[33mcommit a0a72077b5c3f6521108d9f06b5346fced0bdfe8[m
+Author: Yan <57139085+yansabino@users.noreply.github.com>
+Date:   Thu Feb 20 19:04:13 2020 -0300
+
+    Update projeto4banks.ts
+
+[33mcommit 50639550e8679985fe783def7fdf4dfad75f5cb0[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Thu Feb 20 18:54:55 2020 -0300
+
+    feito até o ISP
+
+[33mcommit 16ccc6bbff227cd3b9633b50fdfb4c0cca033284[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Thu Feb 20 18:33:46 2020 -0300
+
+    feito até o LSP
+
+[33mcommit e4c8c159bc17e7c62c3e28441b81fdf47cac2193[m
+Merge: b57d391 21a010e
+Author: Yan <57139085+yansabino@users.noreply.github.com>
+Date:   Thu Feb 20 09:01:14 2020 -0300
+
+    Merge pull request #28 from future4code/semana12-aula3
+    
+    Semana12 aula3
+
+[33mcommit 21a010e97cac1ab4050fc50997412a2fdfb97cbb[m[33m ([m[1;31morigin/semana12-aula3[m[33m)[m
+Author: Yan <57139085+yansabino@users.noreply.github.com>
+Date:   Thu Feb 20 08:59:59 2020 -0300
+
+    Update taskActionsAsync.test.js
+
+[33mcommit 6b6172df5686b8b681fcf4a9164f77d0d48995ea[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Wed Feb 19 19:10:15 2020 -0300
+
+    Final Adjustments
+
+[33mcommit 5c28f17ee03ec565860c0b3b7523d41fde6c5346[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Wed Feb 19 16:42:49 2020 -0300
+
+    Final Commit
+
+[33mcommit 7bdccaf98fc306ac2ddfb9d58270e6b4561e1678[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Wed Feb 19 15:15:21 2020 -0300
+
+    Instances created
+
+[33mcommit 1092e131953cd7595cb80faeef6de47de930b7c0[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Wed Feb 19 14:37:25 2020 -0300
+
+    Client types created
+
+[33mcommit 62dd245cc4c01cb662a5290e268aa4533945c828[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Wed Feb 19 13:46:53 2020 -0300
+
+    first commit
+
+[33mcommit b27971f761dcf9e1edd1112c2edd7f7aeecae33b[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Tue Feb 18 17:08:15 2020 -0300
+
+    entrega
+
+[33mcommit 7576c27a65741c6fc33004fca977f64d51d00234[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Tue Feb 18 14:30:14 2020 -0300
+
+    Primeiro passo feito
+
+[33mcommit ac92f56753f724a965eb8b5a01e16d5b34880efe[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Mon Feb 17 17:34:20 2020 -0300
+
+    Exercicio de classes incompleto
+
+[33mcommit afebdd19039c9de64644a63b4bbd378ebd6045ad[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Fri Feb 14 16:31:21 2020 -0300
+
+    showing the balance
+
+[33mcommit 7df98983b32721e7eb1f0ad7a0f67858151a159a[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Fri Feb 14 14:28:16 2020 -0300
+
+    adding the users without expenses
+
+[33mcommit 4a4c8d6ca158a321c1d84bc55116b7daf17a6bbb[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Fri Feb 14 10:51:14 2020 -0300
+
+    types and variables created
+
+[33mcommit 74482da25655f6b1385e7ee5636d61b27f2e9075[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Fri Feb 14 10:12:25 2020 -0300
+
+    first commit and configs
+
+[33mcommit ec115cef4ce1c6f2e8d7c8ccf98aba468ef70ee0[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Thu Feb 13 17:51:32 2020 -0300
+
+    Ajustes finais e projeto de add evento completo
+
+[33mcommit 9a4db0c7e26bdf84df9620812b50118e1a007abf[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Thu Feb 13 16:48:09 2020 -0300
+
+    Reading and writing working
+
+[33mcommit 978c43d7401621e009306d3e714c62cf2fd5cd13[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Thu Feb 13 13:57:55 2020 -0300
+
+    first commit
+
+[33mcommit 693b66e5e7a7b591b90562632087874bca6ad046[m[33m ([m[1;31morigin/semana14-dia3[m[33m)[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Wed Feb 12 18:25:34 2020 -0300
+
+    comentarios removidos
+
+[33mcommit 30fc881cba10513446b5657e91026bd95e7eb794[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Wed Feb 12 18:03:02 2020 -0300
+
+    Primeiro exercicio feito
+
+[33mcommit b57d3911652fbd2c050e93d3977e6a1c34c14b14[m
+Merge: 1a905a2 db60ffc
+Author: Yan <57139085+yansabino@users.noreply.github.com>
+Date:   Tue Feb 11 16:58:38 2020 -0300
+
+    Merge pull request #29 from future4code/semana14-dia1
+    
+    Semana14 dia1
+
+[33mcommit d2453246162ec9fe11740d3f1cfee9ce5f176265[m[33m ([m[1;31morigin/semana14-dia2[m[33m)[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Tue Feb 11 16:57:29 2020 -0300
+
+    exercicios 1 e 2 feitos
+
+[33mcommit 1a905a2ff2ebfd272b07adeb9272bd2da3c77beb[m
+Merge: 6b6fb7d 0e4f7f4
+Author: Yan <57139085+yansabino@users.noreply.github.com>
+Date:   Tue Feb 11 14:02:04 2020 -0300
+
+    Merge pull request #11 from future4code/semana4-aula4
+    
+    Semana4 aula4
+
+[33mcommit 6b6fb7d3dd3daf0125b613599a3cec0eebf0ea4c[m
+Merge: 204ff6d ee11c75
+Author: Yan <57139085+yansabino@users.noreply.github.com>
+Date:   Tue Feb 11 14:00:11 2020 -0300
+
+    Merge pull request #27 from future4code/semana12-aula2
+    
+    Semana12 aula2
+
+[33mcommit 204ff6d53199b96da70262406c0f523abecfbdfb[m
+Merge: db30ed3 124559f
+Author: Yan <57139085+yansabino@users.noreply.github.com>
+Date:   Mon Feb 10 19:35:31 2020 -0300
+
+    Merge pull request #21 from future4code/semana7-projeto-spotif4-yan
+    
+    Semana7 projeto spotif4 yan
+
+[33mcommit db60ffc64ce645b6e6dceafdab3d8c824b621b35[m[33m ([m[1;31morigin/semana14-dia1[m[33m)[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Mon Feb 10 16:31:46 2020 -0300
+
+    validação do ex1 feita
+
+[33mcommit 715fc9a3e4fc57a3f1317cae1a4f1e6bb0f56412[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Mon Feb 10 16:23:20 2020 -0300
+
+    validação do ex2 feita
+
+[33mcommit 7bf5a56ca9d2aa212a59027f7cd733de960db836[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Mon Feb 10 15:45:50 2020 -0300
+
+    Parte Obrigatória feita
+
+[33mcommit 2e9b9c8e9ead32d56515d3206ca2c1091a8744aa[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Mon Feb 10 15:18:43 2020 -0300
+
+    Ex2 done
+
+[33mcommit 411ee5bee9360e2cfe12fa0d9eca12ef598e2e6e[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Mon Feb 10 14:28:59 2020 -0300
+
+    Ex1 done
+
+[33mcommit 49e7b1dedec112ec74d1f5e00f615231487cac78[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Fri Jan 31 16:54:30 2020 -0300
+
+    ultimas alterações
+
+[33mcommit c75ff763532b6b3165aa5dcc1ac5da6b7fe3aad2[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Fri Jan 31 16:49:59 2020 -0300
+
+    Tests async feitos
+
+[33mcommit 23772a6656eedccc767eab5ce75f6a974d71dcb3[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Fri Jan 31 15:40:07 2020 -0300
+
+    Arquivo de setupTests criado e configurado
+
+[33mcommit c8f661e5c657b70ddcdbe0ada3aaa6844394552f[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Fri Jan 31 15:32:29 2020 -0300
+
+    tests das actions sincronas e reducer feitos
+
+[33mcommit 8a8faa8a8a807e927c78b46903dbc87f8e0d7c05[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Fri Jan 31 13:32:21 2020 -0300
+
+    inicio dos tests das actions
+
+[33mcommit 83b1056d29274a885f382644a82dcbc9a3386f8b[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Fri Jan 31 12:57:01 2020 -0300
+
+    alguns ajustes
+
+[33mcommit 0b1247f018ebb656445874f9a2c575a6f77b5631[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Fri Jan 31 12:33:10 2020 -0300
+
+    Funcionalidades prontas
+
+[33mcommit 3aac8843cc890114d44835d80effc10962190f6b[m
+Author: Yan Sabino <yan.sabino@hotmail.com>
+Date:   Thu Jan 30 17:14:40 2020 -0300
+
+    entrega dia 4
