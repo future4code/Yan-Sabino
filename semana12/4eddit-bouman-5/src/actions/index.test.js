@@ -3,6 +3,11 @@ import {setPostAction} from './index'
 
 describe("teste actions posts", ()=>{
     test("teste getActions", ()=>{
-       const action = setPostAction("setar os posts")
+       
+       const  textoDeTeste = "get de texte"
+       
+        const action = setPostAction(textoDeTeste)
+
+        expect(action.type).toEqual('SET_POSTS_ACTION') 
     })
 })
