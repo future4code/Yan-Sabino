@@ -1,8 +1,8 @@
-import { UserGateway } from "../gateways/userGateway";
-import { AuthenticationGateway } from "../gateways/authenticationGateway";
+import { UserGateway } from "../../gateways/userGateway";
+import { AuthenticationGateway } from "../../gateways/authenticationGateway";
 import { v4 } from "uuid";
-import { User } from "../entities/user";
-import { CryptographyGateway } from "../gateways/cryptographyGateway";
+import { User } from "../../entities/user";
+import { CryptographyGateway } from "../../gateways/cryptographyGateway";
 
 export class SignUpUC {
   constructor(

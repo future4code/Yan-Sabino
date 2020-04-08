@@ -1,6 +1,6 @@
-import { AuthenticationGateway } from "../gateways/authenticationGateway";
-import { UserGateway } from "../gateways/userGateway";
-import { CryptographyGateway } from "../gateways/cryptographyGateway";
+import { AuthenticationGateway } from "../../gateways/authenticationGateway";
+import { UserGateway } from "../../gateways/userGateway";
+import { CryptographyGateway } from "../../gateways/cryptographyGateway";
 
 export class ChangePasswordUC {
   constructor(

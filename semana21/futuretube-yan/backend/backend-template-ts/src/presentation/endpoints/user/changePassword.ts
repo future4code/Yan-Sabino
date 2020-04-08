@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { ChangePasswordUC } from "../../business/usecase/changePassword";
-import { UserDatabase } from "../../data/userDB";
-import { JwtAuthorizer } from "../../services/jwtAuthorizer";
-import { BcryptService } from "../../services/bcryptService";
+import { ChangePasswordUC } from "../../../business/usecase/user/changePassword";
+import { UserDatabase } from "../../../data/userDB";
+import { JwtAuthorizer } from "../../../services/jwtAuthorizer";
+import { BcryptService } from "../../../services/bcryptService";
 
 export const changePasswordEndpoint = async (req: Request, res: Response) => {
   try {
