@@ -21,7 +21,7 @@ export class ChangePasswordUC {
     const usersInfo = this.authenticationGateway.getUsersInfoFromToken(
       input.token
     );
-    const id = usersInfo.userId;
+    const id = usersInfo.id;
 
     // id do usuário -> banco pegar o usuário com esse id
     const user = await this.db.getUserById(id);
@@ -43,14 +43,13 @@ export class ChangePasswordUC {
       throw new Error("Incorret information");
     }
 
-    // banco -> autaliza a senha com a nova senha
+    // banco -> autualiza a senha com a nova senha
     const pass = await this.cryptographyGateway.encrypt(input.newPassword);
     await this.db.updatePassword(user.getId(), pass);
 
     // [CHECK] devolver um novo token
     const token = this.authenticationGateway.generateToken({
-      userId: user.getId(),
-      type: user.getType()
+      id: user.getId()
     });
 
     return {

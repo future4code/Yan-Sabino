@@ -73,13 +73,13 @@ export class UserDatabase extends BaseDB implements UserGateway {
   }
 
   public async updatePassword(
-    userId: string,
+    id: string,
     newPassword: string
   ): Promise<void> {
     await this.connection.raw(`
       UPDATE ${this.usersTable}
       SET password = '${newPassword}'
-      WHERE id = '${userId}'
+      WHERE id = '${id}'
     `);
   }
 }

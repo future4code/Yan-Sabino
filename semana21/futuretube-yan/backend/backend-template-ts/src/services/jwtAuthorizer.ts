@@ -5,14 +5,13 @@ import {
 import * as jwt from "jsonwebtoken";
 
 export class JwtAuthorizer implements AuthenticationGateway {
-  private SECRET_KEY = "GOLI";
+  private SECRET_KEY = "YAN";
   private expiresIn = "10h";
 
   public generateToken(input: UsersInfoForToken): string {
     const token = jwt.sign(
       {
-        userId: input.userId,
-        type: input.type
+        id: input.id,
       },
       this.SECRET_KEY,
       {
@@ -24,10 +23,9 @@ export class JwtAuthorizer implements AuthenticationGateway {
   }
 
   public getUsersInfoFromToken(token: string): UsersInfoForToken {
-    const result = jwt.verify(token, this.SECRET_KEY) as UsersInfoForToken; // userId, type
+    const result = jwt.verify(token, this.SECRET_KEY) as UsersInfoForToken; // id, type
     return {
-      userId: result.userId,
-      type: result.type
+      id: result.id
     };
   }
 }

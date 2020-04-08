@@ -21,8 +21,9 @@ export const changePasswordEndpoint = async (req: Request, res: Response) => {
 
     res.status(200).send(result);
   } catch (err) {
-    res.status(400).send({
+      res.status(400).send({
       errMessage: err.message
     });
   }
+  
 };
