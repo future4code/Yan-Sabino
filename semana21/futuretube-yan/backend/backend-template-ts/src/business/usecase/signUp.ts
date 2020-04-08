@@ -40,7 +40,7 @@ export class SignUpUC {
 
     //gerar token
     const token = this.authenticationGateway.generateToken({
-      userId: user.getId(),
+      id: user.getId(),
     });
 
     return {

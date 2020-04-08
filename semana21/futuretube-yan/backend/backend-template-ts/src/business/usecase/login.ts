@@ -28,7 +28,7 @@ export class LoginUserUC {
 
     // Se estiver compatível, geramos o token e o usuário está logado
     const token = this.authenticationGateway.generateToken({
-      userId: user.getId()
+      id: user.getId()
     });
 
     return {

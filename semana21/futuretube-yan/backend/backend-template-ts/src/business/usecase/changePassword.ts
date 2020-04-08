@@ -30,9 +30,9 @@ export class ChangePasswordUC {
     }
 
     // usuário -> 1. comparar o email enviado na requisicão com o email falso
-    if (user.getEmail() !== input.email) {
-      throw new Error("Incorret information");
-    }
+    // if (user.getEmail() !== input.email) {
+    //   throw new Error("Incorret information");
+    // }
 
     // usuário -> 2. compara a senha antiga do usuário com a senha salva no banco
     const isPasswordCorrect = await this.cryptographyGateway.compare(
@@ -60,7 +60,7 @@ export class ChangePasswordUC {
 
 interface ChangePasswordUCInput {
   token: string;
-  email: string;
+  // email: string;
   oldPassword: string;
   newPassword: string;
 }
