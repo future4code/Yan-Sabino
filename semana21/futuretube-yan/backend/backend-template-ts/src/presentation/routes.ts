@@ -12,7 +12,7 @@ app.use(express.json());
 app.post("/signup", signUpEndpoint);
 app.post("/users/changePassword", changePasswordEndpoint);
 app.post("/login", loginEndpoint);
-app.post("/videos/upload", uploadVideoEndPoint)
-app.get("/users/videos/", getUserVideosEndPoint)
+app.post("/videos/upload", uploadVideoEndPoint);
+app.get("/users/videos/", getUserVideosEndPoint);
 
 export default app;

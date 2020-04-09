@@ -16,14 +16,13 @@ export const changePasswordEndpoint = async (req: Request, res: Response) => {
       token: req.headers.auth as string,
       // email: req.body.email,
       oldPassword: req.body.oldPassword,
-      newPassword: req.body.newPassword
+      newPassword: req.body.newPassword,
     });
 
     res.status(200).send(result);
   } catch (err) {
-      res.status(400).send({
-      errMessage: err.message
+    res.status(400).send({
+      errMessage: err.message,
     });
   }
-  
 };

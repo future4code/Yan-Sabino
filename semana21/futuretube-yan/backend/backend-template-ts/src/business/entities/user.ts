@@ -27,4 +27,3 @@ export class User {
     return this.password;
   }
 }
-

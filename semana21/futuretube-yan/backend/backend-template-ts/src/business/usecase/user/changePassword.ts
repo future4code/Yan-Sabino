@@ -49,11 +49,11 @@ export class ChangePasswordUC {
 
     // [CHECK] devolver um novo token
     const token = this.authenticationGateway.generateToken({
-      id: user.getId()
+      id: user.getId(),
     });
 
     return {
-      token
+      token,
     };
   }
 }

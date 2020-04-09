@@ -29,11 +29,17 @@ export class UserDatabase extends BaseDB implements UserGateway {
       SELECT * FROM ${this.usersTable} WHERE email = '${email}'
     `);
 
-    if(!user[0]){
-      return undefined
+    if (!user[0]) {
+      return undefined;
     }
 
-    return new User(user[0].id, user[0].name, user[0].email, user[0].birth_date, user[0].password);
+    return new User(
+      user[0].id,
+      user[0].name,
+      user[0].email,
+      user[0].birth_date,
+      user[0].password
+    );
   }
 
   public async getUserByEmail(email: string): Promise<User | undefined> {
@@ -72,10 +78,7 @@ export class UserDatabase extends BaseDB implements UserGateway {
     );
   }
 
-  public async updatePassword(
-    id: string,
-    newPassword: string
-  ): Promise<void> {
+  public async updatePassword(id: string, newPassword: string): Promise<void> {
     await this.connection.raw(`
       UPDATE ${this.usersTable}
       SET password = '${newPassword}'

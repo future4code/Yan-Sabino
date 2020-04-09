@@ -14,13 +14,13 @@ export const loginEndpoint = async (req: Request, res: Response) => {
 
     const result = await uc.execute({
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
     });
 
     res.status(200).send(result);
   } catch (err) {
     res.status(400).send({
-      errMessage: err.message
+      errMessage: err.message,
     });
   }
 };
