@@ -105,7 +105,24 @@ export class VideoDB extends BaseDB implements VideoGateway {
         video.picture
       );
     });
+  }
+
+  public async getAllVideoInfos(videoId: string): Promise<VideoFeed>{
+    const result = await this.connection.raw(`
+    SELECT * FROM ${this.videoTableName}
+    WHERE videoId = '${videoId}'
+    `)
 
 
+
+    return new VideoFeed(
+      result[0][0].videoId,
+      result[0][0].url,
+      result[0][0].description,
+      result[0][0].title,
+      result[0][0].userId,
+      result[0][0].name,
+      result[0][0].picture
+    )
   }
 }

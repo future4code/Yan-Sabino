@@ -8,4 +8,5 @@ export interface VideoGateway {
   changeVideosInfos(videoId: string ,newDescription: string, newTitle: string): Promise<void>;
   deleteVideo(videoId: string): Promise<void>;
   getAllVideos(limit: number, offset: number): Promise<VideoFeed[]>;
+  getAllVideoInfos(videoId: string): Promise<VideoFeed>
 }
