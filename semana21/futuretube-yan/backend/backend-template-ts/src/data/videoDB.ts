@@ -2,6 +2,7 @@ import { BaseDB } from "./baseDB";
 import { VideoGateway } from "../business/gateways/videoGateway";
 import { Video } from "../business/entities/video";
 import { VideoFeed } from "../business/entities/videoFeed";
+import { Stream } from "stream";
 
 export class VideoDB extends BaseDB implements VideoGateway {
   private videoTableName = "videos_futuretube";
@@ -46,5 +47,32 @@ export class VideoDB extends BaseDB implements VideoGateway {
         video.picture
       );
     });
+  }
+
+  public async getVideoById(videoId: string): Promise<Video | undefined>{
+    const result = await this.connection.raw(`
+      SELECT * FROM ${this.videoTableName}
+      WHERE videoId = '${videoId}'
+    `)
+
+    if (!result[0][0]) {
+      return undefined;
+    }
+
+    return new Video(
+      result[0][0].videoId,
+      result[0][0].url,
+      result[0][0].description,
+      result[0][0].title,
+      result[0][0].userId
+    )
+  }
+
+  public async changeVideosInfos(videoId: string ,newDescription: string, newTitle: string): Promise<void>{
+    await this.connection.raw(`
+      UPDATE ${this.videoTableName}
+      SET description = '${newDescription}', title = '${newTitle}'
+      WHERE videoId = '${videoId}';
+    `)
   }
 }
