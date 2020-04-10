@@ -7,6 +7,7 @@ import { uploadVideoEndPoint } from "./endpoints/video/uploadVideo";
 import { getUserVideosEndPoint } from "./endpoints/video/getUserVideos";
 import { changeVideoInfosEndPoint } from "./endpoints/video/changeVideoInfos";
 import { deleteVideoEndPoint } from "./endpoints/video/deleteVideo";
+import { getAllVideosEndPoint } from "./endpoints/video/getAllVideos";
 
 const app = express();
 app.use(express.json());
@@ -18,5 +19,6 @@ app.post("/videos/upload", uploadVideoEndPoint);
 app.get("/users/videos/", getUserVideosEndPoint);
 app.post("/videos/changeInfos", changeVideoInfosEndPoint)
 app.post("/videos/delete",deleteVideoEndPoint)
+app.get("/videos", getAllVideosEndPoint)
 
 export default app;
