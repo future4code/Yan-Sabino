@@ -29,9 +29,7 @@ export class ChangePasswordUC {
       throw new Error("User not found");
     }
 
-
-
-    // usuário -> 2. compara a senha antiga do usuário com a senha salva no banco
+    // usuário -> 1. compara a senha antiga do usuário com a senha salva no banco
     const isPasswordCorrect = await this.cryptographyGateway.compare(
       input.oldPassword,
       user.getPassword()

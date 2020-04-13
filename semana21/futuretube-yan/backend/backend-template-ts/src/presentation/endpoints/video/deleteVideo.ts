@@ -7,18 +7,16 @@ export const deleteVideoEndPoint = async (req: Request, res: Response) => {
   try {
     const jwtAuth = new JwtAuthorizer();
     const videoDB = new VideoDB();
-    const userInfo = jwtAuth.getUsersInfoFromToken(req.headers.auth as string);
-    const uc = new DeleteVideoUC(videoDB);
+    const uc = new DeleteVideoUC(videoDB, jwtAuth);
 
     const input = {
-      userId: userInfo.id,
+      token: req.headers.auth as string,
       videoId: req.body.videoId,
     };
 
-    await uc.execute(input);
-    res.status(200).send({
-      message: "Video deleted successfully",
-    });
+    const result = await uc.execute(input);
+
+    res.status(200).send(result);
   } catch (err) {
     res.status(400).send({
       message: err.message,
