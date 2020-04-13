@@ -1,10 +1,13 @@
+import { threadId } from "worker_threads";
+
 export class User {
   constructor(
     private id: string,
     private name: string,
     private email: string,
     private birthDate: string,
-    private password: string = ""
+    private password: string = "",
+    private picture: string
   ) {}
 
   public getId(): string {
@@ -25,5 +28,9 @@ export class User {
 
   public getPassword(): string {
     return this.password;
+  }
+
+  public getPicture(): string {
+    return this.picture
   }
 }

@@ -19,7 +19,7 @@ app.post("/login", loginEndpoint);
 app.post("/videos/upload", uploadVideoEndPoint);
 app.get("/users/videos/", getUserVideosEndPoint);
 app.post("/videos/changeInfos", changeVideoInfosEndPoint)
-app.post("/videos/delete", deleteVideoEndPoint)
+app.delete("/videos/delete", deleteVideoEndPoint)
 app.get("/videos", getAllVideosEndPoint)
 app.get("/videos/info", getAllVideoInfos)
 

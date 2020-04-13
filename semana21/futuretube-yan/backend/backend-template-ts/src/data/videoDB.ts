@@ -2,7 +2,6 @@ import { BaseDB } from "./baseDB";
 import { VideoGateway } from "../business/gateways/videoGateway";
 import { Video } from "../business/entities/video";
 import { VideoFeed } from "../business/entities/videoFeed";
-import { Stream } from "stream";
 
 export class VideoDB extends BaseDB implements VideoGateway {
   private videoTableName = "videos_futuretube";
@@ -92,8 +91,6 @@ export class VideoDB extends BaseDB implements VideoGateway {
       LIMIT ${limit} OFFSET ${offset};
     `)
 
-
-
     return response[0].map((video: any) => {
       return new VideoFeed(
         video.videoId,
@@ -109,11 +106,12 @@ export class VideoDB extends BaseDB implements VideoGateway {
 
   public async getAllVideoInfos(videoId: string): Promise<VideoFeed>{
     const result = await this.connection.raw(`
-    SELECT * FROM ${this.videoTableName}
+    SELECT ${this.videoTableName}.*, ${this.usersTable}.name, ${this.usersTable}.picture 
+    FROM ${this.videoTableName}
+    JOIN ${this.usersTable}
+    ON ${this.videoTableName}.userId = ${this.usersTable}.id
     WHERE videoId = '${videoId}'
     `)
-
-
 
     return new VideoFeed(
       result[0][0].videoId,
