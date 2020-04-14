@@ -9,12 +9,10 @@ export const getUserVideosEndPoint = async (req: Request, res: Response) => {
     const jwtAuth = new JwtAuthorizer();
     const getUserVideoUC = new GetUserVideosUC(videoDB, jwtAuth);
 
-    const input = {
-      userId: req.query ? req.query.userId : "",
+    const result = await getUserVideoUC.execute({
+      userId: req.query.userId as string || "",
       token: req.headers.auth as string,
-    };
-
-    const result = await getUserVideoUC.execute(input);
+    });
     res.status(200).send(result);
   } catch (err) {
     res.status(400).send(err.message);

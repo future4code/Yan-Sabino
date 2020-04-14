@@ -8,7 +8,7 @@ export const getAllVideosEndPoint = async (req: Request, res: Response) => {
         const uc = new GetAllVideosUC(videoDB)
         
         const input = {
-            page: req.query.page
+            page: Number(req.query.page)
         }
 
         const result = await uc.execute(input)

@@ -11,7 +11,7 @@ export const deleteVideoEndPoint = async (req: Request, res: Response) => {
 
     const input = {
       token: req.headers.auth as string,
-      videoId: req.body.videoId,
+      videoId: req.params.videoId,
     };
 
     const result = await uc.execute(input);

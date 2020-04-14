@@ -21,13 +21,14 @@ class UserDatabase extends baseDB_1.BaseDB {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 yield this.connection.raw(`
-      INSERT INTO ${this.usersTable} (id, name, email, birth_date, password)
+      INSERT INTO ${this.usersTable} (id, name, email, birth_date, password, picture)
       VALUES(
         '${user.getId()}',
         '${user.getName()}',
         '${user.getEmail()}',
         '${user.getBirthDate()}',
-        '${user.getPassword()}'
+        '${user.getPassword()}',
+        '${user.getPicture()}'
       )
     `);
             }
@@ -44,7 +45,7 @@ class UserDatabase extends baseDB_1.BaseDB {
             if (!user[0]) {
                 return undefined;
             }
-            return new user_1.User(user[0].id, user[0].name, user[0].email, user[0].birth_date, user[0].password);
+            return new user_1.User(user[0].id, user[0].name, user[0].email, user[0].birth_date, user[0].password, user[0].picture);
         });
     }
     getUserByEmail(email) {
@@ -55,7 +56,7 @@ class UserDatabase extends baseDB_1.BaseDB {
             if (!result[0][0]) {
                 return undefined;
             }
-            return new user_1.User(result[0][0].id, result[0][0].name, result[0][0].email, result[0][0].birthDate, result[0][0].password);
+            return new user_1.User(result[0][0].id, result[0][0].name, result[0][0].email, result[0][0].birthDate, result[0][0].password, result[0][0].picture);
         });
     }
     getUserById(id) {
@@ -66,7 +67,7 @@ class UserDatabase extends baseDB_1.BaseDB {
             if (!result[0][0]) {
                 return undefined;
             }
-            return new user_1.User(result[0][0].id, result[0][0].name, result[0][0].email, result[0][0].birth_date, result[0][0].password);
+            return new user_1.User(result[0][0].id, result[0][0].name, result[0][0].email, result[0][0].birth_date, result[0][0].password, result[0][0].picture);
         });
     }
     updatePassword(id, newPassword) {
