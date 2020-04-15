@@ -6,11 +6,12 @@ export const ImgContainer = styled.div`
   align-items: center;
   margin-top: 55px;
   justify-content:center;
+  background: "#fff";
 `
 
 export const StyledImg = styled.img`
-  width: 104px;
-  height: 58px;
+  width: 208px;
+  height: 116px;
   object-fit: contain;
   
 `;

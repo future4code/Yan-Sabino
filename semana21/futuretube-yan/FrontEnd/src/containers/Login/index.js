@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import { ImageLogo, FontEnter } from "../../style/Login/style"
+import React from "react";
 import { connect } from "react-redux";
 import { userLogin } from "../../actions/userActions";
 import FormContainer from "../../components/FormContainer";
+import {StyledImg, ImgContainer} from "../../style/SignUp/style"
+import FutureTube from "../../images/Capturar.PNG"
+import { push } from "connected-react-router";
+import { routes } from "../Router";
 
 class Login extends React.Component{
     constructor(props){
@@ -62,10 +62,14 @@ class Login extends React.Component{
 
         return(
             <div>
+                <ImgContainer>
+                    <StyledImg src={FutureTube} alt="Logo" />
+                    <h4>Entrar</h4>
+                </ImgContainer> 
                 <FormContainer
                 formInputs = {formLoginData}
-                buttonText = "Criar"
                 onClickCriar = {this.onClickToSignUp}
+                onClickSignUp = {this.goToSignupPage}
                 />
             </div>
         )
@@ -73,7 +77,8 @@ class Login extends React.Component{
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-    login: (email, password) => dispatch(userLogin(email,password))
+    login: (email, password) => dispatch(userLogin(email,password)),
+    goToSignupPage: () => dispatch(push(routes.signup))
 })
 
 export default connect(null, mapDispatchToProps)(Login)

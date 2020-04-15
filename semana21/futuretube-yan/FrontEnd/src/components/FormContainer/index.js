@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import Button from "@material-ui/core/Button";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles, styled } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles(theme => ({
@@ -33,10 +33,11 @@ export function FormContainer(props) {
   const preventDefault = (e) => {
     e.preventDefault()
     props.onClickCriar(props.form)
+    props.onClickSignup()
   }
 
     return (
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs" style={{background: "#fff"}}>
         <CssBaseline />
         <div className={classes.paper}>
           {props.formTitle !== undefined && <Typography component="h1" variant="h5">{props.formTitle}</Typography>}
@@ -61,11 +62,21 @@ export function FormContainer(props) {
               type="submit"
               fullWidth
               variant="contained"
-              style={{ background:"#e8222e" }}
+              style={{ background:"#FF0000" }}
               className={classes.submit}
               onClick={preventDefault}
             >
-              {props.buttonText}
+              Login
+            </Button>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              style={{ background:"#FF0000" }}
+              className={classes.submit}
+              onClick={preventDefault}
+            >
+              Signup
             </Button>
           </form>
         </div>

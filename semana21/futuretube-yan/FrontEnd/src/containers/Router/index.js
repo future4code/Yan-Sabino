@@ -5,7 +5,7 @@ import Login from "../Login";
 import SignUp from "../SignUp"
 
 export const routes = {
-  login: "/login",
+  login: "/",
   signup: "/signup",
   // home: "/videos/"
 };
