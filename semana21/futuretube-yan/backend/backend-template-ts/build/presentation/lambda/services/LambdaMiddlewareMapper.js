@@ -15,7 +15,7 @@ class LambdaMiddlewareMapper {
     }
     static toLambdaResponse(data) {
         return {
-            headers: data.headers,
+            headers: Object.assign(Object.assign({}, data.headers), { "Access-Control-Allow-Headers": "*", "Access-Control-Allow-Methods": "*", "Access-Control-Allow-Origin": "*" }),
             body: JSON.stringify(data.body),
             statusCode: data.statusCode
         };

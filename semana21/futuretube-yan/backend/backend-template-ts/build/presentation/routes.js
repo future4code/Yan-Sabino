@@ -21,7 +21,7 @@ app.post("/login", login_1.loginEndpoint);
 app.post("/videos/upload", uploadVideo_1.uploadVideoEndPoint);
 app.get("/users/videos/", getUserVideos_1.getUserVideosEndPoint);
 app.post("/videos/changeInfos", changeVideoInfos_1.changeVideoInfosEndPoint);
-app.delete("/videos/delete", deleteVideo_1.deleteVideoEndPoint);
+app.delete("/videos/delete/:videoId", deleteVideo_1.deleteVideoEndPoint);
 app.get("/videos/", getAllVideos_1.getAllVideosEndPoint);
 app.get("/videos/info", getAllVideoInfos_1.getAllVideoInfos);
 exports.default = app;

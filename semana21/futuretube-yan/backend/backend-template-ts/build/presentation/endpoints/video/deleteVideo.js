@@ -19,7 +19,7 @@ exports.deleteVideoEndPoint = (req, res) => __awaiter(void 0, void 0, void 0, fu
         const uc = new deleteVideo_1.DeleteVideoUC(videoDB, jwtAuth);
         const input = {
             token: req.headers.auth,
-            videoId: req.body.videoId,
+            videoId: req.params.videoId,
         };
         const result = yield uc.execute(input);
         res.status(200).send(result);

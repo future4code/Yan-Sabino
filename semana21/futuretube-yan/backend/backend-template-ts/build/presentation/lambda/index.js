@@ -24,17 +24,16 @@ exports.handler = (event) => __awaiter(void 0, void 0, void 0, function* () {
         const response = yield mw.execute();
         const mappedResponse = LambdaMiddlewareMapper_1.LambdaMiddlewareMapper.toLambdaResponse(response);
         console.log("Response: ", mappedResponse);
-        return LambdaMiddlewareMapper_1.LambdaMiddlewareMapper.toLambdaResponse(response);
+        return mappedResponse;
     }
     catch (err) {
         console.log("Error: ", err);
-        const response = {
+        const errorResponse = LambdaMiddlewareMapper_1.LambdaMiddlewareMapper.toLambdaResponse({
+            body: Object.assign({}, err.body),
+            headers: {},
             statusCode: err.statusCode || 400,
-            body: JSON.stringify({
-                message: err.message || "An unknown error occured"
-            })
-        };
-        console.log("Error output: ", response);
-        return response;
+        });
+        console.log("ErrorResponse: ", errorResponse);
+        return errorResponse;
     }
 });

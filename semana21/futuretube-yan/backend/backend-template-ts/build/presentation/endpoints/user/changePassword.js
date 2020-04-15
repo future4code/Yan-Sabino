@@ -18,7 +18,6 @@ exports.changePasswordEndpoint = (req, res) => __awaiter(void 0, void 0, void 0,
         const uc = new changePassword_1.ChangePasswordUC(new userDB_1.UserDatabase(), new jwtAuthorizer_1.JwtAuthorizer(), new bcryptService_1.BcryptService());
         const result = yield uc.execute({
             token: req.headers.auth,
-            // email: req.body.email,
             oldPassword: req.body.oldPassword,
             newPassword: req.body.newPassword,
         });

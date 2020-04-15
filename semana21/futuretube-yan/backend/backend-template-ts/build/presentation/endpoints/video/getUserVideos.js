@@ -17,12 +17,8 @@ exports.getUserVideosEndPoint = (req, res) => __awaiter(void 0, void 0, void 0, 
         const videoDB = new videoDB_1.VideoDB();
         const jwtAuth = new jwtAuthorizer_1.JwtAuthorizer();
         const getUserVideoUC = new getUserVideos_1.GetUserVideosUC(videoDB, jwtAuth);
-        // const input = {
-        //   userId: req.headers ? req.headers.userId : "",
-        //   token: req.headers.auth as string,
-        // };
         const result = yield getUserVideoUC.execute({
-            userId: req.headers.userId || "",
+            userId: req.query.userId || "",
             token: req.headers.auth,
         });
         res.status(200).send(result);
