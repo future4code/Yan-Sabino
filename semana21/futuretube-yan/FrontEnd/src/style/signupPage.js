@@ -1,9 +1,12 @@
 import styled from "styled-components"
+import { withStyles } from '@material-ui/core/styles';
+import Button from "@material-ui/core/Button";
+
 
 export const SignUpWrapper = styled.form`
     width: 100%;
     height: 100vh;
-    gap: 5px;
+    gap: 2px;
     place-content: center;
     justify-items: center;
     display: grid;
@@ -23,3 +26,16 @@ export const StyledImg = styled.img`
   height: 116px;
   object-fit: contain;
 `;
+
+export const StyledButton = withStyles({
+    root: {
+        background: '#FF0000',
+        color: '#fff',
+        margin: '0 0 10px 0',
+        '&:hover':{
+            border: "1px solid #FF0000",
+            background: '#fff',
+            color: "#ff0000"
+        }
+    }
+})(Button)
