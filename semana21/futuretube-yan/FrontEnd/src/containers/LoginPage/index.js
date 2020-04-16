@@ -44,7 +44,8 @@ class LoginPage extends React.Component {
     this.setState({ [name]: value });
   };
 
-  handleLoginButton = () => {
+  handleLoginButton = (e) => {
+    e.preventDefault()
     const { email, password } = this.state;
     this.props.login(email, password);
 
@@ -52,7 +53,7 @@ class LoginPage extends React.Component {
   };
 
   render() {
-    const { email, password } = this.state;
+    
     return (
       <Fragment>
         <LoginWrapper onSubmit={this.handleLoginButton}>
