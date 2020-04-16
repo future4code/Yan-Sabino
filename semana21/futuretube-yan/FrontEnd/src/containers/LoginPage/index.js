@@ -6,7 +6,7 @@ import TextField from "@material-ui/core/TextField";
 import { routes } from "../Router/";
 import { userLogin } from "../../actions/userActions";
 import { LoginWrapper, ImgContainer, StyledImg } from "../../style/loginPage";
-import { FutureTube } from "../../images/futuretube.png"
+import futuretube from "../../images/futuretube.png";
 
 class LoginPage extends React.Component {
   constructor(props) {
@@ -37,8 +37,8 @@ class LoginPage extends React.Component {
     return (
       <LoginWrapper>
         <ImgContainer>
-          <StyledImg src={FutureTube} alt="Logo" />
-          <h4>Login</h4>
+          <StyledImg src={futuretube} alt="Logo" />
+          <h4>Entrar</h4>
         </ImgContainer>
         <TextField
           variant="outlined"

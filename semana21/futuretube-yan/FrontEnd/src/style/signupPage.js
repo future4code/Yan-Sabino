@@ -1,9 +1,9 @@
 import styled from "styled-components"
 
-export const LoginWrapper = styled.form`
+export const SignUpWrapper = styled.form`
     width: 100%;
     height: 100vh;
-    gap: 10px;
+    gap: 5px;
     place-content: center;
     justify-items: center;
     display: grid;
