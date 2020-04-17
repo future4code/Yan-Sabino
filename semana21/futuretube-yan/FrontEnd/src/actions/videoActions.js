@@ -29,7 +29,7 @@ export const setVideoDetailAction = (videoDetail) => ({
 export const getAllVideos = (page) => async (dispatch) => {
   try {
     const response = await axios.get(`${baseUrl}/videos/?page=${page}`);
-    dispatch(setVideoAction(response.data.videos));
+    dispatch(setVideoAction(response.data));
   } catch (error) {
     console.log(error);
     window.alert("Erro de renderização");

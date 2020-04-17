@@ -2,8 +2,10 @@ import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import Header from "../../components/header";
 import RecipeReviewCard from "../../components/videoCard";
+import PermanentDrawerLeft from "../../components/sideMenu";
 import { getAllVideos } from "../../actions/videoActions";
 import Loader from "../../components/loader";
+import { Container, SideMenu, VideoContainer, BodyContainer } from "../../style/homePage";
 
 class Home extends React.Component {
   constructor(props) {
@@ -13,14 +15,13 @@ class Home extends React.Component {
     };
   }
 
-  componentDidMount(){
-      
-      this.props.getAllVideos()
+  componentDidMount() {
+    this.props.getAllVideos();
   }
 
   render() {
     const { videos } = this.state;
-    console.log(this.props.videos)
+    console.log(this.props.videos);
     let filterVideos = this.props.videos.filter((video) => {
       return (
         video.title
@@ -29,16 +30,25 @@ class Home extends React.Component {
       );
     });
 
-    const isVideosReady = this.props.videos.lenght === 0 ? <Loader/> : (
+    const isVideosReady =
+      this.props.videos.lenght === 0 ? (
+        <Loader />
+      ) : (
         <Fragment>
-            {filterVideos.map((video) => <RecipeReviewCard />)}
+          {filterVideos.map((video) => (
+            <RecipeReviewCard />
+          ))}
         </Fragment>
-    )
+      );
     return (
-      <div>
+      <BodyContainer>
         <Header />
-        {isVideosReady}
-      </div>
+        <Container>
+          <PermanentDrawerLeft></PermanentDrawerLeft>
+
+          <VideoContainer>{isVideosReady}</VideoContainer>
+        </Container>
+      </BodyContainer>
     );
   }
 }

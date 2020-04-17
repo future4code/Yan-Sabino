@@ -3,14 +3,16 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 
+
+
 export const StyledHeader = styled.header `
-    width: 100%;
-    min-height: 100px;
+    width: calc(100% - 240px);
+    min-height: 10%;
     background-color: white;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+    margin-left: 240px;
     position: absolute;
     top: 0px;
 `
