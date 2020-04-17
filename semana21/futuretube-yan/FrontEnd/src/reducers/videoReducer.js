@@ -1,7 +1,8 @@
 const inicialState = {
     allVideos: [],
     selectedVideo: {},
-    selectedVideoId: ""
+    selectedVideoId: "",
+    currentPage: 1
 }
 
 const videos = (state = inicialState, action) =>{
@@ -12,6 +13,8 @@ const videos = (state = inicialState, action) =>{
             return {...state, selectedVideoId: action.payload.videoId}
         case "SET_VIDEO_DETAIL":
             return {...state, selectedVideo: action.payload.videoDetail}
+        case "SET_CURRENT_PAGE":
+            return {...state, currentPage: action.payload.page}
         default:
             return state
     }

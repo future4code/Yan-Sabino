@@ -9,7 +9,7 @@ import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
-import FavoriteIcon from "@material-ui/icons/Favorite";
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RecipeReviewCard() {
+export default function RecipeReviewCard(props) {
   const classes = useStyles();
 
   return (
@@ -38,12 +38,12 @@ export default function RecipeReviewCard() {
             R
           </Avatar> // user picture
         }
-        title="Shrimp and Chorizo Paella"
+        title={props.videoTitle}
       />
       <CardMedia
         className={classes.media}
-        image="/static/images/cards/paella.jpg" // thumbnail video
-        title="Paella dish" // titulo do video
+        
+         // titulo do video
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
@@ -51,8 +51,8 @@ export default function RecipeReviewCard() {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+        <IconButton aria-label="delete videos">
+          <DeleteIcon />
         </IconButton>
       </CardActions>
     </Card>

@@ -5,7 +5,7 @@ import RecipeReviewCard from "../../components/videoCard";
 import PermanentDrawerLeft from "../../components/sideMenu";
 import { getAllVideos } from "../../actions/videoActions";
 import Loader from "../../components/loader";
-import { Container, SideMenu, VideoContainer, BodyContainer } from "../../style/homePage";
+import { Container, VideoContainer, BodyContainer } from "../../style/homePage";
 
 class Home extends React.Component {
   constructor(props) {
@@ -16,37 +16,64 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getAllVideos();
+    this.props.getAllVideos(this.props.page);
   }
 
+  handleSeachFieldChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value,
+    });
+
+    this.setState({
+      searchInput: event.target.value,
+    });
+  };
+
   render() {
-    const { videos } = this.state;
-    console.log(this.props.videos);
-    let filterVideos = this.props.videos.filter((video) => {
+    const { videos } = this.props;
+    console.log(videos);
+    let filterVideos = videos.filter((video) => {
       return (
         video.title
           .toLowerCase()
           .indexOf(this.state.searchInput.toLowerCase()) !== -1
       );
     });
+    console.log(filterVideos);
 
-    const isVideosReady =
-      this.props.videos.lenght === 0 ? (
-        <Loader />
-      ) : (
-        <Fragment>
-          {filterVideos.map((video) => (
-            <RecipeReviewCard />
-          ))}
-        </Fragment>
-      );
+    // const isVideosReady =
+    //   this.props.videos.length === 0 ? (
+    //     <Loader />
+    //   ) : (
+    //     <div>
+    //       {filterVideos.map((video) => (
+    //         <VideoContainer key={video.videoId}>
+    //           <RecipeReviewCard videoUrl={video.url} videoTitle={video.title} />
+    //         </VideoContainer>
+    //       ))}
+    //     </div>
+    //   );
     return (
       <BodyContainer>
         <Header />
+
         <Container>
           <PermanentDrawerLeft></PermanentDrawerLeft>
-
-          <VideoContainer>{isVideosReady}</VideoContainer>
+          {this.props.videos.length === 0 ? (
+            <Loader />
+          ) : (
+            <div>
+              {filterVideos.map((video) => (
+                <VideoContainer key={video.videoId}>
+                  <RecipeReviewCard
+                    videoUrl={video.url}
+                    videoTitle={video.title}
+                  />
+                </VideoContainer>
+              ))}
+            </div>
+          )}
         </Container>
       </BodyContainer>
     );
@@ -55,10 +82,11 @@ class Home extends React.Component {
 
 const mapStateToProps = (state) => ({
   videos: state.videos.allVideos,
+  page: state.videos.currentPage,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getAllVideos: () => dispatch(getAllVideos()),
+  getAllVideos: (page) => dispatch(getAllVideos(page)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

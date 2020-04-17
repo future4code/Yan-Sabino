@@ -13,8 +13,9 @@ export const StyledHeader = styled.header `
     justify-content: space-around;
     align-items: center;
     margin-left: 240px;
-    position: absolute;
+    position: fixed;
     top: 0px;
+
 `
 
 export const StyledImg = styled.img `

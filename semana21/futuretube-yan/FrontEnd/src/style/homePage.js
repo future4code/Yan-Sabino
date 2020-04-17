@@ -29,11 +29,14 @@ export const SideMenu = styled.div`
 `
 
 export const VideoContainer = styled.div`
-    width: 70%;
-    height:100%;
+    width: 300px;
+    height: 400px;
+    max-width:300px;
+    max-height:400px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     background-color: #FAFAFA;
+    margin-top: 300px;
 `
 
 // loader animado

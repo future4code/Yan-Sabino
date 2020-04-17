@@ -26,10 +26,18 @@ export const setVideoDetailAction = (videoDetail) => ({
   },
 });
 
+export const updateCurrentPage = (page) =>({
+  type: "SET_CURRENT_PAGE",
+  payload: {
+    page
+  }
+})
+
 export const getAllVideos = (page) => async (dispatch) => {
   try {
     const response = await axios.get(`${baseUrl}/videos/?page=${page}`);
     dispatch(setVideoAction(response.data));
+    dispatch(updateCurrentPage(page))
   } catch (error) {
     console.log(error);
     window.alert("Erro de renderização");
