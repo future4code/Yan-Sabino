@@ -36,7 +36,7 @@ export const SearchContainer = styled.div`
 `
 
 export const MenuContainer = styled.div `
-    width: 30%;
+    width: 300px;
     height: 100%;
     display: flex;
     justify-content: flex-end;

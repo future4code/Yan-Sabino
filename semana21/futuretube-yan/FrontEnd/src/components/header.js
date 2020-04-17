@@ -31,9 +31,9 @@ function Header (props){
             </SearchContainer>
 
             <MenuContainer>
-                <StyledButton>olá</StyledButton>
-                <StyledButton>olá</StyledButton>
-                <StyledButton>olá</StyledButton>
+                <StyledButton>login</StyledButton>
+                <StyledButton>SignUp</StyledButton>
+                <StyledButton>Logout</StyledButton>
             </MenuContainer>
         </StyledHeader>
     )
