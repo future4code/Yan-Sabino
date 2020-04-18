@@ -6,9 +6,9 @@ import SignUp from "../SignUp"
 import Home from "../Home"
 
 export const routes = {
-  login: "/",
+  login: "/login",
   signup: "/signup",
-  home: "/videos"
+  home: "/"
 };
 
 function Router(props) {

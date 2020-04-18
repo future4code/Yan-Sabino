@@ -24,6 +24,8 @@ function Header (props){
               margin="normal"
               autoFocus
               placeholder="Pesquisar"
+              onChange={props.handleSeachFieldChange}
+              value={props.value}
             />
             <IconButton>
                 <SearchIcon></SearchIcon>
@@ -31,9 +33,9 @@ function Header (props){
             </SearchContainer>
 
             <MenuContainer>
-                <StyledButton>login</StyledButton>
-                <StyledButton>SignUp</StyledButton>
-                <StyledButton>Logout</StyledButton>
+                <StyledButton onClick={props.goToLogin}>login</StyledButton>
+                <StyledButton onClick={props.goToSignUp}>SignUp</StyledButton>
+                <StyledButton onClick={props.logout}>Logout</StyledButton>
             </MenuContainer>
         </StyledHeader>
     )

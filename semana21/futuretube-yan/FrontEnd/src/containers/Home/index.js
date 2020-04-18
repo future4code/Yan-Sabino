@@ -6,6 +6,8 @@ import PermanentDrawerLeft from "../../components/sideMenu";
 import { getAllVideos } from "../../actions/videoActions";
 import Loader from "../../components/loader";
 import { Container, VideoContainer, BodyContainer } from "../../style/homePage";
+import { push } from "connected-react-router";
+import { routes } from "../Router/";
 
 class Home extends React.Component {
   constructor(props) {
@@ -18,6 +20,11 @@ class Home extends React.Component {
   componentDidMount() {
     this.props.getAllVideos(this.props.page);
   }
+
+  handleLogOut = () => {
+    localStorage.removeItem("token");
+    window.alert("User Logout");
+  };
 
   handleSeachFieldChange = (event) => {
     const { name, value } = event.target;
@@ -32,7 +39,8 @@ class Home extends React.Component {
 
   render() {
     const { videos } = this.props;
-    console.log(videos);
+    const { videos1 } = this.state;
+    // console.log(videos);
     let filterVideos = videos.filter((video) => {
       return (
         video.title
@@ -56,24 +64,30 @@ class Home extends React.Component {
     //   );
     return (
       <BodyContainer>
-        <Header />
+        <Header
+          onChangeSearchField={this.handleSeachFieldChange.bind(this)}
+          value={videos1}
+          goToSignUp={this.props.goToSignUp}
+          goToLogin={this.props.goToLogin}
+          logout={this.handleLogOut}
+        />
 
         <Container>
           <PermanentDrawerLeft></PermanentDrawerLeft>
-          {this.props.videos.length === 0 ? (
-            <Loader />
-          ) : (
-            <div>
-              {filterVideos.map((video) => (
-                <VideoContainer key={video.videoId}>
+          <Fragment>
+            {this.props.videos.length === 0 ? (
+              <Loader />
+            ) : (
+              <VideoContainer>
+                {videos.map((video) => (
                   <RecipeReviewCard
                     videoUrl={video.url}
                     videoTitle={video.title}
                   />
-                </VideoContainer>
-              ))}
-            </div>
-          )}
+                ))}
+              </VideoContainer>
+            )}
+          </Fragment>
         </Container>
       </BodyContainer>
     );
@@ -87,6 +101,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   getAllVideos: (page) => dispatch(getAllVideos(page)),
+  goToSignUp: () => dispatch(push(routes.signup)),
+  goToLogin: () => dispatch(push(routes.login)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

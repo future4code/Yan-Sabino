@@ -15,7 +15,7 @@ export const userSignup = (name, email, birthDate, password, picture) => async (
   try {
     const response = await axios.post(`${baseUrl}/signup`, input);
     window.localStorage.setItem("token", response.data.token);
-    dispatch(push(routes.login));
+    dispatch(push(routes.home));
   } catch (error) {
     console.log(error)
     window.alert("Erro no SignUp");
