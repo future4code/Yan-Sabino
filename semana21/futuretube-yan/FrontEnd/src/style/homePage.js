@@ -34,7 +34,7 @@ export const VideoContainer = styled.div`
     max-width:300px;
     max-height:400px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     background-color: #FAFAFA;
     margin-top: 300px;
 `

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import Header from "../../components/header";
-import RecipeReviewCard from "../../components/videoCard";
+import VideoCard from "../../components/videoCard";
 import PermanentDrawerLeft from "../../components/sideMenu";
 import { getAllVideos } from "../../actions/videoActions";
 import Loader from "../../components/loader";
@@ -57,7 +57,7 @@ class Home extends React.Component {
     //     <div>
     //       {filterVideos.map((video) => (
     //         <VideoContainer key={video.videoId}>
-    //           <RecipeReviewCard videoUrl={video.url} videoTitle={video.title} />
+    //           <VideoCard videoUrl={video.url} videoTitle={video.title} />
     //         </VideoContainer>
     //       ))}
     //     </div>
@@ -74,20 +74,22 @@ class Home extends React.Component {
 
         <Container>
           <PermanentDrawerLeft></PermanentDrawerLeft>
-          <Fragment>
-            {this.props.videos.length === 0 ? (
-              <Loader />
-            ) : (
-              <VideoContainer>
-                {videos.map((video) => (
-                  <RecipeReviewCard
+
+          {this.props.videos.length === 0 ? (
+            <Loader />
+          ) : (
+            <Fragment>
+              {videos.map((video) => (
+                <VideoContainer key={video.videoId}>
+                  <VideoCard
                     videoUrl={video.url}
                     videoTitle={video.title}
-                  />
-                ))}
-              </VideoContainer>
-            )}
-          </Fragment>
+                  /> 
+                  {/* <div>{video.title}</div> */}
+                </VideoContainer>
+              ))}
+            </Fragment>
+          )}
         </Container>
       </BodyContainer>
     );
