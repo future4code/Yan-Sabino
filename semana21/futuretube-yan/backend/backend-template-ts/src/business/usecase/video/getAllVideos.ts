@@ -21,6 +21,7 @@ export class GetAllVideosUC {
         videoId: video.getVideoId(),
         title: video.getTitle(),
         url: video.getUrl(),
+        picture: video.getPicture()
       };
     });
   }
@@ -34,4 +35,5 @@ export interface GetAllVideosUCOutPut {
   videoId: string;
   title: string;
   url: string;
+  picture: string
 }

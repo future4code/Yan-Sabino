@@ -7,7 +7,7 @@ export const uploadVideoEndPoint = async (req: Request, res: Response) => {
   try {
     const uc = new UploadVideoUC(new VideoDB());
     const jwtAuth = new JwtAuthorizer();
-    const userId = jwtAuth.getUsersInfoFromToken(req.headers.auth as string);
+    const userId = jwtAuth.getUsersInfoFromToken(req.headers.Authorization as string);
     const input = {
       url: req.body.url,
       description: req.body.description,

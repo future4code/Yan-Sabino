@@ -10,7 +10,7 @@ export const deleteVideoEndPoint = async (req: Request, res: Response) => {
     const uc = new DeleteVideoUC(videoDB, jwtAuth);
 
     const input = {
-      token: req.headers.auth as string,
+      token: req.headers.Authorization as string,
       videoId: req.params.videoId,
     };
 
