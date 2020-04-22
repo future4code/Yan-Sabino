@@ -63,7 +63,7 @@ export class UserDatabase extends BaseDB implements UserGateway {
     );
   }
 
-  public async getUserById(id: string): Promise<User | undefined> {
+  public async getUserById(id: string): Promise<User> {
     const result = await this.connection.raw(`
       SELECT * FROM ${this.usersTable} WHERE id = '${id}'
     `);

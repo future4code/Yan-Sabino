@@ -9,6 +9,7 @@ import { changeVideoInfosEndPoint } from "./endpoints/video/changeVideoInfos";
 import { deleteVideoEndPoint } from "./endpoints/video/deleteVideo";
 import { getAllVideosEndPoint } from "./endpoints/video/getAllVideos";
 import { getAllVideoInfos } from "./endpoints/video/getAllVideoInfos";
+import { getUserByIdEndPoint } from "./endpoints/user/getUserById";
 
 const app = express();
 app.use(express.json());
@@ -22,5 +23,6 @@ app.post("/videos/changeInfos", changeVideoInfosEndPoint)
 app.delete("/videos/delete/:videoId", deleteVideoEndPoint)
 app.get("/videos/", getAllVideosEndPoint)
 app.get("/videos/info", getAllVideoInfos)
+app.get("/user", getUserByIdEndPoint)
 
 export default app;
