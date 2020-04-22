@@ -69,7 +69,7 @@ class Home extends React.Component {
         />
 
         <Container>
-          <PermanentDrawerLeft></PermanentDrawerLeft>
+          <PermanentDrawerLeft password={this.props.goToChangePassword}></PermanentDrawerLeft>
           {isVideosReady}
         </Container>
       </BodyContainer>
@@ -86,6 +86,7 @@ const mapDispatchToProps = (dispatch) => ({
   getAllVideos: (page) => dispatch(getAllVideos(page)),
   goToSignUp: () => dispatch(push(routes.signup)),
   goToLogin: () => dispatch(push(routes.login)),
+  goToChangePassword: () => dispatch(push(routes.changePassword))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

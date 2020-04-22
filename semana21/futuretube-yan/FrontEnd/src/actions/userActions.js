@@ -1,6 +1,7 @@
 import axios from "axios";
 import { push } from "connected-react-router";
 import { routes } from "../containers/Router";
+import { updateCurrentPage } from "./videoActions";
 
 export const baseUrl = "https://mt5jvqqlt0.execute-api.us-east-1.amazonaws.com/v1";
 
@@ -37,3 +38,23 @@ export const userLogin = (email, password) => async (dispatch) => {
     window.alert("Usuário não encontrado");
   }
 };
+
+export const changePassword = (oldPassword, newPassword) => async (dispatch) =>{
+  const updatePassword = {
+    oldPassword,
+    newPassword
+  }
+  console.log(updatePassword)
+  const token = window.localStorage.getItem("token")
+  try {
+    await axios.post(`${baseUrl}/users/changePassWord`, updatePassword, {
+      headers:{
+        auth: token
+      }
+    })
+
+    dispatch(push(routes.home))
+  } catch (error) {
+    window.alert("Não foi possivel alterar sua senha");
+  }
+}

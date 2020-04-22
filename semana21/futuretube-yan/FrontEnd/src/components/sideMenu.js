@@ -7,8 +7,8 @@ import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+import PublishIcon from '@material-ui/icons/Publish';
+import LockIcon from '@material-ui/icons/Lock';
 
 const drawerWidth = 240;
 
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PermanentDrawerLeft() {
+export default function PermanentDrawerLeft(props) {
   const classes = useStyles();
 
   return (
@@ -56,10 +56,10 @@ export default function PermanentDrawerLeft() {
         <div className={classes.drawerContainer} />
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+          {["Upload Video", "Change Password"].map((text, index) => (
+            <ListItem button key={text} onClick={props.password} >
+              <ListItemIcon >
+                {index % 2 === 0 ? <PublishIcon /> : <LockIcon/>}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>
