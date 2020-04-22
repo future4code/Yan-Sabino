@@ -17,8 +17,12 @@ exports.deleteVideoEndPoint = (req, res) => __awaiter(void 0, void 0, void 0, fu
         const jwtAuth = new jwtAuthorizer_1.JwtAuthorizer();
         const videoDB = new videoDB_1.VideoDB();
         const uc = new deleteVideo_1.DeleteVideoUC(videoDB, jwtAuth);
+        const auth = req.headers.Authorization || req.headers.authorization;
+        if (!auth) {
+            throw new Error("Token not found");
+        }
         const input = {
-            token: req.headers.auth,
+            token: auth,
             videoId: req.params.videoId,
         };
         const result = yield uc.execute(input);

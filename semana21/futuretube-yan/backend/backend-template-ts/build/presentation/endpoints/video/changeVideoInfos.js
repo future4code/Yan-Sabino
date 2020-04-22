@@ -16,8 +16,12 @@ exports.changeVideoInfosEndPoint = (req, res) => __awaiter(void 0, void 0, void 
     try {
         const videoDB = new videoDB_1.VideoDB();
         const uc = new changeVideosInfos_1.ChangeVideosInfosUC(videoDB, new jwtAuthorizer_1.JwtAuthorizer());
+        const auth = req.headers.Authorization || req.headers.authorization;
+        if (!auth) {
+            throw new Error("Token not found");
+        }
         const result = yield uc.execute({
-            token: req.headers.auth,
+            token: auth,
             videoId: req.body.videoId,
             newDescription: req.body.newDescription,
             newTitle: req.body.newTitle

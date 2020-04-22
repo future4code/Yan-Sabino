@@ -24,6 +24,7 @@ class GetAllVideosUC {
                     videoId: video.getVideoId(),
                     title: video.getTitle(),
                     url: video.getUrl(),
+                    picture: video.getPicture()
                 };
             });
         });

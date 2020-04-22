@@ -10,7 +10,9 @@ export class UserDatabase extends BaseDB implements UserGateway {
   public async signUp(user: User): Promise<void> {
     try {
       await this.connection.raw(`
-      INSERT INTO ${this.usersTable} (id, name, email, birth_date, password, picture)
+      INSERT INTO ${
+        this.usersTable
+      } (id, name, email, birth_date, password, picture)
       VALUES(
         '${user.getId()}',
         '${user.getName()}',
@@ -67,10 +69,6 @@ export class UserDatabase extends BaseDB implements UserGateway {
     const result = await this.connection.raw(`
       SELECT * FROM ${this.usersTable} WHERE id = '${id}'
     `);
-
-    if (!result[0][0]) {
-      return undefined;
-    }
 
     return new User(
       result[0][0].id,

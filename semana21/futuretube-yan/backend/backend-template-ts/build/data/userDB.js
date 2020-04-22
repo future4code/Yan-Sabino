@@ -64,9 +64,6 @@ class UserDatabase extends baseDB_1.BaseDB {
             const result = yield this.connection.raw(`
       SELECT * FROM ${this.usersTable} WHERE id = '${id}'
     `);
-            if (!result[0][0]) {
-                return undefined;
-            }
             return new user_1.User(result[0][0].id, result[0][0].name, result[0][0].email, result[0][0].birth_date, result[0][0].password, result[0][0].picture);
         });
     }

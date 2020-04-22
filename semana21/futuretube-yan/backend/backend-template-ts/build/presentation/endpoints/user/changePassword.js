@@ -16,8 +16,12 @@ const bcryptService_1 = require("../../../services/bcryptService");
 exports.changePasswordEndpoint = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const uc = new changePassword_1.ChangePasswordUC(new userDB_1.UserDatabase(), new jwtAuthorizer_1.JwtAuthorizer(), new bcryptService_1.BcryptService());
+        const auth = req.headers.Authorization || req.headers.authorization;
+        if (!auth) {
+            throw new Error("Token not found");
+        }
         const result = yield uc.execute({
-            token: req.headers.auth,
+            token: auth,
             oldPassword: req.body.oldPassword,
             newPassword: req.body.newPassword,
         });

@@ -17,9 +17,13 @@ exports.getUserVideosEndPoint = (req, res) => __awaiter(void 0, void 0, void 0, 
         const videoDB = new videoDB_1.VideoDB();
         const jwtAuth = new jwtAuthorizer_1.JwtAuthorizer();
         const getUserVideoUC = new getUserVideos_1.GetUserVideosUC(videoDB, jwtAuth);
+        const auth = req.headers.Authorization || req.headers.authorization;
+        if (!auth) {
+            throw new Error("Token not found");
+        }
         const result = yield getUserVideoUC.execute({
             userId: req.query.userId || "",
-            token: req.headers.auth,
+            token: auth,
         });
         res.status(200).send(result);
     }

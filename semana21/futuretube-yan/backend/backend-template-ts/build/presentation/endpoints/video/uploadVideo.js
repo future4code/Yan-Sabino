@@ -16,7 +16,11 @@ exports.uploadVideoEndPoint = (req, res) => __awaiter(void 0, void 0, void 0, fu
     try {
         const uc = new uploadVideo_1.UploadVideoUC(new videoDB_1.VideoDB());
         const jwtAuth = new jwtAuthorizer_1.JwtAuthorizer();
-        const userId = jwtAuth.getUsersInfoFromToken(req.headers.auth);
+        const auth = req.headers.Authorization || req.headers.authorization;
+        if (!auth) {
+            throw new Error("Token not found");
+        }
+        const userId = jwtAuth.getUsersInfoFromToken(auth);
         const input = {
             url: req.body.url,
             description: req.body.description,
