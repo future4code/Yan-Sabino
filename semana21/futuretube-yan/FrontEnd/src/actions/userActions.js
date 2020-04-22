@@ -47,12 +47,12 @@ export const changePassword = (oldPassword, newPassword) => async (dispatch) =>{
   console.log(updatePassword)
   const token = window.localStorage.getItem("token")
   try {
-    await axios.post(`${baseUrl}/users/changePassWord`, updatePassword, {
+    const response = await axios.post(`${baseUrl}/users/changePassWord`, updatePassword, {
       headers:{
         auth: token
       }
     })
-
+    console.log(response)
     dispatch(push(routes.home))
   } catch (error) {
     window.alert("Não foi possivel alterar sua senha");

@@ -15,13 +15,13 @@ import TextField from "@material-ui/core/TextField";
 
 const changePassWordForm = [
   {
-    name: "oldpassword",
+    name: "oldPassword",
     type: "password",
     label: "Senha Antiga",
     required: true,
   },
   {
-    name: "newpassword",
+    name: "newPassword",
     type: "password",
     label: "Senha Nova",
     required: true,
