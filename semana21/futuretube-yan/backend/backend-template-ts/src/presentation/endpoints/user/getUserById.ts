@@ -7,8 +7,13 @@ export const getUserByIdEndPoint = async (req: Request, res: Response) => {
   try {
     const uc = new GetUserByIdUC(new UserDatabase(), new JwtAuthorizer());
 
+    const auth = req.headers.Authorization || req.headers.authorization
+    if(!auth){
+        throw new Error("Token not found")
+    }
+
     const result = await uc.execute({
-      token: req.headers.authorization as string,
+      token: auth as string,
     });
 
     res.status(200).send(result);

@@ -9,9 +9,14 @@ export const getUserVideosEndPoint = async (req: Request, res: Response) => {
     const jwtAuth = new JwtAuthorizer();
     const getUserVideoUC = new GetUserVideosUC(videoDB, jwtAuth);
 
+    const auth = req.headers.Authorization || req.headers.authorization
+    if(!auth){
+        throw new Error("Token not found")
+    }
+
     const result = await getUserVideoUC.execute({
       userId: req.query.userId as string || "",
-      token: req.headers.Authorization as string,
+      token: auth as string,
     });
     res.status(200).send(result);
   } catch (err) {

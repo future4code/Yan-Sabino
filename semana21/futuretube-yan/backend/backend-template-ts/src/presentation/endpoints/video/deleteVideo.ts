@@ -9,8 +9,13 @@ export const deleteVideoEndPoint = async (req: Request, res: Response) => {
     const videoDB = new VideoDB();
     const uc = new DeleteVideoUC(videoDB, jwtAuth);
 
+    const auth = req.headers.Authorization || req.headers.authorization
+    if(!auth){
+        throw new Error("Token not found")
+    }
+
     const input = {
-      token: req.headers.Authorization as string,
+      token: auth as string,
       videoId: req.params.videoId,
     };
 

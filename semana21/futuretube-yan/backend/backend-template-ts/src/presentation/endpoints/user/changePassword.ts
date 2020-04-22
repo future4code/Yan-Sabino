@@ -12,8 +12,13 @@ export const changePasswordEndpoint = async (req: Request, res: Response) => {
       new BcryptService()
     );
 
+    const auth = req.headers.Authorization || req.headers.authorization
+    if(!auth){
+        throw new Error("Token not found")
+    }
+
     const result = await uc.execute({
-      token: req.headers.Authorization as string,
+      token: auth as string,
       oldPassword: req.body.oldPassword,
       newPassword: req.body.newPassword,
     });
