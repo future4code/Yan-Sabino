@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import Header from "../../components/header";
 import VideoCard from "../../components/videoCard";
@@ -27,46 +27,42 @@ class Home extends React.Component {
   };
 
   handleSeachFieldChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value,
-    });
-
     this.setState({
       searchInput: event.target.value,
     });
   };
 
-  render() {
-    const { videos } = this.props;
-    const { videos1 } = this.state;
-    // console.log(videos);
-    let filterVideos = videos.filter((video) => {
-      return (
+  searchVideo = () => {
+    return this.props.videos.filter((video) => {
+      if (
         video.title
           .toLowerCase()
           .indexOf(this.state.searchInput.toLowerCase()) !== -1
-      );
+      ) {
+        return true;
+      }
     });
-    console.log(filterVideos);
+  };
 
-    // const isVideosReady =
-    //   this.props.videos.length === 0 ? (
-    //     <Loader />
-    //   ) : (
-    //     <div>
-    //       {filterVideos.map((video) => (
-    //         <VideoContainer key={video.videoId}>
-    //           <VideoCard videoUrl={video.url} videoTitle={video.title} />
-    //         </VideoContainer>
-    //       ))}
-    //     </div>
-    //   );
+  render() {
+    const searchedVideo = this.searchVideo();
+    console.log(searchedVideo);
+    const isVideosReady =
+      this.props.videos.length === 0 ? (
+        <Loader />
+      ) : (
+        <VideoContainer>
+          {searchedVideo.map((video) => (
+            <VideoCard videoUrl={video.url} videoTitle={video.title} />
+          ))}
+        </VideoContainer>
+      );
+
     return (
       <BodyContainer>
         <Header
           onChangeSearchField={this.handleSeachFieldChange.bind(this)}
-          value={videos1}
+          value={this.state.searchInput}
           goToSignUp={this.props.goToSignUp}
           goToLogin={this.props.goToLogin}
           logout={this.handleLogOut}
@@ -74,22 +70,7 @@ class Home extends React.Component {
 
         <Container>
           <PermanentDrawerLeft></PermanentDrawerLeft>
-
-          {this.props.videos.length === 0 ? (
-            <Loader />
-          ) : (
-            <Fragment>
-              {videos.map((video) => (
-                <VideoContainer key={video.videoId}>
-                  <VideoCard
-                    videoUrl={video.url}
-                    videoTitle={video.title}
-                  /> 
-                  {/* <div>{video.title}</div> */}
-                </VideoContainer>
-              ))}
-            </Fragment>
-          )}
+          {isVideosReady}
         </Container>
       </BodyContainer>
     );

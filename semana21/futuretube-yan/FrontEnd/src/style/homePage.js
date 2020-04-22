@@ -29,19 +29,19 @@ export const SideMenu = styled.div`
 `
 
 export const VideoContainer = styled.div`
-    width: 300px;
-    height: 400px;
-    max-width:300px;
-    max-height:400px;
+    width: 1000px;
+    height: 1100px;
+    gap: 20px;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(4, 1fr);
     background-color: #FAFAFA;
-    margin-top: 300px;
+    margin-top: 150px;
 `
 
 // loader animado
 
 export const Loading = styled.text`
+  
   font-size: 9px;
   text-align: center;
 `;

@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
 
   drawer: {
     width: drawerWidth,
+    maxWidth: drawerWidth,
     flexShrink: 0,
     
   },

@@ -24,12 +24,10 @@ function Header (props){
               margin="normal"
               autoFocus
               placeholder="Pesquisar"
-              onChange={props.handleSeachFieldChange}
+              onChange={props.onChangeSearchField}
               value={props.value}
             />
-            <IconButton>
-                <SearchIcon></SearchIcon>
-            </IconButton>
+
             </SearchContainer>
 
             <MenuContainer>

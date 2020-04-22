@@ -9,13 +9,14 @@ import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
-import DeleteIcon from '@material-ui/icons/Delete';
+import DeleteIcon from "@material-ui/icons/Delete";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 300,
-    maxHeight: 400,
-    margin: 400,
+    width: 200,
+    height: 350,
+    maxWidth: 200,
+    maxHeight: 350,
   },
   media: {
     height: 0,
@@ -42,8 +43,8 @@ export default function VideoCard(props) {
       />
       <CardMedia
         className={classes.media}
-        
-         // titulo do video
+
+        // titulo do video
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
