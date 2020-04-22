@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     height: 350,
     maxWidth: 200,
     maxHeight: 350,
+    zIndex: 0
   },
   media: {
     height: 0,

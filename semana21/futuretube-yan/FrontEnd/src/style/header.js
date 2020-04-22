@@ -15,7 +15,7 @@ export const StyledHeader = styled.header `
     margin-left: 240px;
     position: fixed;
     top: 0px;
-
+    z-index: 1;
 `
 
 export const StyledImg = styled.img `

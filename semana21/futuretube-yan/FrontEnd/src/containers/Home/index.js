@@ -46,7 +46,7 @@ class Home extends React.Component {
 
   render() {
     const searchedVideo = this.searchVideo();
-    console.log(searchedVideo);
+
     const isVideosReady =
       this.props.videos.length === 0 ? (
         <Loader />
@@ -58,18 +58,35 @@ class Home extends React.Component {
         </VideoContainer>
       );
 
-    return (
-      <BodyContainer>
+    const isLoggend = window.localStorage.getItem("token");
+    let buttonRender;
+
+    if (isLoggend) {
+      buttonRender = (
+        <Header
+          onChangeSearchField={this.handleSeachFieldChange.bind(this)}
+          value={this.state.searchInput}
+          logout={this.handleLogOut}
+        />
+      );
+    } else {
+      buttonRender = (
         <Header
           onChangeSearchField={this.handleSeachFieldChange.bind(this)}
           value={this.state.searchInput}
           goToSignUp={this.props.goToSignUp}
           goToLogin={this.props.goToLogin}
-          logout={this.handleLogOut}
         />
+      );
+    }
 
+    return (
+      <BodyContainer>
+        {buttonRender}
         <Container>
-          <PermanentDrawerLeft password={this.props.goToChangePassword}></PermanentDrawerLeft>
+          <PermanentDrawerLeft
+            password={this.props.goToChangePassword}
+          ></PermanentDrawerLeft>
           {isVideosReady}
         </Container>
       </BodyContainer>
@@ -86,7 +103,7 @@ const mapDispatchToProps = (dispatch) => ({
   getAllVideos: (page) => dispatch(getAllVideos(page)),
   goToSignUp: () => dispatch(push(routes.signup)),
   goToLogin: () => dispatch(push(routes.login)),
-  goToChangePassword: () => dispatch(push(routes.changePassword))
+  goToChangePassword: () => dispatch(push(routes.changePassword)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
