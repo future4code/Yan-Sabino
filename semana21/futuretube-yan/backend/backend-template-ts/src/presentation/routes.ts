@@ -1,5 +1,4 @@
 import express from "express";
-
 import { signUpEndpoint } from "./endpoints/user/signUp";
 import { loginEndpoint } from "./endpoints/user/login";
 import { changePasswordEndpoint } from "./endpoints/user/changePassword";
@@ -11,8 +10,11 @@ import { getAllVideosEndPoint } from "./endpoints/video/getAllVideos";
 import { getAllVideoInfos } from "./endpoints/video/getAllVideoInfos";
 import { getUserByIdEndPoint } from "./endpoints/user/getUserById";
 
+var cors = require("cors")
+
 const app = express();
 app.use(express.json());
+app.use(cors())
 
 app.post("/signup", signUpEndpoint);
 app.post("/users/changePassword", changePasswordEndpoint);
