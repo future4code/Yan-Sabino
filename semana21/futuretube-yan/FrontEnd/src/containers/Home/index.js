@@ -52,7 +52,7 @@ class Home extends React.Component {
 
   render() {
     const searchedVideo = this.searchVideo();
-    console.log(searchedVideo)
+    
     const isVideosReady =
       this.props.videos.length === 0 ? (
         <Loader />
@@ -60,6 +60,7 @@ class Home extends React.Component {
         <VideoContainer>
           {searchedVideo.map((video) => (
             <VideoCard
+              key={video.videoId}
               videoUrl={video.url}
               videoTitle={video.title}             
               deleteVideo={this.handleDeleteVideo}
