@@ -26,18 +26,18 @@ export const setVideoDetailAction = (videoDetail) => ({
   },
 });
 
-export const updateCurrentPage = (page) =>({
+export const updateCurrentPage = (page) => ({
   type: "SET_CURRENT_PAGE",
   payload: {
-    page
-  }
-})
+    page,
+  },
+});
 
 export const getAllVideos = (page) => async (dispatch) => {
   try {
     const response = await axios.get(`${baseUrl}/videos/?page=${page}`);
     dispatch(setVideoAction(response.data));
-    dispatch(updateCurrentPage(page))
+    dispatch(updateCurrentPage(page));
   } catch (error) {
     console.log(error);
     window.alert("Erro de renderização");
@@ -45,13 +45,21 @@ export const getAllVideos = (page) => async (dispatch) => {
 };
 
 export const deleteVideo = (videoId) => async (dispatch) => {
-  const token = window.localStorage.getItem("token")
-
+  const token = window.localStorage.getItem("token");
+  
   try {
-    if(window.confirm("Deseja mesmo deletar esse video?")){
-      await axios.delete(`${baseUrl}/videos/delete`)
+    if (window.confirm("Deseja mesmo deletar esse video?")) {
+      await axios.delete(`${baseUrl}/videos/delete/${videoId}`, {
+        headers: {
+          Authorization: token,
+        },
+      });
+      console.log(videoId)
+      window.alert("Video deletado com sucesso");
+      dispatch(getAllVideos());
     }
   } catch (error) {
-    
+    window.alert("Não foi possivel deletar o vídeo");
   }
-}
+  
+};

@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function VideoCard(props) {
   const classes = useStyles();
-
+  
   return (
     <Card className={classes.root}>
       <CardHeader
@@ -53,7 +53,7 @@ export default function VideoCard(props) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="delete videos">
+        <IconButton aria-label="delete videos" onClick={props.deleteVideo}>
           <DeleteIcon />
         </IconButton>
       </CardActions>

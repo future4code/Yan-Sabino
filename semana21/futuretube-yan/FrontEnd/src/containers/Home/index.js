@@ -4,6 +4,7 @@ import Header from "../../components/header";
 import VideoCard from "../../components/videoCard";
 import PermanentDrawerLeft from "../../components/sideMenu";
 import { getAllVideos } from "../../actions/videoActions";
+import { deleteVideo } from "../../actions/videoActions";
 import Loader from "../../components/loader";
 import { Container, VideoContainer, BodyContainer } from "../../style/homePage";
 import { push } from "connected-react-router";
@@ -26,6 +27,10 @@ class Home extends React.Component {
     window.alert("User Logout");
   };
 
+  handleDeleteVideo = (videoId) => {
+    this.props.deleteVideo(videoId);
+  };
+
   handleSeachFieldChange = (event) => {
     this.setState({
       searchInput: event.target.value,
@@ -46,14 +51,18 @@ class Home extends React.Component {
 
   render() {
     const searchedVideo = this.searchVideo();
-
+    console.log(searchedVideo)
     const isVideosReady =
       this.props.videos.length === 0 ? (
         <Loader />
       ) : (
         <VideoContainer>
           {searchedVideo.map((video) => (
-            <VideoCard videoUrl={video.url} videoTitle={video.title} />
+            <VideoCard
+              videoUrl={video.url}
+              videoTitle={video.title}             
+              deleteVideo={this.handleDeleteVideo}
+            />
           ))}
         </VideoContainer>
       );
@@ -101,6 +110,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   getAllVideos: (page) => dispatch(getAllVideos(page)),
+  deleteVideo: (videoId) => dispatch(deleteVideo(videoId)),
   goToSignUp: () => dispatch(push(routes.signup)),
   goToLogin: () => dispatch(push(routes.login)),
   goToChangePassword: () => dispatch(push(routes.changePassword)),

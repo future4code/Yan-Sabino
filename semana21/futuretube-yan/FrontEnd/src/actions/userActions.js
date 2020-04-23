@@ -1,7 +1,7 @@
 import axios from "axios";
 import { push } from "connected-react-router";
 import { routes } from "../containers/Router";
-import { updateCurrentPage } from "./videoActions";
+
 
 export const baseUrl = "https://mt5jvqqlt0.execute-api.us-east-1.amazonaws.com/v1";
 
@@ -47,7 +47,7 @@ export const changePassword = (oldPassword, newPassword) => async (dispatch) =>{
   console.log(updatePassword)
   const token = window.localStorage.getItem("token")
   try {
-    const response = await axios.post(`${baseUrl}/users/changePassword`, updatePassword, {
+     await axios.post(`${baseUrl}/users/changePassword`, updatePassword, {
       headers:{
         Authorization: token
       }
