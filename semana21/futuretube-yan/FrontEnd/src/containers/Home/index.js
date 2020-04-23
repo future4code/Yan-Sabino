@@ -5,6 +5,7 @@ import VideoCard from "../../components/videoCard";
 import PermanentDrawerLeft from "../../components/sideMenu";
 import { getAllVideos } from "../../actions/videoActions";
 import { deleteVideo } from "../../actions/videoActions";
+import { getUserById } from "../../actions/userActions"
 import Loader from "../../components/loader";
 import { Container, VideoContainer, BodyContainer } from "../../style/homePage";
 import { push } from "connected-react-router";
@@ -62,6 +63,7 @@ class Home extends React.Component {
               videoUrl={video.url}
               videoTitle={video.title}             
               deleteVideo={this.handleDeleteVideo}
+              userPicture={this.props.getUserById.picture}
             />
           ))}
         </VideoContainer>
@@ -111,6 +113,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   getAllVideos: (page) => dispatch(getAllVideos(page)),
   deleteVideo: (videoId) => dispatch(deleteVideo(videoId)),
+  getUserById: () => dispatch(getUserById()),
   goToSignUp: () => dispatch(push(routes.signup)),
   goToLogin: () => dispatch(push(routes.login)),
   goToChangePassword: () => dispatch(push(routes.changePassword)),

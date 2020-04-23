@@ -58,3 +58,16 @@ export const changePassword = (oldPassword, newPassword) => async (dispatch) =>{
     window.alert("Não foi possivel alterar sua senha");
   }
 }
+
+export const getUserById = () => async (dispatch) =>{
+  const token = window.localStorage.getItem("token")
+  try {
+    await axios.get(`${baseUrl}/user`, {
+      headers: {
+        Authorization: token
+      }
+    })
+  } catch (error) {
+    window.alert("Não foi possivel encontrar o usuario");
+  }
+}

@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     height: 350,
     maxWidth: 200,
     maxHeight: 350,
-    zIndex: 0
+    zIndex: 0,
   },
   media: {
     height: 0,
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function VideoCard(props) {
   const classes = useStyles();
-  
+
   return (
     <Card className={classes.root}>
       <CardHeader
@@ -42,11 +42,19 @@ export default function VideoCard(props) {
         }
         title={props.videoTitle}
       />
-      <CardMedia
+      {/* <CardMedia
         className={classes.media}
 
         // titulo do video
-      />
+      /> */}
+      <iframe
+        width="200"
+        height="150"
+        src={props.videoUrl}
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        // allowfullscreen
+      ></iframe>
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           Descrição do vídeo
