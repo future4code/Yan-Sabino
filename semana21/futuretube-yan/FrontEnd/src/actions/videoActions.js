@@ -43,3 +43,15 @@ export const getAllVideos = (page) => async (dispatch) => {
     window.alert("Erro de renderização");
   }
 };
+
+export const deleteVideo = (videoId) => async (dispatch) => {
+  const token = window.localStorage.getItem("token")
+
+  try {
+    if(window.confirm("Deseja mesmo deletar esse video?")){
+      await axios.delete(`${baseUrl}/videos/delete`)
+    }
+  } catch (error) {
+    
+  }
+}
