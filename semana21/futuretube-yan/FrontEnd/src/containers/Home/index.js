@@ -63,7 +63,7 @@ class Home extends React.Component {
               key={video.videoId}
               videoUrl={video.url}
               videoTitle={video.title}             
-              deleteVideo={this.handleDeleteVideo}
+              deleteVideo={() => { this.handleDeleteVideo(video.videoId) } }
               userPicture={this.props.getUserById.picture}
             />
           ))}
