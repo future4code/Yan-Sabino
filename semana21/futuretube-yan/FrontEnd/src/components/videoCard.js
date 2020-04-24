@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: 200,
     height: 350,
-    maxWidth: 200,
+    mWidth: 200,
     maxHeight: 350,
     zIndex: 0,
   },
@@ -53,11 +53,11 @@ export default function VideoCard(props) {
         src={props.videoUrl}
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        // allowfullscreen
+        allownetworking="internal"
       ></iframe>
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          Descrição do vídeo
+          {props.videoDescription}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

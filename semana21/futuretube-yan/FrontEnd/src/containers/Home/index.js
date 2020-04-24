@@ -1,15 +1,22 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import Header from "../../components/header";
 import VideoCard from "../../components/videoCard";
 import PermanentDrawerLeft from "../../components/sideMenu";
 import { getAllVideos } from "../../actions/videoActions";
 import { deleteVideo } from "../../actions/videoActions";
-import { getUserById } from "../../actions/userActions"
+import { getUserById } from "../../actions/userActions";
 import Loader from "../../components/loader";
-import { Container, VideoContainer, BodyContainer } from "../../style/homePage";
+import {
+  Container,
+  VideoContainer,
+  BodyContainer,
+  StyledButton,
+  ButtonWrapper,
+} from "../../style/homePage";
 import { push } from "connected-react-router";
 import { routes } from "../Router/";
+import PaginationRounded from "../../components/pagination";
 
 class Home extends React.Component {
   constructor(props) {
@@ -38,6 +45,14 @@ class Home extends React.Component {
     });
   };
 
+  goToNextPage = () => {
+    this.props.getAllVideos(this.props.page + 1);
+  };
+
+  goToPreviusPage = () => {
+    this.props.getAllVideos(this.props.page - 1);
+  };
+
   searchVideo = () => {
     return this.props.videos.filter((video) => {
       if (
@@ -52,7 +67,7 @@ class Home extends React.Component {
 
   render() {
     const searchedVideo = this.searchVideo();
-    
+
     const isVideosReady =
       this.props.videos.length === 0 ? (
         <Loader />
@@ -62,9 +77,12 @@ class Home extends React.Component {
             <VideoCard
               key={video.videoId}
               videoUrl={video.url}
-              videoTitle={video.title}             
-              deleteVideo={() => { this.handleDeleteVideo(video.videoId) } }
+              videoTitle={video.title}
+              deleteVideo={() => {
+                this.handleDeleteVideo(video.videoId);
+              }}
               userPicture={this.props.getUserById.picture}
+              videoDescription={video.description}
             />
           ))}
         </VideoContainer>
@@ -93,16 +111,22 @@ class Home extends React.Component {
     }
 
     return (
-      <BodyContainer>
-        {buttonRender}
-        <Container>
-          <PermanentDrawerLeft
-            password={this.props.goToChangePassword}
-            upload={this.props.goToUploadVideo}
-          ></PermanentDrawerLeft>
-          {isVideosReady}
-        </Container>
-      </BodyContainer>
+      <Fragment>
+        <BodyContainer>
+          {buttonRender}
+          <Container>
+            <PermanentDrawerLeft
+              password={this.props.goToChangePassword}
+              upload={this.props.goToUploadVideo}
+            />
+            {isVideosReady}
+            <ButtonWrapper>
+              <StyledButton onClick={this.goToNextPage}>Avançar</StyledButton>
+              <StyledButton onClick={this.goToPreviusPage}>voltar</StyledButton>
+            </ButtonWrapper>
+          </Container>
+        </BodyContainer>
+      </Fragment>
     );
   }
 }
@@ -119,7 +143,7 @@ const mapDispatchToProps = (dispatch) => ({
   goToSignUp: () => dispatch(push(routes.signup)),
   goToLogin: () => dispatch(push(routes.login)),
   goToChangePassword: () => dispatch(push(routes.changePassword)),
-  goToUploadVideo: () => dispatch(push(routes.uploadVideo))
+  goToUploadVideo: () => dispatch(push(routes.uploadVideo)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

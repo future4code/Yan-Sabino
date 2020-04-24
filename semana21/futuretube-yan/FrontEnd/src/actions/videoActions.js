@@ -79,8 +79,9 @@ export const  uploadVideo = (url, description, title) => async (dispatch) => {
         Authorization: token
       }
     })
-    dispatch(push(routes.uploadVideo))
+    window.alert("Video criado com sucesso");
+    dispatch(push(routes.home))
   } catch (error) {
-    
+    window.alert("Não foi possivel adicionar o vídeo")
   }
 }
