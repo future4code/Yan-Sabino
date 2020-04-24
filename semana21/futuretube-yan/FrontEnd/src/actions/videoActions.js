@@ -63,3 +63,24 @@ export const deleteVideo = (videoId) => async (dispatch) => {
   }
   
 };
+
+export const  uploadVideo = (url, description, title) => async (dispatch) => {
+  const input = {
+    url, 
+    description, 
+    title
+  }
+
+  const token = window.localStorage.getItem("token")
+
+  try {
+    await axios.post(`${baseUrl}/videos/upload`, input, {
+      headers: {
+        Authorization: token
+      }
+    })
+    dispatch(push(routes.uploadVideo))
+  } catch (error) {
+    
+  }
+}

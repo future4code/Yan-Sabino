@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PermanentDrawerLeft(props) {
   const classes = useStyles();
-
+  
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -57,7 +57,7 @@ export default function PermanentDrawerLeft(props) {
         <Divider />
         <List>
           {["Upload Video", "Change Password"].map((text, index) => (
-            <ListItem button key={text} onClick={props.password} >
+            <ListItem button key={text} onClick={text === "Upload Video" ? props.upload : props.password} >
               <ListItemIcon >
                 {index % 2 === 0 ? <PublishIcon /> : <LockIcon/>}
               </ListItemIcon>

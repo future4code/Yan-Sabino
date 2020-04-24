@@ -98,6 +98,7 @@ class Home extends React.Component {
         <Container>
           <PermanentDrawerLeft
             password={this.props.goToChangePassword}
+            upload={this.props.goToUploadVideo}
           ></PermanentDrawerLeft>
           {isVideosReady}
         </Container>
@@ -118,6 +119,7 @@ const mapDispatchToProps = (dispatch) => ({
   goToSignUp: () => dispatch(push(routes.signup)),
   goToLogin: () => dispatch(push(routes.login)),
   goToChangePassword: () => dispatch(push(routes.changePassword)),
+  goToUploadVideo: () => dispatch(push(routes.uploadVideo))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
