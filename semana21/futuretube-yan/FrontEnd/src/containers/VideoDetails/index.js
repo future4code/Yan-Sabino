@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
-import Header from "../../components/header";
+import HeaderVideoDetails from "../../components/headerVideoDetails";
 import PermanentDrawerLeft from "../../components/sideMenu";
 import { push } from "connected-react-router";
 import { routes } from "../Router/";
@@ -30,6 +30,11 @@ class VideoDetails extends React.Component {
     }
   }
 
+  handleLogOut = () => {
+    localStorage.removeItem("token");
+    window.alert("User Logout");
+  };
+
   handleSeachFieldChange = (event) => {
     this.setState({
       searchInput: event.target.value,
@@ -41,10 +46,10 @@ class VideoDetails extends React.Component {
     let buttonRender;
 
     if (isLoggend) {
-      buttonRender = <Header logout={this.handleLogOut} />;
+      buttonRender = <HeaderVideoDetails logout={this.handleLogOut} />;
     } else {
       buttonRender = (
-        <Header
+        <HeaderVideoDetails
           goToSignUp={this.props.goToSignUp}
           goToLogin={this.props.goToLogin}
         />

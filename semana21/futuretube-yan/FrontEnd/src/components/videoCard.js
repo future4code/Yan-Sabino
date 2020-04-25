@@ -31,6 +31,31 @@ const useStyles = makeStyles((theme) => ({
 
 export default function VideoCard(props) {
   const classes = useStyles();
+  const isLoggend = window.localStorage.getItem("token");
+  let buttonRender;
+
+  if (isLoggend) {
+    buttonRender = (
+      <CardActions>
+        <IconButton aria-label="delete videos" onClick={props.deleteVideo}>
+          <DeleteIcon />
+        </IconButton>
+        <IconButton aria-label="video details" onClick={props.videoDetails}>
+          <DetailsIcon />
+          Details
+        </IconButton>
+      </CardActions>
+    );
+  } else {
+    buttonRender = (
+      <CardActions>
+        <IconButton aria-label="video details" onClick={props.videoDetails}>
+          <DetailsIcon />
+          Details
+        </IconButton>
+      </CardActions>
+    );
+  }
 
   return (
     <Card className={classes.root}>
@@ -42,7 +67,6 @@ export default function VideoCard(props) {
         }
         title={props.videoTitle}
       />
-
       <iframe
         width="200"
         height="150"
@@ -50,21 +74,13 @@ export default function VideoCard(props) {
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allownetworking="internal"
-      ></iframe>
+      />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           {props.videoDescription}
         </Typography>
       </CardContent>
-      <CardActions>
-        <IconButton aria-label="delete videos" onClick={props.deleteVideo}>
-          <DeleteIcon />
-        </IconButton>
-        <IconButton aria-label="video details" onClick={props.videoDetails}>
-          <DetailsIcon />
-          Details
-        </IconButton>
-      </CardActions>
+      {buttonRender}
     </Card>
   );
 }
