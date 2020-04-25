@@ -10,6 +10,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
 import DeleteIcon from "@material-ui/icons/Delete";
+import DetailsIcon from "@material-ui/icons/Details";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,9 +61,13 @@ export default function VideoCard(props) {
           {props.videoDescription}
         </Typography>
       </CardContent>
-      <CardActions disableSpacing>
+      <CardActions>
         <IconButton aria-label="delete videos" onClick={props.deleteVideo}>
           <DeleteIcon />
+        </IconButton>
+        <IconButton aria-label="video details" onClick={props.deleteVideo}>
+          <DetailsIcon />
+          Details
         </IconButton>
       </CardActions>
     </Card>

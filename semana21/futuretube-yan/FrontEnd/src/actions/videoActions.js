@@ -26,6 +26,17 @@ export const setVideoDetailAction = (videoDetail) => ({
   },
 });
 
+export const getPostDetails = (videoId) => {
+  const token = window.localStorage.getItem("token")
+  try {
+    const response = await axios.get(`${baseUrl}/`)
+  } catch (error) {
+    
+  }
+}
+  
+
+
 export const updateCurrentPage = (page) => ({
   type: "SET_CURRENT_PAGE",
   payload: {
