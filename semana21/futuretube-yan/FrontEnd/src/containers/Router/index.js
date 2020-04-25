@@ -6,6 +6,7 @@ import SignUp from "../SignUp"
 import Home from "../Home"
 import ChangePassword from "../ChangePassword"
 import UploadVideo from "../UploadVideo"
+import VideoDetails from "../VideoDetails"
 
 
 export const routes = {
@@ -13,7 +14,8 @@ export const routes = {
   signup: "/signup",
   home: "/",
   changePassword: "/changePassword",
-  uploadVideo: "/videos/upload"
+  uploadVideo: "/videos/upload",
+  videoDetails: "/videos/details"
 };
 
 function Router(props) {
@@ -25,6 +27,7 @@ function Router(props) {
         <Route exact path={routes.home} component={Home} />
         <Route exact path={routes.changePassword} component={ChangePassword} />
         <Route exact path={routes.uploadVideo} component={UploadVideo} />
+        <Route exact path={routes.videoDetails} component={VideoDetails} />
       </Switch>
     </ConnectedRouter>
   );

@@ -2,7 +2,6 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
-// import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import Avatar from "@material-ui/core/Avatar";
@@ -43,11 +42,7 @@ export default function VideoCard(props) {
         }
         title={props.videoTitle}
       />
-      {/* <CardMedia
-        className={classes.media}
 
-        // titulo do video
-      /> */}
       <iframe
         width="200"
         height="150"
@@ -65,7 +60,7 @@ export default function VideoCard(props) {
         <IconButton aria-label="delete videos" onClick={props.deleteVideo}>
           <DeleteIcon />
         </IconButton>
-        <IconButton aria-label="video details" onClick={props.deleteVideo}>
+        <IconButton aria-label="video details" onClick={props.videoDetails}>
           <DetailsIcon />
           Details
         </IconButton>

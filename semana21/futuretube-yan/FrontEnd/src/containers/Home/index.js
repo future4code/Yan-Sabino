@@ -5,6 +5,7 @@ import VideoCard from "../../components/videoCard";
 import PermanentDrawerLeft from "../../components/sideMenu";
 import { getAllVideos } from "../../actions/videoActions";
 import { deleteVideo } from "../../actions/videoActions";
+import { setVideoIdAction } from "../../actions/videoActions";
 import { getUserById } from "../../actions/userActions";
 import Loader from "../../components/loader";
 import {
@@ -16,7 +17,7 @@ import {
 } from "../../style/homePage";
 import { push } from "connected-react-router";
 import { routes } from "../Router/";
-import PaginationRounded from "../../components/pagination";
+
 
 class Home extends React.Component {
   constructor(props) {
@@ -65,6 +66,11 @@ class Home extends React.Component {
     });
   };
 
+  handleSetVideoId = (videoId) => {
+    this.props.setVideoId(videoId)
+    this.props.goToVideoDetails()
+  }
+
   render() {
     const searchedVideo = this.searchVideo();
 
@@ -81,6 +87,7 @@ class Home extends React.Component {
               deleteVideo={() => {
                 this.handleDeleteVideo(video.videoId);
               }}
+              videoDetails={() => this.handleSetVideoId(video.videoId)}
               userPicture={this.props.getUserById.picture}
               videoDescription={video.description}
             />
@@ -144,6 +151,8 @@ const mapDispatchToProps = (dispatch) => ({
   goToLogin: () => dispatch(push(routes.login)),
   goToChangePassword: () => dispatch(push(routes.changePassword)),
   goToUploadVideo: () => dispatch(push(routes.uploadVideo)),
+  setVideoId: (videoId) => dispatch(setVideoIdAction(videoId)),
+  goToVideoDetails: () => dispatch(push(routes.videoDetails))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

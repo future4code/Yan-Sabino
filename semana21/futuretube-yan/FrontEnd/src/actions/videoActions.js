@@ -26,16 +26,18 @@ export const setVideoDetailAction = (videoDetail) => ({
   },
 });
 
-export const getPostDetails = (videoId) => {
-  const token = window.localStorage.getItem("token")
-  try {
-    const response = await axios.get(`${baseUrl}/`)
-  } catch (error) {
-    
-  }
-}
+export const getVideoDetails = (videoId) => async (dispatch) => {
   
+  try {
+    const response = await axios.get(
+      `${baseUrl}/videos/info?videoId=${videoId}`
+    );
 
+    dispatch(setVideoDetailAction(response.data));
+  } catch (error) {
+    window.alert("Falha na renderização dos detalhes");
+  }
+};
 
 export const updateCurrentPage = (page) => ({
   type: "SET_CURRENT_PAGE",
@@ -57,7 +59,7 @@ export const getAllVideos = (page) => async (dispatch) => {
 
 export const deleteVideo = (videoId) => async (dispatch) => {
   const token = window.localStorage.getItem("token");
-  
+
   try {
     if (window.confirm("Deseja mesmo deletar esse video?")) {
       await axios.delete(`${baseUrl}/videos/delete/${videoId}`, {
@@ -65,34 +67,33 @@ export const deleteVideo = (videoId) => async (dispatch) => {
           Authorization: token,
         },
       });
-      console.log(videoId)
+      console.log(videoId);
       window.alert("Video deletado com sucesso");
       dispatch(getAllVideos());
     }
   } catch (error) {
     window.alert("Não foi possivel deletar o vídeo");
   }
-  
 };
 
-export const  uploadVideo = (url, description, title) => async (dispatch) => {
+export const uploadVideo = (url, description, title) => async (dispatch) => {
   const input = {
-    url, 
-    description, 
-    title
-  }
+    url,
+    description,
+    title,
+  };
 
-  const token = window.localStorage.getItem("token")
+  const token = window.localStorage.getItem("token");
 
   try {
     await axios.post(`${baseUrl}/videos/upload`, input, {
       headers: {
-        Authorization: token
-      }
-    })
+        Authorization: token,
+      },
+    });
     window.alert("Video criado com sucesso");
-    dispatch(push(routes.home))
+    dispatch(push(routes.home));
   } catch (error) {
-    window.alert("Não foi possivel adicionar o vídeo")
+    window.alert("Não foi possivel adicionar o vídeo");
   }
-}
+};
