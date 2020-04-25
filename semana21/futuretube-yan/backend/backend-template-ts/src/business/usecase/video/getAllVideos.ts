@@ -3,7 +3,7 @@ import { VideoGateway } from "../../gateways/videoGateway";
 export class GetAllVideosUC {
   constructor(private videoGateway: VideoGateway) {}
 
-  private VIDEOS_PER_PAGE = 10;
+  private VIDEOS_PER_PAGE = 12;
 
   public async execute(
     input: GetAllVideosUCInput
@@ -21,7 +21,8 @@ export class GetAllVideosUC {
         videoId: video.getVideoId(),
         title: video.getTitle(),
         url: video.getUrl(),
-        picture: video.getPicture()
+        picture: video.getPicture(),
+        description: video.getDescription()
       };
     });
   }
@@ -35,5 +36,6 @@ export interface GetAllVideosUCOutPut {
   videoId: string;
   title: string;
   url: string;
-  picture: string
+  picture: string;
+  description: string;
 }
