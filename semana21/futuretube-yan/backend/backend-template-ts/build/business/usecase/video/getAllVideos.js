@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 class GetAllVideosUC {
     constructor(videoGateway) {
         this.videoGateway = videoGateway;
-        this.VIDEOS_PER_PAGE = 10;
+        this.VIDEOS_PER_PAGE = 12;
     }
     execute(input) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -24,7 +24,8 @@ class GetAllVideosUC {
                     videoId: video.getVideoId(),
                     title: video.getTitle(),
                     url: video.getUrl(),
-                    picture: video.getPicture()
+                    picture: video.getPicture(),
+                    description: video.getDescription()
                 };
             });
         });
