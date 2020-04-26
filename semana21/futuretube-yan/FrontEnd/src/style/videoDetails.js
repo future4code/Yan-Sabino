@@ -9,7 +9,9 @@ export const VideoDetailsContainer = styled.div`
   justify-content: space-between;
 `;
 
-export const StyledIFrame = styled.iframe``;
+export const StyledIFrame = styled.iframe`
+  border: 1px solid black
+`;
 
 export const ButtonWrapper = styled.div`
     max-width: 100px;

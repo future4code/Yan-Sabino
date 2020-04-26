@@ -40,6 +40,27 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PermanentDrawerLeft(props) {
   const classes = useStyles();
+  const isLogged = window.localStorage.getItem("token")
+  let itemsRender
+
+  if(isLogged){
+    itemsRender = (
+      <List>
+      {["Upload Video", "Change Password"].map((text, index) => (
+        <ListItem button key={text} onClick={text === "Upload Video" ? props.upload : props.password} >
+          <ListItemIcon >
+            {index % 2 === 0 ? <PublishIcon /> : <LockIcon/>}
+          </ListItemIcon>
+          <ListItemText primary={text} />
+        </ListItem>
+      ))}
+    </List>
+    )
+  }else{
+    itemsRender = (
+      <List></List>
+    )
+  }
   
   return (
     <div className={classes.root}>
@@ -55,16 +76,7 @@ export default function PermanentDrawerLeft(props) {
       >
         <div className={classes.drawerContainer} />
         <Divider />
-        <List>
-          {["Upload Video", "Change Password"].map((text, index) => (
-            <ListItem button key={text} onClick={text === "Upload Video" ? props.upload : props.password} >
-              <ListItemIcon >
-                {index % 2 === 0 ? <PublishIcon /> : <LockIcon/>}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
+        {itemsRender}
         <Divider />
       </Drawer>
     </div>

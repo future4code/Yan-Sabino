@@ -31,10 +31,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function VideoCard(props) {
   const classes = useStyles();
-  const isLoggend = window.localStorage.getItem("token");
+  const isLogged = window.localStorage.getItem("token");
   let buttonRender;
 
-  if (isLoggend) {
+  if (isLogged) {
     buttonRender = (
       <CardActions>
         <IconButton aria-label="delete videos" onClick={props.deleteVideo}>
