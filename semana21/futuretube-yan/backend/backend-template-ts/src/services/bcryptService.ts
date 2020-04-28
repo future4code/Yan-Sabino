@@ -1,8 +1,9 @@
 import { CryptographyGateway } from "../business/gateways/cryptographyGateway";
-import * as bcrypt from "bcrypt";
+import * as bcrypt from "bcryptjs";
 
 export class BcryptService implements CryptographyGateway {
   private static BCRYPT_SALTS_ROUND = 10;
+
 
   async encrypt(word: string): Promise<string> {
     const generatedSalt = await bcrypt.genSalt(

@@ -7,7 +7,13 @@ export const uploadVideoEndPoint = async (req: Request, res: Response) => {
   try {
     const uc = new UploadVideoUC(new VideoDB());
     const jwtAuth = new JwtAuthorizer();
-    const userId = jwtAuth.getUsersInfoFromToken(req.headers.auth as string);
+
+    const auth = req.headers.Authorization || req.headers.authorization
+    if(!auth){
+        throw new Error("Token not found")
+    }
+    
+    const userId = jwtAuth.getUsersInfoFromToken(auth as string);
     const input = {
       url: req.body.url,
       description: req.body.description,

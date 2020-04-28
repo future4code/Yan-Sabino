@@ -26,6 +26,10 @@ export class SignUpUC {
     if (!input.birthDate || input.birthDate.length < 1) {
       throw new Error("Input birthDate is missing!");
     }
+    if (!input.picture || input.picture.length < 1) {
+      throw new Error("Input picture is missing!");
+    }
+
 
     // criptopgrar a senha
     const pass = await this.cryptographyGateway.encrypt(input.password);
@@ -35,7 +39,7 @@ export class SignUpUC {
       throw new Error("Password does not exist or is not valid");
     }
     // salvar o usuário no banco
-    const user = new User(id, input.name, input.email, input.birthDate, pass);
+    const user = new User(id, input.name, input.email, input.birthDate, pass, input.picture);
     await this.db.signUp(user);
 
     //gerar token
@@ -58,6 +62,7 @@ interface SignUpUCInput {
   email: string;
   birthDate: string;
   password: string;
+  picture: string
 }
 
 interface SignUpUCOutput {

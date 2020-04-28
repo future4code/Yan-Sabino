@@ -16,13 +16,14 @@ export const signUpEndpoint = async (req: Request, res: Response) => {
       name: req.body.name,
       email: req.body.email,
       birthDate: req.body.birthDate,
-      password: req.body.password
+      password: req.body.password,
+      picture: req.body.picture
     });
 
     res.status(200).send(result);
   } catch (err) {
     res.status(400).send({
-      errMessage: err.message
+      errMessage: err.message,
     });
   }
 };

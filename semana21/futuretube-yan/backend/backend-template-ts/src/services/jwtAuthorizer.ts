@@ -3,9 +3,11 @@ import {
   UsersInfoForToken
 } from "../business/gateways/authenticationGateway";
 import * as jwt from "jsonwebtoken";
+import * as dotenv from "dotenv";
+dotenv.config();
 
 export class JwtAuthorizer implements AuthenticationGateway {
-  private SECRET_KEY = "YAN";
+  private SECRET_KEY = process.env.SECRET_KEY as string;;
   private expiresIn = "10h";
 
   public generateToken(input: UsersInfoForToken): string {
