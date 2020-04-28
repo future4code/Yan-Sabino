@@ -7,13 +7,13 @@ export class UploadVideoUC {
 
   public async execute(input: UploadVideoUCInput): Promise<void> {
     const videoId = this.generateVideoId();
-    if (!input.url || input.url.length < 1) {
+    if (!input.url) {
       throw new Error("Input url is missing!");
     }
-    if (!input.description || input.description.length < 1) {
+    if (!input.description) {
       throw new Error("Input description is missing!");
     }
-    if (!input.title || input.title.length < 1) {
+    if (!input.title) {
       throw new Error("Input title is missing!");
     }
 
