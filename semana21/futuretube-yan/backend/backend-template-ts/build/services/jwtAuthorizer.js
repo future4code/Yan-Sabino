@@ -8,11 +8,14 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const jwt = __importStar(require("jsonwebtoken"));
+const dotenv = __importStar(require("dotenv"));
+dotenv.config();
 class JwtAuthorizer {
     constructor() {
-        this.SECRET_KEY = "YAN";
+        this.SECRET_KEY = process.env.SECRET_KEY;
         this.expiresIn = "10h";
     }
+    ;
     generateToken(input) {
         const token = jwt.sign({
             id: input.id,
