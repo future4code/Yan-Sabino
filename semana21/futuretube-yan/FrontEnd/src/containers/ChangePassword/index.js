@@ -38,7 +38,7 @@ class ChangePassWord extends React.Component {
 
   componentDidMount() {
     const token = window.localStorage.getItem("token");
-    if (token === null) {
+    if (!token) {
       window.alert("Usuário precisa estar logado");
       this.props.goToHome();
     }
