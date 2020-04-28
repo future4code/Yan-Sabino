@@ -106,11 +106,11 @@ export class VideoDB extends BaseDB implements VideoGateway {
 
   public async getAllVideoInfos(videoId: string): Promise<VideoFeed>{
     const result = await this.connection.raw(`
-    SELECT ${this.videoTableName}.*, ${this.usersTable}.name, ${this.usersTable}.picture 
+    SELECT ${this.videoTableName}.*, ${this.usersTable}.name as userName, ${this.usersTable}.picture as userPicture
     FROM ${this.videoTableName}
     JOIN ${this.usersTable}
     ON ${this.videoTableName}.userId = ${this.usersTable}.id
-    WHERE videoId = '${videoId}'
+    WHERE videoId = '${videoId}
     `)
 
     return new VideoFeed(
